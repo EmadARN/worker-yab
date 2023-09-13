@@ -22,14 +22,14 @@ const RightBar = () => {
   const Container = styled("div")(({ theme }) => ({
     backgroundColor: "#fdbe33",
     [theme.breakpoints.down("md")]: {
-      display: "block",
+      display: "inline-block",
     },
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
 
     paddingTop: 20,
-    width: "18%",
+    width: "100%",
     height: "auto",
     color: "#efef",
     position: "sticky",
