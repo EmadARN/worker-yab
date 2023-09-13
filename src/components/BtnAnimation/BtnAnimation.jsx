@@ -70,7 +70,7 @@ const BtnAnimation = () => {
   const Span4 = styled("div")(({ theme }) => ({
     width: "2px",
     height: "100%",
-    background: "linear-gradient(to top, #030f27, rgba(253,190,51,1)))",
+    background: "linear-gradient(to top, #030f27, rgba(253,190,51,1))",
     position: "absolute",
     bottom: "0",
     left: "0",
