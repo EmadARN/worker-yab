@@ -8,8 +8,6 @@ import Box from "@mui/material/Box/Box";
 import "react-slideshow-image/dist/styles.css";
 import { Fade, Zoom, Slide } from "react-slideshow-image";
 
-
-
 const Button1 = {
   width: "50%",
   height: "60px",
@@ -49,19 +47,19 @@ const ImageSlider1 = [
 
 const responsiveSettings = [
   {
-      breakpoint: 800,
-      settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3
-      }
+    breakpoint: 800,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3,
+    },
   },
   {
-      breakpoint: 500,
-      settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-      }
-  }
+    breakpoint: 500,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+    },
+  },
 ];
 const ImageSlider = () => {
   return (
@@ -79,8 +77,8 @@ const ImageSlider = () => {
                 width: "100% !important",
               }}
             >
-              <img style={{width:"100%"}} src={image.image} />
-               <Box
+              <img style={{ width: "100%" }} src={image.image} />
+              <Box
                 sx={{
                   position: "absolute",
                   display: "flex",
@@ -89,29 +87,52 @@ const ImageSlider = () => {
                   alignItems: "center",
                   top: "0",
                   bottom: "0",
-                 
                 }}
               >
                 <Typography
-             
-                variant="h4"
-                  sx={{ color: "#fff", fontWeight: "bold",fontSize:{xs:"23px",sm:"25px",md:"35px"}}}
+                  variant="h4"
+                  sx={{
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: { xs: "23px", sm: "25px", md: "35px" },
+                  }}
                 >
                   {image.text}
                 </Typography>
                 <Typography
-           
-                variant="h2"
-                  sx={{ color: "#fff", fontWeight: "bold", fontSize:{xs:"25px",sm:"35px",md:"45px",whiteSpace:'nowrap'}}}
+                  variant="h2"
+                  sx={{
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: {
+                      xs: "25px",
+                      sm: "35px",
+                      md: "45px",
+                      whiteSpace: "nowrap",
+                    },
+                  }}
                 >
                   {image.title}
                 </Typography>
 
-                <Box sx={{display:{xs:"none",sm:"flex"}}}>
-  <Button sx={{top:"90%",border:"1px solid white",padding:"10px 50px",borderRadius:"7px",color:"white",fontWeight:"bold",cursor:"pointer","&:hover":{backgroundColor:"gray",},fontSize:"25px"}}>دریافت مشاوره</Button>
-</Box>
-
-              </Box> 
+                <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+                  <Button
+                    sx={{
+                      top: "90%",
+                      border: "1px solid white",
+                      padding: "10px 50px",
+                      borderRadius: "7px",
+                      color: "white",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                      "&:hover": { backgroundColor: "gray" },
+                      fontSize: "25px",
+                    }}
+                  >
+                    دریافت مشاوره
+                  </Button>
+                </Box>
+              </Box>
             </Box>
           ))}
         </Slide>
@@ -136,5 +157,3 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
-
-

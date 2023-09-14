@@ -11,7 +11,7 @@ import {
   Container,
   Grid,
 } from "@mui/material";
-import builder from "../../Asset/image/about.jpg";
+import builder from "../../Asset/image/portfolio-5.jpg";
 import mechanic from "../../Asset/image/Industrial-Maintenance-Mechanic-Technician-940x529.jpg";
 import { styled } from "@mui/material/styles";
 import Title from "../Title/Title";
@@ -24,7 +24,9 @@ const OurService = () => {
 
   return (
     <>
-      <Title title="سرویس ها" />
+      <Box sx={{ mr: { xs: 2, sm: 10 } }}>
+        <Title title="سرویس ها" />
+      </Box>
 
       <Grid container sx={{ mt: 15 }}>
         {buttons.map((item) => {
@@ -71,6 +73,10 @@ const OurService = () => {
                     color: "#fdbe33",
                     fontFamily: "Lalezar",
                     fontSize: "22px",
+                    "&:hover": {
+                      bgcolor: "#fdbe33",
+                      color: "#030f27",
+                    },
                   }}
                 >
                   {item.name}
@@ -85,27 +91,3 @@ const OurService = () => {
 };
 
 export default OurService;
-{
-  /* <Box
-sx={{
-  position: "absolute",
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
-  width: "100%",
-  height: "100%",
-  opacity: 0,
-  transition: "0.5s ease-in",
-
-  cursor: "pointer",
-  "&:hover": {
-    opacity: 1,
-  },
-}}
->
-<Typography
-  variant="h6"
-  sx={{ position: "absolute", color: "#fff" }}
->
-  دوره متخصصی طراحی وب
-</Typography>
-</Box> */
-}

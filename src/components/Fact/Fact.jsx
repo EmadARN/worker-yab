@@ -20,10 +20,10 @@ const Box2 = styled("div")(({ theme }) => ({
   height: "140%",
 }));
 
-const Fact = () => {
+const Fact = ({ scroll }) => {
   const [loadCount, setLoadCount] = useState(false);
   function lc() {
-    if (window.scrollY > 100) {
+    if (window.scrollY > scroll) {
       setLoadCount(true);
     } else {
       setLoadCount(false);
