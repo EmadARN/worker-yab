@@ -1,9 +1,9 @@
 import Home from "./Pages/Home";
 import SignUpPage from "./Pages/SignUpPage";
-
+import AboutPage from "./Pages/AboutPage";
 const routes = [
   { path: "/", element: <Home /> },
-  // { path: "/About", element: <About /> },
+  { path: "/About", element: <AboutPage /> },
   {
     path: "/SignupPage",
     element: <SignUpPage />,

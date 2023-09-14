@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import CountUp from "react-countup";
-
 const Box = styled("div")(({ theme }) => ({
   backgroundColor: "#fdbe33",
   display: "flex",
@@ -24,7 +23,7 @@ const Box2 = styled("div")(({ theme }) => ({
 const Fact = () => {
   const [loadCount, setLoadCount] = useState(false);
   function lc() {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 100) {
       setLoadCount(true);
     } else {
       setLoadCount(false);
