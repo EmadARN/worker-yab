@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <TopBarCss />
       <Grid container>
-        <Grid xs={2}>
+        <Grid xs={2} >
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>

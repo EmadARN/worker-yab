@@ -3,7 +3,7 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import ContactPhoneOutlinedIcon from "@mui/icons-material/ContactPhoneOutlined";
 import ForwardToInboxOutlinedIcon from "@mui/icons-material/ForwardToInboxOutlined";
 import NavBar from "../NavBarCss/NavBar";
-function TopBarCss() {
+function TopBarCss({ display }) {
   return (
     <>
       <Grid
@@ -70,7 +70,7 @@ function TopBarCss() {
             <Typography fontFamily="Lalezar">info@gmail.com</Typography>
           </Grid>
         </Grid>
-        <NavBar />
+        <NavBar display={display} />
       </Grid>
     </>
   );

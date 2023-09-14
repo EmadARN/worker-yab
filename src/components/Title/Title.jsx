@@ -14,7 +14,6 @@ const Title = ({ title }) => {
             width: "200px",
             position: "relative",
             margin: "auto",
-            
           }}
         >
           <Typography
@@ -22,6 +21,7 @@ const Title = ({ title }) => {
               fontFamily: "Lalezar",
               position: "absolute",
               fontSize: "28px",
+              whiteSpace: { xs: "wrap", md: "nowrap" },
               "&::before": {
                 content: '""',
                 position: "absolute",
