@@ -1,10 +1,10 @@
 import React from "react";
-import TopBarCss from "../Components/topbarcss/TopBarCss";
-import RightBar from "../Components/RightBar/RightBar";
-import BtnAnimation from "../Components/BtnAnimation/BtnAnimation";
-import OurService from "../Components/OurService/OurService";
+import TopBarCss from "../components/topbarcss/TopBarCss";
+import RightBar from "../components/RightBar/RightBar"
+import BtnAnimation from "../components/BtnAnimation/BtnAnimation"
+import OurService from "../components/OurService/OurService";
 import { Container, Grid } from "@mui/material";
-import Carousel1 from "../Components/carousel/Carousel";
+import Carousel1 from "../components/carousel/Carousel";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
         <Grid xs={2}>
           <RightBar />
         </Grid>
-        <Grid xs={10} md={12}>
+        <Grid xs={10} md={12} sx={{width:"100%",height:"100%"}}>
           <Carousel1
             describtion={[
               {
