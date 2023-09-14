@@ -55,15 +55,50 @@ function NavBar({ display }) {
                     key={page}
                     sx={{
                       my: 2,
+                      mx: 2,
                       color: "#fff",
                       display: "block",
-                      textTransform: "capitalize",
-
                       fontSize: "20px",
                       px: 4,
+                      cursor: "pointer",
+                      position: "relative",
+                      transition: "all 1s",
+                      "&:after": {
+                        content: '" "',
+                        width: "5px",
+                        height: "5px",
+                        position: "absolute",
+                        border: "0px solid #fff",
+                        transition: "all 1s",
+                        top: "-1px",
+                        left: "-1px",
+                        borderTop: "2px solid #fdbe33",
+                        borderLeft: "2px solid #fdbe33",
+                      },
+                      "&:before": {
+                        content: '" "',
+                        width: "5px",
+                        height: "5px",
+                        position: "absolute",
+                        border: "0px solid #fff",
+                        transition: "all 1s",
+                        bottom: "-1px",
+                        right: "-1px",
+                        borderBottom: "2px solid #fdbe33",
+                        borderRight: "2px solid #fdbe33",
+                      },
+                      "&:hover": {
+                        "&:after": {
+                          width: "70%",
+                          height: " 70%",
+                        },
+                        "&:before": {
+                          width: "70%",
+                          height: " 70%",
+                        },
+                      },
                     }}
                   >
-                    {" "}
                     <Link
                       style={{
                         textDecoration: "none",
@@ -117,12 +152,48 @@ function NavBar({ display }) {
                     key={page}
                     sx={{
                       my: 2,
+                      mx: 2,
                       color: "#fff",
                       display: "block",
-                      textTransform: "capitalize",
-
                       fontSize: "20px",
                       px: 4,
+                      cursor: "pointer",
+                      position: "relative",
+                      transition: "all 1s",
+                      "&:after": {
+                        content: '" "',
+                        width: "5px",
+                        height: "5px",
+                        position: "absolute",
+                        border: "0px solid #fff",
+                        transition: "all 1s",
+                        top: "-1px",
+                        left: "-1px",
+                        borderTop: "2px solid #fdbe33",
+                        borderLeft: "2px solid #fdbe33",
+                      },
+                      "&:before": {
+                        content: '" "',
+                        width: "5px",
+                        height: "5px",
+                        position: "absolute",
+                        border: "0px solid #fff",
+                        transition: "all 1s",
+                        bottom: "-1px",
+                        right: "-1px",
+                        borderBottom: "2px solid #fdbe33",
+                        borderRight: "2px solid #fdbe33",
+                      },
+                      "&:hover": {
+                        "&:after": {
+                          width: "70%",
+                          height: " 70%",
+                        },
+                        "&:before": {
+                          width: "70%",
+                          height: " 70%",
+                        },
+                      },
                     }}
                   >
                     {" "}
