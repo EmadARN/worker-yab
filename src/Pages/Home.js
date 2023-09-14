@@ -7,6 +7,7 @@ import { Container, Grid } from "@mui/material";
 import ImageSlider from "../components/carousel/ImageSlider";
 import Fact from "../components/Fact/Fact";
 import About from "../components/About/About";
+import FAQs from "../components/faqs/FAQs";
 
 const Home = () => {
   return (
@@ -28,6 +29,9 @@ const Home = () => {
           </Grid>
           <Grid xs={10} md={8} sx={{ margin: "70px auto" }}>
             <OurService />
+          </Grid>
+          <Grid xs={10} md={8} sx={{ margin: " auto" }}>
+            <FAQs />
           </Grid>
         </Grid>
       </Grid>
