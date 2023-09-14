@@ -30,9 +30,10 @@ const RightBar = () => {
 
     paddingTop: 20,
     width: "100%",
-    height: "auto",
+    height: "100vh",
     color: "#efef",
     position: "sticky",
+    top: "0px",
     borderRadius: "0 0 8px 8px",
   }));
   return (

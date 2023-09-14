@@ -7,14 +7,14 @@ const SectionTittle = styled("div")(({ theme }) => ({
 const Title = ({ title }) => {
   return (
     <div>
-      <SectionTittle
-        sx={{ display: "flex", justifyContent: "center", pr: { lg: 10 } }}
-      >
+      <SectionTittle sx={{}}>
         <Box
           sx={{
             textAlign: "center",
             width: "200px",
             position: "relative",
+            margin: "auto",
+            
           }}
         >
           <Typography
