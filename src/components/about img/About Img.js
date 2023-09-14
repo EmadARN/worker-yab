@@ -3,9 +3,9 @@ import {Grid} from "@mui/material";
 function AboutImg(props){
     return(
         <>
-            <Grid container xs={12} sx={{mt:"50px"}}>
-                <img src={props.imgs1} width="80%" height="800px"/>
-                {/*<img src={props.imgs2} width="80%" height="800px"/>*/}
+            <Grid container xs={12} sx={{m:"50px 0"}}>
+                <img src={props.imgs1} width="90%" height="800px"/>
+                {/*<img src={props.imgs2} width="90%" height="800px"/>*/}
             </Grid>
         </>
     )
