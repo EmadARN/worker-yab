@@ -12,7 +12,7 @@ const pages = [
   { id: 2, name: "ارتباط با ما", to: "/ContactUs" },
 ];
 
-function NavBar() {
+function NavBar({ display }) {
   const [loadCount, setLoadCount] = React.useState(false);
   function lc() {
     if (window.scrollY > 50) {
@@ -44,7 +44,7 @@ function NavBar() {
             position: "fixed",
             top: "0px",
             zIndex: "999",
-            transition: "all 1s",
+            transition: "all 1s ",
           }}
         >
           <Box>
@@ -141,7 +141,7 @@ function NavBar() {
               </Box>
             </Toolbar>
           </Box>
-          <Box sx={{ pl: 3 }}>
+          <Box sx={{ pl: 3, display: display }}>
             <Link
               style={{
                 textDecoration: "none",
