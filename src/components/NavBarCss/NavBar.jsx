@@ -15,7 +15,7 @@ const pages = [
 function NavBar() {
   const [loadCount, setLoadCount] = React.useState(false);
   function lc() {
-    if (window.scrollY > 1) {
+    if (window.scrollY > 50) {
       setLoadCount(true);
     } else {
       setLoadCount(false);
