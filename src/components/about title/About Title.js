@@ -6,7 +6,7 @@ function AboutTitle(){
         <>
             <Grid container xs={12}>
 
-                <Grid item xs={8} sx={{margin:"50px auto"}}>
+                <Grid item xs={8} sx={{margin:"20% auto"}}>
                     <Typography color="#fdbe33" fontSize="30px" fontWeight="bold">
                         خوش آمدید به سازندگان
                     </Typography>
@@ -15,9 +15,8 @@ function AboutTitle(){
                         5 سال سابقه کار تخصصی در قسمت فنی
                     </Typography>
 
+                    <AboutDesc />
                 </Grid>
-
-
 
             </Grid>
         </>
