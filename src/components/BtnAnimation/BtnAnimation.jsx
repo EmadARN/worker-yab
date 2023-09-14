@@ -1,10 +1,8 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-const BtnAnimation = () => {
+const BtnAnimation = ({ title, color, size, ffamily, fweight }) => {
   const CustomButton = styled("div")(({ theme }) => ({
-    display: "flex",
-    height: "100vh",
     alignItems: "center",
     border: 0,
     overflow: "hidden",
@@ -93,9 +91,14 @@ const BtnAnimation = () => {
         <Span4></Span4>
         <Button
           variant="text"
-          sx={{ color: "#030f27", fontFamily: "Lalezar", fontSize: "20px" }}
+          sx={{
+            color: color,
+            fontFamily: ffamily,
+            fontSize: size,
+            fontWeight: fweight,
+          }}
         >
-          ثبت نام
+          {title}
         </Button>
       </CustomButtonA>
     </CustomButton>

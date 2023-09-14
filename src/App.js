@@ -1,12 +1,7 @@
-import React from "react";
-import { Container } from "@mui/system";
-import Home from "./Pages/Home";
-const App = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
+import { useRoutes } from "react-router-dom";
+import routes from "./Routes";
 
-export default App;
+export default function App() {
+  let router = useRoutes(routes);
+  return router;
+}

@@ -5,6 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import BtnAnimation from "../BtnAnimation/BtnAnimation";
 
 const pages = [
   { id: 1, name: "خانه", to: "/" },
@@ -28,40 +29,60 @@ function NavBar() {
           bgcolor: "#030f27",
           width: "90%",
           p: 1,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="#333"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
+        <Box>
+          <Toolbar disableGutters>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  sx={{
+                    my: 2,
+                    color: "#fff",
+                    display: "block",
+                    textTransform: "capitalize",
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{
-                  my: 2,
-                  color: "#fff",
-                  display: "block",
-                  textTransform: "capitalize",
-                  fontWeight: "700",
-                  fontSize: "20px",
-                  px: 4,
-                }}
-              >
-                {page.name}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
+                    fontSize: "20px",
+                    px: 4,
+                  }}
+                >
+                  {" "}
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "#fff",
+                      fontSize: "20px",
+                    }}
+                    to={page.to}
+                  >
+                    {page.name}
+                  </Link>
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </Box>
+        <Box sx={{ pl: 3 }}>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontSize: "20px",
+            }}
+            to={"/SignupPage"}
+          >
+            <BtnAnimation
+              title="ثبت نام"
+              color="#fff"
+              size="18px"
+              fweight="700"
+            />
+          </Link>
+        </Box>
       </Box>
     </Box>
   );
