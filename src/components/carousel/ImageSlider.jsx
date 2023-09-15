@@ -1,6 +1,6 @@
 import { styled, Typography } from "@mui/material";
 import React from "react";
-
+import 'animate.css';
 import { useState } from "react";
 import Button from "@mui/material/Button/Button";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -30,21 +30,23 @@ const ImageSlider1 = [
     text: "کارگران حرفه ای",
     title: "خانه رویایی خود رت به ما بسپرید",
     image:
-      "https://initiafy-website-images.s3.amazonaws.com/wordpress-upload/2015/06/Canada-New-Worker-Safety-group-of-workers.jpg",
+      "https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+
   },
   {
     id: 2,
     text: "ماقابل اعتماد هستیم",
     title: "خانه ی شما را میسازیم",
     image:
-      "https://media.istockphoto.com/id/1299734004/photo/skillful-worker-attending-brief-meeting-in-the-factory.jpg?s=612x612&w=0&k=20&c=A4HZVtx6YbVtD0KRn4N4yI2ORFmSBT-Al8lJhzeCG9Q=",
+      "https://images.unsplash.com/photo-1482731215275-a1f151646268?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
   },
   {
     id: 3,
     text: "سازندگان حرفه ای",
     title: "پروژه های خود را به ما بسپارید",
     image:
-      "https://www.safeopedia.com/images/uploads/safety-engagement-technology.jpg",
+      "https://images.unsplash.com/photo-1565954786194-d22abeaac3ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+
   },
 ];
 
@@ -84,7 +86,8 @@ const ImageSlider = () => {
               }}
             >
               <img style={{ width: "100%" }} src={image.image} />
-              <Box
+              <Box 
+              
                 sx={{
                   position: "absolute",
                   display: "flex",
@@ -98,6 +101,7 @@ const ImageSlider = () => {
                 }}
               >
                 <Typography
+               
                   variant="h4"
                   sx={{
                     color: "#fff",
@@ -108,7 +112,7 @@ const ImageSlider = () => {
                   {image.text}
                 </Typography>
                 <Typography
-           
+  
                 variant="h2"
                   sx={{mb:"10%", color: "#fff", fontWeight: "bold", fontSize:{xs:"25px",sm:"35px",md:"45px",whiteSpace:'nowrap'}}}
                 >

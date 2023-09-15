@@ -19,7 +19,7 @@ const Home = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid xs={12}>
+          <Grid xs={12} sx={{height:"20%"}}>
             <ImageSlider />
           </Grid>
           <Grid xs={12} sx={{ mt: 10 }}>
@@ -35,6 +35,7 @@ const Home = () => {
             <FAQs />
           </Grid>
         </Grid>
+
         <Footer
          page1 = {"درباره ما"}
          page2={"ارتباط با ما"}
