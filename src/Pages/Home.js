@@ -8,6 +8,7 @@ import ImageSlider from "../components/carousel/ImageSlider";
 import Fact from "../components/Fact/Fact";
 import About from "../components/About/About";
 import FAQs from "../components/faqs/FAQs";
+import {Footer} from '../components/Footer/Footer'
 
 const Home = () => {
   return (
@@ -34,6 +35,17 @@ const Home = () => {
             <FAQs />
           </Grid>
         </Grid>
+        <Footer
+         page1 = {"درباره ما"}
+         page2={"ارتباط با ما"}
+         page3={"خدمات"}
+         services1={"خدمات مکانیکی"}
+         services2={"کارگران ساختمانی"}
+         address={'اعتمادیه.خیابان اول عربی'}
+         phNumber={"0919123456"}
+         email={"test1@gmail.com"}
+ 
+        />
       </Grid>
     </>
   );

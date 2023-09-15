@@ -3,13 +3,16 @@ import React from "react";
 
 import { useState } from "react";
 import Button from "@mui/material/Button/Button";
-
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Box from "@mui/material/Box/Box";
 import "react-slideshow-image/dist/styles.css";
 import { Fade, Zoom, Slide } from "react-slideshow-image";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import BtnAnimation from "../BtnAnimation/BtnAnimation";
+
 
 const Button1 = {
-  width: "50%",
+  width: "60%",
   height: "60px",
   border: "3px solid #315cfd",
   borderRadius: "45px",
@@ -18,7 +21,7 @@ const Button1 = {
 
   fontSize: "1.2em",
   fontWeight: 550,
-  margin: " 10% auto 30% auto",
+  margin: " 0 auto 15% auto",
 };
 
 const ImageSlider1 = [
@@ -65,7 +68,7 @@ const ImageSlider = () => {
   return (
     <>
       <div style={{ width: "100% !important" }} className="slide-container">
-        <Slide indicators={true} duration={3000} reponsive={responsiveSettings}>
+        <Slide indicators={false} duration={3000} reponsive={responsiveSettings} prevArrow={<button style={{background:"none",border:"none",marginLeft:"2%",color:"white",marginBottom:"26%",fontSize:"30px",textAlign:"center",width:"30px"}}><ChevronLeftIcon sx={{fontSize:"50px"}}/></button>} nextArrow={<button style={{background:"none",border:"none",color:"white",marginBottom:"26%",width:"30px",marginRight:'3%'}}><ChevronRightIcon sx={{fontSize:"50px"}}/></button>} >
           {ImageSlider1.map((image, index) => (
             <Box
               key={index}
@@ -73,8 +76,11 @@ const ImageSlider = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-
+                  height:"15%",
                 width: "100% !important",
+                mt:{xs:"16%",md:"10%"},
+              
+                
               }}
             >
               <img style={{ width: "100%" }} src={image.image} />
@@ -85,8 +91,10 @@ const ImageSlider = () => {
                   justifyContent: "center",
                   flexDirection: "column",
                   alignItems: "center",
-                  top: "0",
-                  bottom: "0",
+                  top: {sm:'4%',md:"20%"},
+
+                 
+                 
                 }}
               >
                 <Typography
@@ -100,39 +108,23 @@ const ImageSlider = () => {
                   {image.text}
                 </Typography>
                 <Typography
-                  variant="h2"
-                  sx={{
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: {
-                      xs: "25px",
-                      sm: "35px",
-                      md: "45px",
-                      whiteSpace: "nowrap",
-                    },
-                  }}
+           
+                variant="h2"
+                  sx={{mb:"10%", color: "#fff", fontWeight: "bold", fontSize:{xs:"25px",sm:"35px",md:"45px",whiteSpace:'nowrap'}}}
                 >
                   {image.title}
                 </Typography>
 
-                <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-                  <Button
-                    sx={{
-                      top: "90%",
-                      border: "1px solid white",
-                      padding: "10px 50px",
-                      borderRadius: "7px",
-                      color: "white",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      "&:hover": { backgroundColor: "gray" },
-                      fontSize: "25px",
-                    }}
-                  >
-                    دریافت مشاوره
-                  </Button>
-                </Box>
-              </Box>
+                <Box sx={{display:{xs:"none",sm:"flex"}}}>
+                <BtnAnimation
+                title="دریافت مشاوره "
+                color="#fff"
+                size="18px"
+                fweight="700"
+              />
+</Box>
+
+              </Box> 
             </Box>
           ))}
         </Slide>
