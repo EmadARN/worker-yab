@@ -51,13 +51,15 @@ const RightBar = () => {
               marginBottom: "40px",
             },
             cursor: "pointer",
+            mt: { xs: 0, sm: 3 },
           }}
         />
         <Typography
           sx={{
-            pb: 5,
+            pb: 3,
             color: "#030f27",
             pr: { xs: 0, sm: 2 },
+            mt: { xs: 0, sm: 3 },
             "@media (max-width:470px)": {
               display: "none",
             },

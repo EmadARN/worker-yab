@@ -8,7 +8,7 @@ import BtnAnimation from "../BtnAnimation/BtnAnimation";
 const pages = [
   { id: 1, name: "خانه", to: "/" },
   { id: 3, name: "درباره ما", to: "/About" },
-  { id: 3, name: "سرویس ها", to: "/service" },
+  { id: 3, name: "سرویس ها", to: "/ServicesPage" },
   { id: 2, name: "ارتباط با ما", to: "/ContactUs" },
 ];
 
