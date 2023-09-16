@@ -3,18 +3,20 @@ import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 import BtnAnimation from "../components/BtnAnimation/BtnAnimation";
 import OurService from "../components/OurService/OurService";
-import { Container, Grid } from "@mui/material";
+import { Button, Container, Grid } from "@mui/material";
 import ImageSlider from "../components/carousel/ImageSlider";
 import Fact from "../components/Fact/Fact";
 import About from "../components/About/About";
 import FAQs from "../components/faqs/FAQs";
 import {Footer} from '../components/Footer/Footer'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import Link from "@mui/material/Link/Link";
 
 const Home = () => {
   return (
     <>
       <TopBarCss />
-      <Grid container>
+      <Grid container >
         <Grid xs={2}>
           <RightBar />
         </Grid>
@@ -36,6 +38,9 @@ const Home = () => {
           </Grid>
         </Grid>
 
+
+        <Link sx={{mt:"10%",background:"#315CFD",borderRadius:"50%"}} href="#">  <Button ><ArrowUpwardIcon sx={{color:'white',fontSize:"25px"}}/></Button></Link>
+
         <Footer
          page1 = {"درباره ما"}
          page2={"ارتباط با ما"}
@@ -47,7 +52,11 @@ const Home = () => {
          email={"test1@gmail.com"}
  
         />
+
+
+     
       </Grid>
+    
     </>
   );
 };

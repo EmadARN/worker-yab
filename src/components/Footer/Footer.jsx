@@ -5,16 +5,19 @@ import { Link } from 'react-router-dom'
  import LocationOnIcon from '@mui/icons-material/LocationOn';
  import PhoneIcon from '@mui/icons-material/Phone';
  import EmailIcon from '@mui/icons-material/Email';
+ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+
 const FotterGrid =styled('grid')(({theme})=>({
     width:'100%',
     height:'100%',
     backgroundColor:"#030F27",
 
-    marginTop:"100px",
+
 
     [theme.breakpoints.down('md')]:{
       flexDirection:"column",
       justifyContent:"space-around",
+
     
     }
     
@@ -46,6 +49,7 @@ const ItemText ={
 export const Footer = (props) => {
   return (
     <>
+       
     <FotterGrid >
 <Grid container sx={{    display:"flex",
     justifyContent:"space-evenly",borderBottom:"3px solid white"}}>

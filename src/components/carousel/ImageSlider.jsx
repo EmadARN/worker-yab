@@ -101,7 +101,7 @@ const ImageSlider = () => {
                 }}
               >
                 <Typography
-               
+               className="animate__animated animate__backInLeft"
                   variant="h4"
                   sx={{
                     color: "#fff",
@@ -112,7 +112,7 @@ const ImageSlider = () => {
                   {image.text}
                 </Typography>
                 <Typography
-  
+                className="animate__animated animate__backInRight"
                 variant="h2"
                   sx={{mb:"10%", color: "#fff", fontWeight: "bold", fontSize:{xs:"25px",sm:"35px",md:"45px",whiteSpace:'nowrap'}}}
                 >
