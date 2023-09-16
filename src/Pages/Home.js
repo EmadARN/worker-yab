@@ -12,11 +12,13 @@ import { Footer } from "../components/Footer/Footer";
 import TableMain from "../components/Table/TableMain";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Link from "@mui/material/Link/Link";
+import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
 
 const Home = () => {
   return (
     <>
       <TopBarCss />
+     
       <Grid container>
         <Grid xs={2}>
           <RightBar />
@@ -28,9 +30,11 @@ const Home = () => {
           <Grid xs={12} sx={{ mt: 10 }}>
             <About />
           </Grid>
+           <BtnDownToTop />
           <Grid xs={12} sx={{ mt: 10 }}>
             <Fact scroll="1500" />
           </Grid>
+
           <Grid xs={10} md={8} sx={{ margin: "150px auto" }}>
             <TableMain />
           </Grid>
@@ -41,15 +45,7 @@ const Home = () => {
             <FAQs />
           </Grid>
         </Grid>
-        <Link
-          sx={{ mt: "10%", background: "#315CFD", borderRadius: "50%" }}
-          href="#"
-        >
-          {" "}
-          <Button>
-            <ArrowUpwardIcon sx={{ color: "white", fontSize: "25px" }} />
-          </Button>
-        </Link>
+
         <Footer
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
