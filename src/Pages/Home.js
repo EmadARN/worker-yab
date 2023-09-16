@@ -10,7 +10,7 @@ import About from "../components/About/About";
 import FAQs from "../components/faqs/FAQs";
 import { Footer } from "../components/Footer/Footer";
 import TableMain from "../components/Table/TableMain";
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Link from "@mui/material/Link/Link";
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid xs={12} sx={{ height: "20%" }}>
+          <Grid xs={12}>
             <ImageSlider />
           </Grid>
           <Grid xs={12} sx={{ mt: 10 }}>
@@ -40,23 +40,27 @@ const Home = () => {
           <Grid xs={10} md={8} sx={{ margin: "150px auto" }}>
             <FAQs />
           </Grid>
-
-       
-      </Grid>
-      <Link sx={{mt:"10%",background:"#315CFD",borderRadius:"50%"}} href="#">  <Button ><ArrowUpwardIcon sx={{color:'white',fontSize:"25px"}}/></Button></Link>
-      <Footer
-         page1 = {"درباره ما"}
-         page2={"ارتباط با ما"}
-         page3={"خدمات"}
-         services1={"خدمات مکانیکی"}
-         services2={"کارگران ساختمانی"}
-         address={'اعتمادیه.خیابان اول عربی'}
-         phNumber={"0919123456"}
-         email={"test1@gmail.com"}
- 
+        </Grid>
+        <Link
+          sx={{ mt: "10%", background: "#315CFD", borderRadius: "50%" }}
+          href="#"
+        >
+          {" "}
+          <Button>
+            <ArrowUpwardIcon sx={{ color: "white", fontSize: "25px" }} />
+          </Button>
+        </Link>
+        <Footer
+          page1={"درباره ما"}
+          page2={"ارتباط با ما"}
+          page3={"خدمات"}
+          services1={"خدمات مکانیکی"}
+          services2={"کارگران ساختمانی"}
+          address={"اعتمادیه.خیابان اول عربی"}
+          phNumber={"0919123456"}
+          email={"test1@gmail.com"}
         />
       </Grid>
-    
     </>
   );
 };
