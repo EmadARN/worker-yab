@@ -6,7 +6,7 @@ import { Grid, ThemeProvider, createTheme } from "@mui/material";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-
+import Counter from "lyef-counter";
 import { prefixer } from "stylis";
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
@@ -24,7 +24,6 @@ const VerifyNumber = () => {
         <ThemeProvider theme={theme}>
           <Grid
             sx={{
-              
               display: "flex",
               justifyContent: "center",
               mt: 20,
@@ -33,11 +32,13 @@ const VerifyNumber = () => {
               },
               "& label.Mui-focused": {
                 color: "#030f27",
-                fontWeight: "700",
+                fontWeight: "bold",
+                fontSize: "22px",
               },
             }}
           >
             <TextField
+            focused
               id="standard-basic"
               label="شماره همراه"
               variant="standard"

@@ -3,10 +3,12 @@ import React from "react";
 
 import TableRow from "./Table";
 import { Grid } from "@mui/material";
+import Title from "../Title/Title";
 
 const TableMain = () => {
   return (
     <>
+      <Title title="ثبت نامی ها اخیر" />
       <Container>
         <Grid container>
           <Grid
@@ -16,25 +18,23 @@ const TableMain = () => {
               justifyContent: "center",
               alignItems: "center",
               marginTop: "10%",
+              overflowX: { xs: "scroll", md: "unset" },
+              mt: 20,
+              cursor: "pointer",
+              "&::-webkit-scrollbar": {
+                height: "10px",
+              },
+              "&::-webkit-scrollbar-track": {
+                "-webkit-box-shadow": "inset 0 0 6px rgba(0, 0, 0, 0.3)",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "  #fdbe33",
+                outline: " 3px solid #030f27",
+              },
             }}
           >
             <TableRow />
           </Grid>
-
-          <Grid
-            container
-            sx={{
-              "@media(min-width:600px)": {
-                display: "flex",
-                width: "100%",
-                justifyContent: "space-between",
-              },
-              "@media (max-width:600px)": {
-                margin: "auto",
-                textAlign: "center",
-              },
-            }}
-          ></Grid>
         </Grid>
       </Container>
     </>
