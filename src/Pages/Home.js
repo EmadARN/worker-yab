@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <TopBarCss />
-     
+
       <Grid container>
         <Grid xs={2}>
           <RightBar />
@@ -30,7 +30,7 @@ const Home = () => {
           <Grid xs={12} sx={{ mt: 10 }}>
             <About />
           </Grid>
-           <BtnDownToTop />
+          <BtnDownToTop />
           <Grid xs={12} sx={{ mt: 10 }}>
             <Fact scroll="1500" />
           </Grid>

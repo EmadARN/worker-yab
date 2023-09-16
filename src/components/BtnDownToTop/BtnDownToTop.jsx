@@ -30,7 +30,7 @@ const BtnDownToTop = () => {
         "& > :not(style)": { m: 1 },
         position: "fixed",
 
-        bottom: "380px",
+        top: "700px",
 
         display: visible ? "inline" : "none",
         zIndex: "999",
@@ -40,11 +40,12 @@ const BtnDownToTop = () => {
       <Fab
         aria-label="add"
         sx={{
-          backgroundColor: " #030f27",
-          color: "#fdbe33",
+          backgroundColor: " #fdbe33",
+          color: "#030f27",
+
           "&:hover": {
-            backgroundColor: " #fdbe33",
-            color: "#030f27",
+            backgroundColor: " #030f27",
+            color: "#fdbe33",
           },
         }}
       >
