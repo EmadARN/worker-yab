@@ -9,7 +9,9 @@ import "react-slideshow-image/dist/styles.css";
 import { Fade, Zoom, Slide } from "react-slideshow-image";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import BtnAnimation from "../BtnAnimation/BtnAnimation";
-
+import SliderImg1 from '../../Asset/image/photo-1482731215275-a1f151646268.avif'
+import SliderImg2 from '../../Asset/image/photo-1485083269755-a7b559a4fe5e.avif'
+import SliderImg3 from '../../Asset/image/photo-1565954786194-d22abeaac3ae.avif'
 
 const Button1 = {
   width: "60%",
@@ -29,8 +31,7 @@ const ImageSlider1 = [
     id: 1,
     text: "کارگران حرفه ای",
     title: "خانه رویایی خود رت به ما بسپرید",
-    image:
-      "https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+    image:SliderImg1,
 
   },
   {
@@ -38,14 +39,14 @@ const ImageSlider1 = [
     text: "ماقابل اعتماد هستیم",
     title: "خانه ی شما را میسازیم",
     image:
-      "https://images.unsplash.com/photo-1482731215275-a1f151646268?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      SliderImg2,
   },
   {
     id: 3,
     text: "سازندگان حرفه ای",
     title: "پروژه های خود را به ما بسپارید",
     image:
-      "https://images.unsplash.com/photo-1565954786194-d22abeaac3ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      SliderImg3,
 
   },
 ];
