@@ -1,7 +1,8 @@
 # Technologies used to build this MVP project
 # 1)JS
-# 2)MUI
-# 3)npm packages ...
+# 2)REACT
+# 3)MUI
+# 4)npm packages ...
 
 
 
