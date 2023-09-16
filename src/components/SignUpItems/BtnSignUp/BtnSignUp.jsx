@@ -8,6 +8,9 @@ const Customa = styled("div")(({ theme }) => ({
   padding: "15px",
   textAlign: "center",
   cursor: "pointer",
+  userSelect: "none", //userSelect: "none",
+  WebkitTouchCallout: " none", //userSelect in Chrome: "none",
+  MozUserSelect: "none", //userSelect in FireFox: "none",
   "&:hover": {
     background: " #fdbe33",
     color: "#fff",
