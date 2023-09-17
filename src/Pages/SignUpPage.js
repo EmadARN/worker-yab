@@ -12,7 +12,7 @@ const SignUpPage = () => {
       <TopBarCss display="none" />
       <Stepper1 />
       <VerifyNumber />
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 15 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", my: 15 }}>
         {" "}
         <BtnSignUp />
       </Box>
