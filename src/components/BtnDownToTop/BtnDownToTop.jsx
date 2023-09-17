@@ -30,7 +30,7 @@ const BtnDownToTop = () => {
         "& > :not(style)": { m: 1 },
         position: "fixed",
 
-        top: "700px",
+        top: "600px",
 
         display: visible ? "inline" : "none",
         zIndex: "999",
