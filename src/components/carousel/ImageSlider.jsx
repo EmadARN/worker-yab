@@ -1,4 +1,4 @@
-import { styled, Typography } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
 import React from "react";
 import 'animate.css';
 import { useState } from "react";
@@ -13,18 +13,6 @@ import SliderImg1 from '../../Asset/image/photo-1482731215275-a1f151646268.avif'
 import SliderImg2 from '../../Asset/image/photo-1485083269755-a7b559a4fe5e.avif'
 import SliderImg3 from '../../Asset/image/photo-1565954786194-d22abeaac3ae.avif'
 
-const Button1 = {
-  width: "60%",
-  height: "60px",
-  border: "3px solid #315cfd",
-  borderRadius: "45px",
-  transition: "all 0.3s",
-  cursor: "pointer",
-
-  fontSize: "1.2em",
-  fontWeight: 550,
-  margin: " 0 auto 15% auto",
-};
 
 const ImageSlider1 = [
   {
@@ -70,8 +58,8 @@ const responsiveSettings = [
 const ImageSlider = () => {
   return (
     <>
-      <div style={{ width: "100% !important" }} className="slide-container">
-        <Slide indicators={false} duration={3000} reponsive={responsiveSettings} prevArrow={<button style={{background:"none",border:"none",marginLeft:"2%",color:"white",marginBottom:"26%",fontSize:"30px",textAlign:"center",width:"30px"}}><ChevronLeftIcon sx={{fontSize:"50px"}}/></button>} nextArrow={<button style={{background:"none",border:"none",color:"white",marginBottom:"26%",width:"30px",marginRight:'3%'}}><ChevronRightIcon sx={{fontSize:"50px"}}/></button>} >
+     
+        <Slide indicators={false} duration={3000} reponsive={responsiveSettings}  prevArrow={<button style={{background:"none",border:"none",marginLeft:"2%",color:"white",marginBottom:"26%",fontSize:"30px",textAlign:"center",width:"30px"}}><ChevronLeftIcon sx={{fontSize:"50px"}}/></button>} nextArrow={<button style={{background:"none",border:"none",color:"white",marginBottom:"26%",width:"30px",marginRight:'3%'}}><ChevronRightIcon sx={{fontSize:"50px"}}/></button>} >
           {ImageSlider1.map((image, index) => (
             <Box
               key={index}
@@ -79,7 +67,7 @@ const ImageSlider = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                  height:"15%",
+                height:'5%',
                 width: "100% !important",
                 mt:{xs:"16%",md:"10%"},
               
@@ -133,22 +121,17 @@ const ImageSlider = () => {
             </Box>
           ))}
         </Slide>
-      </div>
+     
+<Grid sx={{width:"50%",display:"flex",justifyContent:"center",m:"auto",display:{xs:'flex',sm:"none"}}}>
+        <BtnAnimation
+                title="دریافت مشاوره "
+                color="black"
+                size="18px"
+                fweight="700"
+                
+              />
 
-      <Button
-        sx={{
-          background: "white",
-          "&:hover": {
-            background: "#315cfd",
-            color: "white",
-            fontSize: "1.5rem",
-          },
-          display: { xs: "flex", sm: "none" },
-        }}
-        style={Button1}
-      >
-        دریافت مشاوره
-      </Button>
+</Grid>
     </>
   );
 };
