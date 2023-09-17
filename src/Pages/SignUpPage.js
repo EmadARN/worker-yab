@@ -5,14 +5,15 @@ import VerifyNumber from "../components/SignUpItems/SignUp(VerifyNumber)/VerifyN
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
 import { Box } from "@mui/material";
+import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
 
 const SignUpPage = () => {
   return (
     <>
       <TopBarCss display="none" />
       <Stepper1 />
-      <VerifyNumber />
-      <Box sx={{ display: "flex", justifyContent: "center", my: 15 }}>
+      <VerifyCode />
+      <Box sx={{ display: "flex", justifyContent: "center", my: 20 }}>
         {" "}
         <BtnSignUp />
       </Box>
