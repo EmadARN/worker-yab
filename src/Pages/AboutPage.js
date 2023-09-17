@@ -10,7 +10,7 @@ function AboutPage() {
   return (
     <>
       <TopBarCss />
-      <Grid container xs={12}>
+      <Grid container xs={12} sx={{pt: 9}}>
         <Grid xs={2}>
           <RightBar />
         </Grid>
@@ -27,7 +27,7 @@ function AboutPage() {
             xl={5}
             sx={{ mr: { xs: "40px", sm: "40px", md: "0", lg: "0", xl: "0" } }}
           >
-            <AboutImg imgs1={img1} />
+            <AboutImg/>
           </Grid>
           <Grid item xs={12} sx={{ mt: 10 }}>
             <Fact scroll="200" />
