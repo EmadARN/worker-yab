@@ -4,7 +4,7 @@ import AboutDesc from "../about desc/AboutDesc";
 function AboutTitle(){
     return(
         <>
-            <Grid container xs={12}>
+            <Grid container xs={12} sx={{mt: 4}}>
 
                 <Grid item xs={8} sx={{margin:" auto"}}>
                     <Typography color="#fdbe33" fontSize="30px" fontWeight="bold">
