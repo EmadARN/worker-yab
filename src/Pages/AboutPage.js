@@ -3,7 +3,6 @@ import { Grid } from "@mui/material";
 import AboutImg from "../components/About/about img/About Img";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import Fact from "../components/Fact/Fact";
-import img1 from "../Asset/image/about.jpg";
 import FAQs from "../components/faqs/FAQs";
 import RightBar from "../components/RightBar/RightBar";
 function AboutPage() {

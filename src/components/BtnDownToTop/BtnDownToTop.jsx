@@ -33,6 +33,7 @@ const BtnDownToTop = () => {
         top: "600px",
 
         display: visible ? "inline" : "none",
+        display: { xs: "none", md: "flex" },
         zIndex: "999",
       }}
       onClick={scrollToTop}
