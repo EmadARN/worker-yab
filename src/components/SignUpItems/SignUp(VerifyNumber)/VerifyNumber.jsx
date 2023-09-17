@@ -38,11 +38,16 @@ const VerifyNumber = () => {
             }}
           >
             <TextField
-            focused
               id="standard-basic"
               label="شماره همراه"
-              variant="standard"
-              sx={{ width: "20%" }}
+              variant="filled"
+              sx={{
+                "& .MuiFilledInput-underline:after": {
+                  borderBottomColor: "#fdbe33",
+                },
+
+                width: "20%",
+              }}
             />
           </Grid>
         </ThemeProvider>
