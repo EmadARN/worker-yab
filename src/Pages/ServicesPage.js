@@ -12,15 +12,15 @@ const ServicesPage = () => {
   return (
     <>
       <TopBarCss />
-      <Grid container>
-        <Grid xs={2}>
+      <Grid  container>
+        <Grid item xs={2}>
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid xs={10} md={8} sx={{ margin: "70px auto" }}>
+          <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
             <OurService />
           </Grid>
-          <Grid xs={10} md={8} sx={{ margin: " auto" }}>
+          <Grid item xs={10} md={8} sx={{ margin: " auto" }}>
             <FAQs />
           </Grid>
         </Grid>

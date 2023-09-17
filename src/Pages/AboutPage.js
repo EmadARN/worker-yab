@@ -29,11 +29,11 @@ function AboutPage() {
           >
             <AboutImg imgs1={img1} />
           </Grid>
-          <Grid xs={12} sx={{ mt: 10 }}>
+          <Grid item xs={12} sx={{ mt: 10 }}>
             <Fact scroll="200" />
           </Grid>
 
-          <Grid xs={10} md={8} sx={{ margin: "100px auto" }}>
+          <Grid item xs={10} md={8} sx={{ margin: "100px auto" }}>
             <FAQs />
           </Grid>
         </Grid>
