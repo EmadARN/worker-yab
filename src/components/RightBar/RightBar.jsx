@@ -12,6 +12,7 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
 import PrintIcon from "@mui/icons-material/Print";
 import ShareIcon from "@mui/icons-material/Share";
+import { Link } from "react-router-dom";
 const RightBar = () => {
   const actions = [
     { icon: <FileCopyIcon />, name: "ثبت نام" },
@@ -34,109 +35,145 @@ const RightBar = () => {
     color: "#efef",
     position: "sticky",
     top: "0px",
-    borderRadius: "0 0 8px 8px",
   }));
   return (
     <Container sx={{}}>
-      <Box
-        sx={{
-          display: { xs: "block", sm: "flex" },
-          pr: 2,
+      <Link
+        to={"/"}
+        style={{
+          textDecoration: "none",
+          color: "#222",
+          fontSize: "20px",
         }}
       >
-        <Home
+        <Box
           sx={{
-            color: "#030f27",
-            "@media (max-width:470px)": {
-              marginBottom: "40px",
-            },
-            cursor: "pointer",
-            mt: { xs: 0, sm: 3 },
-          }}
-        />
-        <Typography
-          sx={{
-            pb: 3,
-            color: "#030f27",
-            pr: { xs: 0, sm: 2 },
-            mt: { xs: 0, sm: 3 },
-            "@media (max-width:470px)": {
-              display: "none",
-            },
+            display: { xs: "block", sm: "flex" },
+            pr: 2,
           }}
         >
-          خانه
-        </Typography>
-      </Box>
-      <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-        <GroupsIcon
-          sx={{
-            color: "#030f27",
-            "@media (max-width:470px)": {
-              marginBottom: "40px",
-            },
-            cursor: "pointer",
-          }}
-        />
-        <Typography
-          sx={{
-            pb: 5,
-            color: "#030f27",
-            pr: { xs: 0, sm: 2 },
-            "@media (max-width:470px)": {
-              display: "none",
-            },
-          }}
-        >
-          درباره ما
-        </Typography>
-      </Box>
-      <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-        <TtyIcon
-          sx={{
-            color: "#030f27",
-            "@media (max-width:470px)": {
-              marginBottom: "40px",
-            },
-            cursor: "pointer",
-          }}
-        />
-        <Typography
-          sx={{
-            pb: 5,
-            color: "#030f27",
-            pr: { xs: 0, sm: 2 },
-            "@media (max-width:470px)": {
-              display: "none",
-            },
-          }}
-        >
-          ارتباط با ما
-        </Typography>
-      </Box>
-      <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-        <ManageAccountsIcon
-          sx={{
-            color: "#030f27",
-            "@media (max-width:470px)": {
-              marginBottom: "40px",
-            },
-            cursor: "pointer",
-          }}
-        />
-        <Typography
-          sx={{
-            pb: 5,
-            color: "#030f27",
-            pr: { xs: 0, sm: 2 },
-            "@media (max-width:470px)": {
-              display: "none",
-            },
-          }}
-        >
-          سرویس ها
-        </Typography>
-      </Box>
+          <Home
+            sx={{
+              color: "#030f27",
+              "@media (max-width:470px)": {
+                marginBottom: "40px",
+              },
+              cursor: "pointer",
+              mt: { xs: 0, sm: 3 },
+            }}
+          />
+
+          <Typography
+            sx={{
+              pb: 3,
+              color: "#030f27",
+              pr: { xs: 0, sm: 2 },
+              mt: { xs: 0, sm: 3 },
+              "@media (max-width:470px)": {
+                display: "none",
+              },
+            }}
+          >
+            خانه
+          </Typography>
+        </Box>
+      </Link>
+      <Link
+        to={"/About"}
+        style={{
+          textDecoration: "none",
+          color: "#222",
+          fontSize: "20px",
+        }}
+      >
+        <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
+          <GroupsIcon
+            sx={{
+              color: "#030f27",
+              "@media (max-width:470px)": {
+                marginBottom: "40px",
+              },
+              cursor: "pointer",
+            }}
+          />
+          <Typography
+            sx={{
+              pb: 5,
+              color: "#030f27",
+              pr: { xs: 0, sm: 2 },
+              "@media (max-width:470px)": {
+                display: "none",
+              },
+            }}
+          >
+            درباره ما
+          </Typography>
+        </Box>
+      </Link>
+      <Link
+        to={"/ContactUs"}
+        style={{
+          textDecoration: "none",
+          color: "#222",
+          fontSize: "20px",
+        }}
+      >
+        <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
+          <TtyIcon
+            sx={{
+              color: "#030f27",
+              "@media (max-width:470px)": {
+                marginBottom: "40px",
+              },
+              cursor: "pointer",
+            }}
+          />
+          <Typography
+            sx={{
+              pb: 5,
+              color: "#030f27",
+              pr: { xs: 0, sm: 2 },
+              "@media (max-width:470px)": {
+                display: "none",
+              },
+            }}
+          >
+            ارتباط با ما
+          </Typography>
+        </Box>
+      </Link>
+      <Link
+        to={"/ServicesPage"}
+        style={{
+          textDecoration: "none",
+          color: "#222",
+          fontSize: "20px",
+        }}
+      >
+        <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
+          <ManageAccountsIcon
+            sx={{
+              color: "#030f27",
+              "@media (max-width:470px)": {
+                marginBottom: "40px",
+              },
+              cursor: "pointer",
+            }}
+          />
+          <Typography
+            sx={{
+              pb: 5,
+              color: "#030f27",
+              pr: { xs: 0, sm: 2 },
+              "@media (max-width:470px)": {
+                display: "none",
+              },
+            }}
+          >
+            سرویس ها
+          </Typography>
+        </Box>
+      </Link>
       <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
         <SpeedDial
           ariaLabel="SpeedDial basic example"

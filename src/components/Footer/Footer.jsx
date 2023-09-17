@@ -371,66 +371,6 @@ export const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          //ooo
-          {/* <Grid
-            sx={{ marginBottom: { xs: "5%", md: "0" } }}
-            xs={12}
-            sm={6}
-            md={2}
-            style={coloumnGrid}
-          >
-            <Typography
-              sx={{
-                color: "#CC902F",
-                mb: { xs: "3%", md: "5%" },
-                whiteSpace: "nowrap",
-              }}
-              variant="h5"
-            >
-              راه های ارتباطی با ما
-            </Typography>
-            <Grid
-              style={ItemGrid}
-              sx={{
-                mb: { xs: "3%", md: "5%" },
-                ml: { xs: "10%", md: "0" },
-                mr: { xs: "10%", md: "25%" },
-              }}
-            >
-              <Box sx={{ marginLeft: "10px" }}>
-                <LocationOnIcon sx={{ color: "white", fontSize: "25px" }} />
-              </Box>
-              <Box>
-                <Typography style={ItemText}>{props.address}</Typography>
-              </Box>
-            </Grid>
-
-            <Grid
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                mb: { xs: "3%", md: "5%" },
-                textAlign: "right",
-                marginLeft: { xs: "10%", md: "0" },
-              }}
-            >
-              <Box sx={{ marginLeft: "10px" }}>
-                <PhoneIcon sx={{ color: "white", fontSize: "25px" }} />
-              </Box>
-              <Box>
-                <Typography style={ItemText}>{props.phNumber}</Typography>
-              </Box>
-            </Grid>
-
-            <Grid style={ItemGrid} sx={{ mr: { xs: "10%", md: "20%" } }}>
-              <Box sx={{ marginLeft: "10px" }}>
-                <EmailIcon sx={{ color: "white", fontSize: "25px" }} />
-              </Box>
-              <Box>
-                <Typography style={ItemText}>{props.email}</Typography>
-              </Box>
-            </Grid>
-          </Grid> */}
         </Grid>
 
         <Grid

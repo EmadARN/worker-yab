@@ -3,13 +3,13 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import { ArrowUpward } from "@mui/icons-material";
 
-const BtnDownToTop = () => {
+const BtnDownToTop = ({ minScroll, maxScroll }) => {
   const [visible, setVisible] = useState(false);
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
+    if (scrolled > minScroll) {
       setVisible(true);
-    } else if (scrolled <= 300) {
+    } else if (scrolled <= maxScroll) {
       setVisible(false);
     }
   };
@@ -29,11 +29,11 @@ const BtnDownToTop = () => {
       sx={{
         "& > :not(style)": { m: 1 },
         position: "fixed",
+        top: "70%",
+        bottom: { xs: "50%", md: "65%" },
 
-        top: "600px",
+        display: `${visible ? "inline" : "none"}`,
 
-        display: visible ? "inline" : "none",
-        display: { xs: "none", md: "flex" },
         zIndex: "999",
       }}
       onClick={scrollToTop}
@@ -43,7 +43,7 @@ const BtnDownToTop = () => {
         sx={{
           backgroundColor: " #fdbe33",
           color: "#030f27",
-
+          display: { xs: "none", md: "inline" },
           "&:hover": {
             backgroundColor: " #030f27",
             color: "#fdbe33",

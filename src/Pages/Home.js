@@ -31,7 +31,7 @@ const Home = () => {
           <Grid item xs={12}>
             <About />
           </Grid>
-          <BtnDownToTop />
+          <BtnDownToTop minScroll={2000} maxScroll={1000} />
           <Grid item xs={12} sx={{ mt: 10 }}>
             <Fact scroll="1500" />
           </Grid>
