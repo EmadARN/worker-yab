@@ -27,7 +27,6 @@ function AboutDesc() {
             sx={{
               left: { xs: "10%", sm: "12%", md: "55%" },
               position: "absolute",
-              mt: 4,
               transition: ".5s",
               borderRadius: "2px",
               p: "15px 35px",

@@ -18,8 +18,8 @@ import Title from "../Title/Title";
 
 const OurService = () => {
   const buttons = [
-    { id: 1, name: "ساختمانی", img: builder },
-    { id: 2, name: "مکانیک", img: mechanic },
+    { id: 1, name: "ساختمانی", img: builder, desc: "نیروی کارگر ساختمان" },
+    { id: 2, name: "مکانیک", img: mechanic, desc: "نیروی مکانیک" },
   ];
 
   return (
@@ -55,9 +55,15 @@ const OurService = () => {
                 >
                   <Typography
                     variant="h6"
-                    sx={{ position: "absolute", color: "#fff" }}
+                    sx={{
+                      position: "absolute",
+                      color: "#fff",
+                      right: "50%",
+                      top: "50%",
+                      transform: "translate(50%,-50%)",
+                    }}
                   >
-                    دوره متخصصی طراحی وب
+                    {item.desc}
                   </Typography>
                 </Box>
                 <CardMedia

@@ -31,7 +31,7 @@ const Home = () => {
           <Grid item xs={12}>
             <About />
           </Grid>
-          <BtnDownToTop />
+          <BtnDownToTop minScroll={2000} maxScroll={1000} />
           <Grid item xs={12} sx={{ mt: 10 }}>
             <Fact scroll="1500" />
           </Grid>
@@ -62,7 +62,12 @@ const Home = () => {
           <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
             <OurService />
           </Grid>
-          <Grid item xs={10} md={8} sx={{ margin: "150px auto" }}>
+          <Grid
+            item
+            xs={10}
+            md={8}
+            sx={{ mx: " auto", mb: { xs: 40, md: 10 } }}
+          >
             <FAQs />
           </Grid>
         </Grid>

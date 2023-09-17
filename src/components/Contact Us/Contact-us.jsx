@@ -3,6 +3,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Button from "@mui/material/Button/Button";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
+import Title from "../Title/Title";
 
 const Grid1 = styled("grid")(({ theme }) => ({
   backgroundColor: "#fdbe33",
@@ -26,25 +27,24 @@ const Grid2 = styled("box")(({ theme }) => ({
   //   width:"100%"
   //   }  ,
 
-width:"100%"
-  
- 
+  width: "100%",
 }));
 
 const MainButton = styled("button")(({ theme }) => ({
   width: "40%",
   height: "60px",
-  border: "3px solid #315cfd",
+
   borderRadius: "45px",
   transition: "all 0.3s",
   cursor: "pointer",
-  background: "#fff",
+  background: "#030f27",
   fontSize: "1.2em",
+  color: "#fff",
   fontWeight: 550,
   margin: "auto",
   "&:hover": {
-    background: "#315cfd",
-    color: "white",
+    background: "#030f27",
+    color: "#fdbe33",
     fontSize: "1.5em",
   },
 }));
@@ -53,176 +53,207 @@ const Contactus = (props) => {
   return (
     <>
       <Grid
-  
+        xs={12}
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          flexDirection:{xs:"column-reverse",md:"row"},
-          width:"100%"
-          
+          ml: { xs: 0, md: 15 },
+          mb: { xs: 30, md: 0 },
+          mt: { xs: 0, sm: 15 },
         }}
       >
-        <Grid1 xs={12} md={6}>
-          <Grid
-            sx={{
-              width: "100%",
-              mb: "5%",
-              display: "flex",
-              justifyContent: "center",
-              mt: "5%",
-            }}
-          >
-            <TextField
-             sx={{
-           
-              input:{border:"3px solid #f5f2eb !important"},
-              width: "80%",
-                label:{color:"#efefef",fontWeight:'bold'},
-                '&:hover fieldset':{
-                  border:"3px solid white !important"
-                },
-                '&.MuiInput-underline:after':{
-                  borderBottom:"2px solid white !important"
-                },
-                '& label.Mui-focused':{
-                  color:"black !important",
-                  fontSize:"20px"
-                },
-                '&.MuiInput-underline:after':{
-                  borderBottomColor:"white !important"
-                },
-              '&.Mui-focused fieldset':{
-                border:" 2px solid white !important"
-              }
-                
-                
-                
-            }}
-              id="outlined-basic"
-              label="نام و نام خانوادگی"
-              variant="outlined"
-            />
-          </Grid>
-          <Grid
-            sx={{
-              width: "100%",
-              mb: "5%",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <TextField
-              sx={{  input:{border:"3px solid #f5f2eb !important"}, label:{color:"#efefef",fontWeight:'bold'},
-              '&:hover fieldset':{
-                border:"3px solid white !important"
-              },
-              '& label.Mui-focused':{
-                color:"black !important",
-                fontSize:"20px"
-              },
-              '&.MuiInput-underline:after':{
-                borderBottomColor:"white !important"
-              },
-            '&.Mui-focused fieldset':{
-              border:" 2px solid white !important"
-            }, input:{border:"2px solid white !important"},width: "80%", color: "#fff" ,label:{color:"#efefef",fontWeight:'bold'}}}
-              id="outlined-basic"
-              label="شماره همراه"
-              variant="outlined"
-            />
-          </Grid>
+        {" "}
+        <Title
+          title="نظرات خود را با ما به اشتراک بگزارید
+"
+        ></Title>
+      </Grid>
 
-          <Grid
-            sx={{
-              width: "100%",
-              mb: "5%",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <TextField
-              sx={{  input:{border:"3px solid #f5f2eb !important"}, label:{color:"#efefef",fontWeight:'bold'},
-              '&:hover fieldset':{
-                border:"3px solid white !important"
-              },
-              '& label.Mui-focused':{
-                color:"black !important",
-                fontSize:"20px"
-              },
-              '&.MuiInput-underline:after':{
-                borderBottomColor:"white !important"
-              },
-            '&.Mui-focused fieldset':{
-              border:" 2px solid #f5f2eb !important"
-            }, input:{border:"2px solid white !important"},width: "80%", color: "#fff" ,label:{color:"#efefef",fontWeight:'bold'}}}
-              id="outlined-basic"
-              label="حوزه کاری"
-              variant="outlined"
-            />
-          </Grid>
-
-          <Grid></Grid>
-
-          <MainButton
-      
-          >
-            دریافت مشاوره
-          </MainButton>
-        </Grid1>
-
-        <Grid2 xs={12} md={6}>
-          {props.data.map((item) => {
-            return (
-              <Grid 
+      <Grid container sx={{ mb: { xs: 0, md: 15 } }}>
+        <Grid
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            flexDirection: { xs: "column-reverse", md: "row" },
+            width: "100%",
+          }}
+        >
+          <Grid1 xs={12} md={6}>
+            <Grid
+              sx={{
+                width: "100%",
+                mb: "5%",
+                display: "flex",
+                justifyContent: "center",
+                mt: "5%",
+              }}
+            >
+              <TextField
                 sx={{
-                  border: "2px solid #141F35",
-                  width: {xs:"80%",md:'80%'},
-                  marginBottom: "4%",
-                  height: {xs:"30%",md:"20%"},
-                  textAlign: {xs:"center"},
-                 
+                  width: "80%",
+                  input: { color: "#030f27" },
+                  label: { color: "#030f27" },
+                  "& label.Mui-focused": {
+                    color: "#030f27",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "#030f27",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#030f27",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#030f27",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#030f27",
+                    },
+                  },
                 }}
-              >
-                <Box
+                id="outlined-basic"
+                label="نام و نام خانوادگی"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid
+              sx={{
+                width: "100%",
+                mb: "5%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <TextField
+                sx={{
+                  width: "80%",
+                  input: { color: "#030f27" },
+                  label: { color: "#030f27" },
+                  "& label.Mui-focused": {
+                    color: "#030f27",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "#030f27",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#030f27",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#030f27",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#030f27",
+                    },
+                  },
+                }}
+                id="outlined-basic"
+                label="شماره همراه"
+                variant="outlined"
+              />
+            </Grid>
+
+            <Grid
+              sx={{
+                width: "100%",
+                mb: "5%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <TextField
+                sx={{
+                  width: "80%",
+                  input: { color: "#030f27" },
+                  label: { color: "#030f27" },
+                  "& label.Mui-focused": {
+                    color: "#030f27",
+                  },
+                  "& .MuiInput-underline:after": {
+                    borderBottomColor: "#030f27",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#030f27",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#030f27",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#030f27",
+                    },
+                  },
+                }}
+                id="outlined-basic"
+                label="حوزه کاری"
+                variant="outlined"
+              />
+            </Grid>
+
+            <Grid></Grid>
+
+            <MainButton>دریافت مشاوره</MainButton>
+          </Grid1>
+
+          <Grid2 xs={12} md={6}>
+            {props.data.map((item) => {
+              return (
+                <Grid
                   sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textAlign: "center",
-                    mt: "5%",
-                    mb:{xs:'4%',md:"0"}
+                    border: "2px solid #141F35",
+                    width: { xs: "80%", md: "80%" },
+                    marginBottom: "4%",
+                    height: { xs: "30%", md: "20%" },
+                    textAlign: { xs: "center" },
                   }}
                 >
-                  <Box sx={{ margin: "0 5% 0 5%", color: "#fdbe33" }}>
-                    {item.icon}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      textAlign: "center",
+                      mt: "5%",
+                      mb: { xs: "4%", md: "0" },
+                    }}
+                  >
+                    <Box sx={{ margin: "0 5% 0 5%", color: "#fdbe33" }}>
+                      {item.icon}
+                    </Box>
+                    <Box>
+                      <Typography
+                        sx={{
+                          color: "#fdbe33",
+                          fontWeight: "bold",
+                          display: "flex",
+                          justifyContent: "start",
+                        }}
+                        variant="h6"
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: "#fff",
+                          fontWeight: "bold",
+                          fontSize: { xs: "16px", md: "25px" },
+                        }}
+                        variant="h5"
+                      >
+                        {item.info}
+                      </Typography>
+                    </Box>
                   </Box>
-                  <Box>
-                    <Typography
-                      sx={{ color: "#fdbe33", fontWeight: "bold" }}
-                      variant="h6"
-                    >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      sx={{ color: "#fff", fontWeight: "bold",fontSize:{xs:"16px",md:"25px"} }}
-                      variant="h5"
-                    >
-                      {item.info}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            );
-          })}
-        </Grid2>
+                </Grid>
+              );
+            })}
+          </Grid2>
+        </Grid>
       </Grid>
     </>
   );
 };
 
 export default Contactus;
-
 
 // <Contactus
 //   data={
