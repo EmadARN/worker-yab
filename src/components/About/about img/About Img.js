@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import construction  from "../../../Asset/image/aboutt.jpeg";
+import construction  from "../../../Asset/image/aboute.jpeg";
 import mechanic from '../../../Asset/image/meca.jpg';
 import {useState} from "react";
 function AboutImg(props) {
@@ -15,7 +15,7 @@ const image_list =[
 
         setImageIndex(image_index+1)
 
-    }, 7000)
+    }, 1000)
     console.log(image_list.length)
     return(
 
