@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Box, Typography } from "@mui/material";
 
-const TableInfo = ({row}) => {
+const TableInfo = ({ row }) => {
   return (
     <>
       <TableContainer component={Paper} sx={{ all: "unset" }}>
@@ -38,6 +38,12 @@ const TableInfo = ({row}) => {
                 align="right"
               >
                 سابقه کار
+              </TableCell>
+              <TableCell
+                sx={{ fontSize: "20px", fontFamily: "Lalezar" }}
+                align="right"
+              >
+                شماره همراه{" "}
               </TableCell>
             </TableRow>
           </TableHead>
@@ -73,6 +79,9 @@ const TableInfo = ({row}) => {
 
                 <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
                   {row.workExprience}
+                </TableCell>
+                <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
+                  {row.number}
                 </TableCell>
               </TableRow>
             ))}

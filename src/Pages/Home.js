@@ -25,10 +25,10 @@ const Home = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid item xs={12}  sx={{height:{xs:"10%", md:'15%'}}}>
+          <Grid item xs={12} sx={{ height: { xs: "10%", md: "15%" } }}>
             <ImageSlider />
           </Grid>
-          <Grid item xs={12} >
+          <Grid item xs={12}>
             <About />
           </Grid>
           <BtnDownToTop />
@@ -45,6 +45,7 @@ const Home = () => {
                   img: personImg1,
                   job: "بنا",
                   workExprience: "10 سال",
+                  number: "0910444444",
                 },
 
                 {
@@ -53,6 +54,7 @@ const Home = () => {
                   img: personImg2,
                   job: "مکانیک",
                   workExprience: "5 سال",
+                  number: "0912456854",
                 },
               ]}
             />
