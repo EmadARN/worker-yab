@@ -5,7 +5,7 @@ import AboutImg from "./about img/About Img";
 import img1 from "../../Asset/image/about.jpg";
 const About = () => {
   return (
-    <Grid container xs={12}>
+    <Grid container xs={12} sx={{mt:{xs:'12%',md:"10%"}}}>
       <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
         <AboutTitle />
       </Grid>
