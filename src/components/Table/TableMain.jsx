@@ -1,11 +1,10 @@
 import { Container } from "@mui/system";
 import React from "react";
-
-import TableRow from "./Table";
 import { Grid } from "@mui/material";
 import Title from "../Title/Title";
+import TableInfo from "./Table";
 
-const TableMain = () => {
+const TableMain = ({ row }) => {
   return (
     <>
       <Title title="ثبت نامی ها اخیر" />
@@ -33,7 +32,7 @@ const TableMain = () => {
               },
             }}
           >
-            <TableRow />
+            <TableInfo row={row} />
           </Grid>
         </Grid>
       </Container>

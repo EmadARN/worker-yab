@@ -13,7 +13,8 @@ import TableMain from "../components/Table/TableMain";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Link from "@mui/material/Link/Link";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
-
+import personImg1 from "../Asset/image/testimonial-2.jpg";
+import personImg2 from "../Asset/image/testimonial-3.jpg";
 const Home = () => {
   return (
     <>
@@ -36,7 +37,25 @@ const Home = () => {
           </Grid>
 
           <Grid xs={10} md={8} sx={{ margin: "150px auto" }}>
-            <TableMain />
+            <TableMain
+              row={[
+                {
+                  firstName: "محمد",
+                  lastName: "رضایی",
+                  img: personImg1,
+                  job: "بنا",
+                  workExprience: "10 سال",
+                },
+
+                {
+                  firstName: "علی",
+                  lastName: "محمدی",
+                  img: personImg2,
+                  job: "مکانیک",
+                  workExprience: "5 سال",
+                },
+              ]}
+            />
           </Grid>
           <Grid xs={10} md={8} sx={{ margin: "70px auto" }}>
             <OurService />
