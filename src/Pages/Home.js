@@ -62,7 +62,12 @@ const Home = () => {
           <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
             <OurService />
           </Grid>
-          <Grid item xs={10} md={8} sx={{ margin: "150px auto" }}>
+          <Grid
+            item
+            xs={10}
+            md={8}
+            sx={{ mx: " auto", mb: { xs: 40, md: 10 } }}
+          >
             <FAQs />
           </Grid>
         </Grid>
