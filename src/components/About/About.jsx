@@ -2,7 +2,7 @@ import React from "react";
 import AboutTitle from "./about title/About Title";
 import { Grid } from "@mui/material";
 import AboutImg from "./about img/About Img";
-import img1 from "../../Asset/image/about.jpg";
+import img1 from "../../Asset/image/aboute.jpeg";
 const About = () => {
   return (
     <Grid container xs={12} sx={{mt:{xs:'12%',md:"10%"}}}>
