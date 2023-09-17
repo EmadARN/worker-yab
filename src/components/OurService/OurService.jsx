@@ -31,7 +31,12 @@ const OurService = () => {
       <Grid container sx={{ mt: 15 }}>
         {buttons.map((item) => {
           return (
-            <Grid xs={12} md={6} sx={{ px: 2, my: { xs: 2, md: 0 } }}>
+            <Grid
+              key={item.id}
+              xs={12}
+              md={6}
+              sx={{ px: 2, my: { xs: 2, md: 0 } }}
+            >
               <Box sx={{ position: "relative" }}>
                 <Box
                   sx={{

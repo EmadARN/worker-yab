@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import CountUp from "react-countup";
-const Box = styled("div")(({ theme }) => ({
+const Box1 = styled("div")(({ theme }) => ({
   backgroundColor: "#fdbe33",
   display: "flex",
   justifyContent: "center",
@@ -36,7 +36,7 @@ const Fact = ({ scroll }) => {
     <>
       <Grid container>
         <Grid xs={12} md={6}>
-          <Box>
+          <Box1>
             <EngineeringOutlinedIcon sx={{ fontSize: "55px" }} />
             <Stack sx={{ mr: 2 }}>
               {loadCount ? (
@@ -53,7 +53,7 @@ const Fact = ({ scroll }) => {
                 کارگران ثبت نام شده{" "}
               </Typography>
             </Stack>
-          </Box>
+          </Box1>
         </Grid>
         <Grid xs={12} md={6} sx={{ pt: { xs: 2.8, md: 0 } }}>
           <Box2>

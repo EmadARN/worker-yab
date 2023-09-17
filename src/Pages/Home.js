@@ -21,22 +21,22 @@ const Home = () => {
       <TopBarCss />
 
       <Grid container>
-        <Grid xs={2}>
+        <Grid item xs={2}>
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <ImageSlider />
           </Grid>
-          <Grid xs={12} sx={{ mt: 10 }}>
+          <Grid item xs={12} sx={{ mt: 10 }}>
             <About />
           </Grid>
           <BtnDownToTop />
-          <Grid xs={12} sx={{ mt: 10 }}>
+          <Grid item xs={12} sx={{ mt: 10 }}>
             <Fact scroll="1500" />
           </Grid>
 
-          <Grid xs={10} md={8} sx={{ margin: "150px auto" }}>
+          <Grid item xs={10} md={8} sx={{ margin: "150px auto" }}>
             <TableMain
               row={[
                 {
@@ -57,10 +57,10 @@ const Home = () => {
               ]}
             />
           </Grid>
-          <Grid xs={10} md={8} sx={{ margin: "70px auto" }}>
+          <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
             <OurService />
           </Grid>
-          <Grid xs={10} md={8} sx={{ margin: "150px auto" }}>
+          <Grid item xs={10} md={8} sx={{ margin: "150px auto" }}>
             <FAQs />
           </Grid>
         </Grid>

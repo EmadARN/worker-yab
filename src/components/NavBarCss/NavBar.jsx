@@ -15,7 +15,7 @@ const pages = [
 function NavBar({ display }) {
   const [loadCount, setLoadCount] = React.useState(false);
   function lc() {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 10) {
       setLoadCount(true);
     } else {
       setLoadCount(false);
@@ -32,7 +32,7 @@ function NavBar({ display }) {
         marginTop: "20px",
       }}
     >
-      {loadCount ? (
+      {loadCount == true ? (
         <Box
           sx={{
             bgcolor: "#030f27",
@@ -51,65 +51,65 @@ function NavBar({ display }) {
             <Toolbar disableGutters>
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {pages.map((page) => (
-                  <Button
-                    key={page}
-                    sx={{
-                      my: 2,
-                      mx: 2,
+                  <Link
+                    key={page.id}
+                    style={{
+                      textDecoration: "none",
                       color: "#fff",
-                      display: "block",
                       fontSize: "20px",
-                      px: 4,
-                      cursor: "pointer",
-                      position: "relative",
-                      transition: "all 1s",
-                      "&:after": {
-                        content: '" "',
-                        width: "5px",
-                        height: "5px",
-                        position: "absolute",
-                        border: "0px solid #fff",
+                    }}
+                    to={page.to}
+                  >
+                    <Button
+                      sx={{
+                        my: 2,
+                        mx: 2,
+                        color: "#fff",
+                        display: "block",
+                        fontSize: "20px",
+                        px: 4,
+                        cursor: "pointer",
+                        position: "relative",
                         transition: "all 1s",
-                        top: "-1px",
-                        left: "-1px",
-                        borderTop: "2px solid #fdbe33",
-                        borderLeft: "2px solid #fdbe33",
-                      },
-                      "&:before": {
-                        content: '" "',
-                        width: "5px",
-                        height: "5px",
-                        position: "absolute",
-                        border: "0px solid #fff",
-                        transition: "all 1s",
-                        bottom: "-1px",
-                        right: "-1px",
-                        borderBottom: "2px solid #fdbe33",
-                        borderRight: "2px solid #fdbe33",
-                      },
-                      "&:hover": {
                         "&:after": {
-                          width: "70%",
-                          height: " 70%",
+                          content: '" "',
+                          width: "5px",
+                          height: "5px",
+                          position: "absolute",
+                          border: "0px solid #fff",
+                          transition: "all 1s",
+                          top: "-1px",
+                          left: "-1px",
+                          borderTop: "2px solid #fdbe33",
+                          borderLeft: "2px solid #fdbe33",
                         },
                         "&:before": {
-                          width: "70%",
-                          height: " 70%",
+                          content: '" "',
+                          width: "5px",
+                          height: "5px",
+                          position: "absolute",
+                          border: "0px solid #fff",
+                          transition: "all 1s",
+                          bottom: "-1px",
+                          right: "-1px",
+                          borderBottom: "2px solid #fdbe33",
+                          borderRight: "2px solid #fdbe33",
                         },
-                      },
-                    }}
-                  >
-                    <Link
-                      style={{
-                        textDecoration: "none",
-                        color: "#fff",
-                        fontSize: "20px",
+                        "&:hover": {
+                          "&:after": {
+                            width: "70%",
+                            height: " 70%",
+                          },
+                          "&:before": {
+                            width: "70%",
+                            height: " 70%",
+                          },
+                        },
                       }}
-                      to={page.to}
                     >
                       {page.name}
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 ))}
               </Box>
             </Toolbar>
@@ -148,66 +148,66 @@ function NavBar({ display }) {
             <Toolbar disableGutters>
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {pages.map((page) => (
-                  <Button
-                    key={page}
-                    sx={{
-                      my: 2,
-                      mx: 2,
+                  <Link
+                    key={page.id}
+                    style={{
+                      textDecoration: "none",
                       color: "#fff",
-                      display: "block",
                       fontSize: "20px",
-                      px: 4,
-                      cursor: "pointer",
-                      position: "relative",
-                      transition: "all 1s",
-                      "&:after": {
-                        content: '" "',
-                        width: "5px",
-                        height: "5px",
-                        position: "absolute",
-                        border: "0px solid #fff",
+                    }}
+                    to={page.to}
+                  >
+                    <Button
+                      sx={{
+                        my: 2,
+                        mx: 2,
+                        color: "#fff",
+                        display: "block",
+                        fontSize: "20px",
+                        px: 4,
+                        cursor: "pointer",
+                        position: "relative",
                         transition: "all 1s",
-                        top: "-1px",
-                        left: "-1px",
-                        borderTop: "2px solid #fdbe33",
-                        borderLeft: "2px solid #fdbe33",
-                      },
-                      "&:before": {
-                        content: '" "',
-                        width: "5px",
-                        height: "5px",
-                        position: "absolute",
-                        border: "0px solid #fff",
-                        transition: "all 1s",
-                        bottom: "-1px",
-                        right: "-1px",
-                        borderBottom: "2px solid #fdbe33",
-                        borderRight: "2px solid #fdbe33",
-                      },
-                      "&:hover": {
                         "&:after": {
-                          width: "70%",
-                          height: " 70%",
+                          content: '" "',
+                          width: "5px",
+                          height: "5px",
+                          position: "absolute",
+                          border: "0px solid #fff",
+                          transition: "all 1s",
+                          top: "-1px",
+                          left: "-1px",
+                          borderTop: "2px solid #fdbe33",
+                          borderLeft: "2px solid #fdbe33",
                         },
                         "&:before": {
-                          width: "70%",
-                          height: " 70%",
+                          content: '" "',
+                          width: "5px",
+                          height: "5px",
+                          position: "absolute",
+                          border: "0px solid #fff",
+                          transition: "all 1s",
+                          bottom: "-1px",
+                          right: "-1px",
+                          borderBottom: "2px solid #fdbe33",
+                          borderRight: "2px solid #fdbe33",
                         },
-                      },
-                    }}
-                  >
-                    {" "}
-                    <Link
-                      style={{
-                        textDecoration: "none",
-                        color: "#fff",
-                        fontSize: "20px",
+                        "&:hover": {
+                          "&:after": {
+                            width: "70%",
+                            height: " 70%",
+                          },
+                          "&:before": {
+                            width: "70%",
+                            height: " 70%",
+                          },
+                        },
                       }}
-                      to={page.to}
                     >
+                      {" "}
                       {page.name}
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 ))}
               </Box>
             </Toolbar>

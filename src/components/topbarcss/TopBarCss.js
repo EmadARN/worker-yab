@@ -70,7 +70,7 @@ function TopBarCss({ display }) {
             <Typography fontFamily="Lalezar">info@gmail.com</Typography>
           </Grid>
         </Grid>
-        <NavBar display={display} />
+        <NavBar  display={display} />
       </Grid>
     </>
   );
