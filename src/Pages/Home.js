@@ -33,7 +33,7 @@ const Home = () => {
           </Grid>
           <BtnDownToTop minScroll={2000} maxScroll={1000} />
           <Grid item xs={12} sx={{ mt: 10 }}>
-            <Fact scroll="1500" />
+            <Fact scroll="1000" />
           </Grid>
 
           <Grid item xs={12} md={8} sx={{ margin: "150px auto" }}>
