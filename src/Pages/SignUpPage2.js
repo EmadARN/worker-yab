@@ -30,7 +30,7 @@ const SignUpPage2 = () => {
             }}
           >
             <Grid xs={6} sx={{ my: 20 }}>
-              <BtnSignUp />
+              <BtnSignUp navigate={"/SignUpPage3"} />
             </Grid>
             <Grid container xs={6} sx={{ my: 20 }}>
               <BackWardBtn navigate={"/SignUpPage"} />
