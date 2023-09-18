@@ -4,35 +4,44 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Camera from "../components/AllCameras/Camera.jsx";
 import Webcam from "react-webcam";
+import TopBarCss from '../components/topbarcss/TopBarCss.js';
+import RightBar from '../components/RightBar/RightBar.jsx';
+import Stepper1 from '../components/SignUpItems/Stepper/Stepper.jsx'
 const SignUpPage4 = () => {
   const MainGrid = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    height: "100vh",
-    width: "100%",
+   
+  
+    
   };
 
   const [openCamera, setOpenCamera] = useState(false);
   return (
     <>
-      <Grid sx={{ mt: { xs: "10%", md: "6%" } }}>
-        <Grid sx={{ mt: { xs: "10%" } }} style={MainGrid} item>
-          <Box mb={4}>
-            <Typography fontFamily={"Lalezar"} variant="h4">
-              بارگذاری چهره متقاضی
-            </Typography>
-          </Box>
-          <Box mb={3}>
-            <Typography
-              fontFamily={"Yekan"}
-              sx={{ whiteSpace: { xs: "wrap" } }}
-            >
-              با رعایت قوانین مشخص شده در انتهای صفحه ,از چهره تان عکس بگیرید و
-              آن را بارگذاری کنید
-            </Typography>
-          </Box>
+    <TopBarCss/>
+    <Grid container >
+    <Grid item xs={2}>
+          <RightBar />
+        </Grid>
+      <Grid  style={MainGrid}  container xs={10} md={12}>
+        <Stepper1/>
+        <Box mb={4} sx={{mt:{xs:'10%'}}}>
+          <Typography fontFamily={"Lalezar"} variant="h4">
+            بارگذاری چهره متقاضی
+          </Typography>
+        </Box>
+        <Box mb={3}>
+          <Typography
+            fontFamily={"Yekan"}
+            sx={{ whiteSpace: { xs: "wrap" } }}
+          >
+            با رعایت قوانین مشخص شده در انتهای صفحه ,از چهره تان عکس بگیرید و
+            آن را بارگذاری کنید
+          </Typography>
+        </Box>
 
           <Box
             sx={{
