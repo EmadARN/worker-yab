@@ -186,6 +186,7 @@ const RightBar = ({ display }) => {
         <Box
           sx={{
             height: 320,
+            marginTop: "200px",
             transform: "translateZ(0px)",
             flexGrow: 1,
             display: { xs: display, md: "flex" },
