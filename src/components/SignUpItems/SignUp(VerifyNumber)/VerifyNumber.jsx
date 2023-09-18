@@ -46,7 +46,8 @@ const VerifyNumber = () => {
                   borderBottomColor: "#fdbe33",
                 },
 
-                width: "20%",
+             
+                width: { xs: "80%", lg: "50%", xl: "30%" },
               }}
             />
           </Grid>

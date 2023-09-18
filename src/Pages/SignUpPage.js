@@ -7,6 +7,7 @@ import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
 import { Box, Grid } from "@mui/material";
 import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
 import { Footer } from "../components/Footer/Footer";
+import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
 
 const SignUpPage = () => {
   return (
@@ -18,10 +19,17 @@ const SignUpPage = () => {
           <VerifyNumber />
         </Grid>
 
-        <Grid xs={12} sx={{ margin: "auto", my: 20 }}>
-          {" "}
-          <BtnSignUp />
+        <Grid
+          xs={6}
+          sx={{
+            margin: "auto",
+            my: 20,
+            pr: { xs: 5, sm: 15, md: 25, lg: 30, xl: 38 },
+          }}
+        >
+          <BtnSignUp navigate={"/SignUpPage2"} />
         </Grid>
+
         <Footer
           page1={"درباره ما"}
           page2={"ارتباط با ما"}

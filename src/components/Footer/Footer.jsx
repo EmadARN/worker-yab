@@ -46,7 +46,7 @@ export const Footer = (props) => {
             display: "flex",
             justifyContent: "space-evenly",
             borderBottom: "3px solid white",
-            mr: { xs: 5, md: 0 },
+            pr: { xs: 5, md: 0 },
           }}
         >
           {/* useful pages */}
@@ -73,7 +73,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link>
+                  <Link to={"/About"}>
                     <Button
                       sx={{
                         color: "white",
@@ -107,7 +107,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link>
+                  <Link to={"/ContactUs"}>
                     <Button
                       sx={{
                         color: "white",
@@ -143,7 +143,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link>
+                  <Link to={"/ServicesPage"}>
                     <Button
                       sx={{
                         color: "white",
