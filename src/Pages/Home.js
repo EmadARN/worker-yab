@@ -36,7 +36,7 @@ const Home = () => {
             <Fact scroll="1500" />
           </Grid>
 
-          <Grid item xs={10} md={8} sx={{ margin: "150px auto" }}>
+          <Grid item xs={12} md={8} sx={{ margin: "150px auto" }}>
             <TableMain
               row={[
                 {
