@@ -16,7 +16,7 @@ const SignUpPage3 = () => {
 
 
 
-      <Box sx={{ display: "flex", justifyContent: "center", my: 20 }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Grid container xs={12}>
           <Grid item xs={12} sm={12} md={5} xl={6} spacing={2}
                 sx={{
