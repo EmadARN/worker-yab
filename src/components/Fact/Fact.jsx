@@ -20,7 +20,7 @@ const Box2 = styled("div")(({ theme }) => ({
   height: "140%",
 }));
 
-const Fact = ({ scroll }) => {
+const Fact = ({ scroll, account_number }) => {
   const [loadCount, setLoadCount] = useState(false);
   function lc() {
     if (window.scrollY > scroll) {
@@ -43,7 +43,7 @@ const Fact = ({ scroll }) => {
                 <CountUp
                   style={{ fontFamily: "Lalezar", fontSize: "40px" }}
                   start={0}
-                  end={20}
+                  end={account_number}
                   duration={3}
                 />
               ) : (

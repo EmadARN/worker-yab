@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 import BtnAnimation from "../components/BtnAnimation/BtnAnimation";
@@ -15,7 +15,56 @@ import Link from "@mui/material/Link/Link";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
 import personImg1 from "../Asset/image/testimonial-2.jpg";
 import personImg2 from "../Asset/image/testimonial-3.jpg";
+import axios from "axios";
+
+//
+// [
+//   {
+//     firstName: "محمد",
+//     lastName: "رضایی",
+//     img: personImg1,
+//     job: "بنا",
+//     workExprience: "10 سال",
+//     number: "0910444444",
+//   },
+//
+//   {
+//     firstName: "علی",
+//     lastName: "محمدی",
+//     img: personImg2,
+//     job: "مکانیک",
+//     workExprience: "5 سال",
+//     number: "0912456854",
+//   },
+// ]
+
+
+
 const Home = () => {
+
+  const [table_Row, setTable_Row] = useState([])
+
+
+  useEffect(()=>{
+    axios.request({
+
+      headers:{
+
+        Authorization: 'Barear 1'
+
+      },
+
+      method: 'GET',
+
+      url:'http://172.27.131.37:8000/UserInf/user/list/'
+
+    }).then((res)=>{
+
+      setTable_Row(res.data.data)
+    })
+
+  }, [table_Row])
+
   return (
     <>
       <TopBarCss />
@@ -33,30 +82,12 @@ const Home = () => {
           </Grid>
           <BtnDownToTop minScroll={2000} maxScroll={1000} />
           <Grid item xs={12} sx={{ mt: 10 }}>
-            <Fact scroll="1000" />
+            <Fact scroll="1000" account_number={table_Row.length}/>
           </Grid>
 
           <Grid item xs={12} md={8} sx={{ margin: "150px auto" }}>
             <TableMain
-              row={[
-                {
-                  firstName: "محمد",
-                  lastName: "رضایی",
-                  img: personImg1,
-                  job: "بنا",
-                  workExprience: "10 سال",
-                  number: "0910444444",
-                },
-
-                {
-                  firstName: "علی",
-                  lastName: "محمدی",
-                  img: personImg2,
-                  job: "مکانیک",
-                  workExprience: "5 سال",
-                  number: "0912456854",
-                },
-              ]}
+              row={table_Row}
             />
           </Grid>
           <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
