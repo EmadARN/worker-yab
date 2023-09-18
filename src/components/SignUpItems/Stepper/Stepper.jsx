@@ -4,12 +4,17 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
-const steps = ["مرحله اول", "مرحله دوم", "مرحله سوم", "مرحله چهارم"];
+const steps = [
+  "تایید شماره همراه",
+  "وارد کردن اطلاعات",
+  "بارگذاری عکس",
+  "تایید نهایی",
+];
 
 export default function Stepper1() {
   return (
-    <Box sx={{ width: "100%", direction: "ltr", mt: 10 }}>
-      <Stepper activeStep={0} alternativeLabel>
+    <Box sx={{ width: "80%", direction: "ltr", mt: 10, mx: "auto" }}>
+      <Stepper activeStep={0} alternativeLabel sx={{}}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
