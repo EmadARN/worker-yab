@@ -122,7 +122,7 @@ const ImageSlider = () => {
           ))}
         </Slide>
      
-<Grid sx={{width:"50%",display:"flex",justifyContent:"center",m:"auto",display:{xs:'flex',sm:"none"}}}>
+<Grid sx={{width:"50%",justifyContent:"center",m:"auto",display:{xs:'flex',sm:"none"}}}>
         <BtnAnimation
                 title="دریافت مشاوره "
                 color="black"
