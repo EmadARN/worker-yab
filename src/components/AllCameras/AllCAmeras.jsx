@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import Webcam from 'react-webcam'
 import { useEffect } from 'react'
-import { Box } from '@mui/material'
+import  Box  from '@mui/material/Box/Box'
 //component for show all available cameras in pc
 const AllCAmeras = () => {
 
