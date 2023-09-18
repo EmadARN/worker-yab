@@ -13,7 +13,8 @@ import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
 import PrintIcon from "@mui/icons-material/Print";
 import ShareIcon from "@mui/icons-material/Share";
 import { Link } from "react-router-dom";
-const RightBar = () => {
+import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
+const RightBar = ({ display }) => {
   const actions = [
     { icon: <FileCopyIcon />, name: "ثبت نام" },
 
@@ -174,39 +175,41 @@ const RightBar = () => {
           </Typography>
         </Box>
       </Link>
-      <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
-        <SpeedDial
-          ariaLabel="SpeedDial basic example"
-          sx={{ position: "sticky", bottom: 16, right: { xs: 0, sm: 20 } }}
-          icon={<SpeedDialIcon sx={{}} />}
-          FabProps={{
-            sx: {
-              bgcolor: "#030f27",
-              "&:hover": {
-                bgcolor: "#fdbe33",
-                color: "#030f27",
-              },
-              width: { xs: "45px", sm: "56px" },
-              height: { xs: "45px", sm: "55px" },
-            },
+      <Link
+        style={{
+          textDecoration: "none",
+
+          fontSize: "20px",
+        }}
+        to={"/SignupPage"}
+      >
+        <Box
+          sx={{
+            height: 320,
+            transform: "translateZ(0px)",
+            flexGrow: 1,
+            display: { xs: display, md: "flex" },
           }}
         >
-          {actions.map((action) => (
-            <SpeedDialAction
-              sx={{
-                MuiTooltip: {
-                  tooltip: {
-                    fontSize: "50px",
-                  },
+          <SpeedDial
+            ariaLabel="SpeedDial basic example"
+            sx={{ position: "sticky", bottom: 16, right: { xs: 0, sm: 20 } }}
+            icon={<SensorOccupiedIcon />}
+            FabProps={{
+              sx: {
+                color: "#fdbe33",
+                bgcolor: "#030f27",
+                "&:hover": {
+                  bgcolor: "#fdbe33",
+                  color: "#030f27",
                 },
-              }}
-              key={action.name}
-              icon={action.icon}
-              tooltipTitle={action.name}
-            />
-          ))}
-        </SpeedDial>
-      </Box>
+                width: { xs: "45px", sm: "56px" },
+                height: { xs: "45px", sm: "55px" },
+              },
+            }}
+          ></SpeedDial>
+        </Box>
+      </Link>
     </Container>
   );
 };

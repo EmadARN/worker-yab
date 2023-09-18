@@ -16,7 +16,7 @@ const SignUpPage = () => {
       <TopBarCss />
       <Grid container>
         <Grid item xs={2}>
-          <RightBar />
+          <RightBar display={"none"} />
         </Grid>
         <Grid container xs={10} md={12}>
           <Stepper1 />

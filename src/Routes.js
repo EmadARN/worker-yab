@@ -22,10 +22,7 @@ const routes = [
     path: "/ContactUs",
     element: <ContactUs />,
   },
-  {
-    path: "/SignUpPage",
-    element: <SignUpPage />,
-  },
+
   {
     path: "/SignUpPage2",
     element: <SignUpPage2 />,
