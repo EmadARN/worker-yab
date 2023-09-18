@@ -43,7 +43,7 @@ export const Footer = (props) => {
         <Grid
           container
           sx={{
-            display: "flex",
+            display: { xs: props.display, md: "flex" },
             justifyContent: "space-evenly",
             borderBottom: "3px solid white",
             pr: { xs: 5, md: 0 },

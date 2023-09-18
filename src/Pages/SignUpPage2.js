@@ -4,6 +4,7 @@ import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
 import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
 import { Footer } from "../components/Footer/Footer";
 import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
+import { Grid } from "@mui/material";
 const SignUpPage2 = () => {
   return (
     <>

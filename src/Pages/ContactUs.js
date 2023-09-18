@@ -46,6 +46,7 @@ const ContactUs = (display) => {
         </Grid>
         <BtnDownToTop minScroll={50} maxScroll={20} />
         <Footer
+          display={"none"}
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}

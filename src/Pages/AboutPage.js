@@ -39,6 +39,7 @@ function AboutPage() {
           </Grid>
         </Grid>
         <Footer
+          display={"none"}
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
