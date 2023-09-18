@@ -8,30 +8,35 @@ import { Box, Grid } from "@mui/material";
 import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
 import { Footer } from "../components/Footer/Footer";
 import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
+import RightBar from "../components/RightBar/RightBar";
 
 const SignUpPage = () => {
   return (
     <>
-      <TopBarCss display="none" />
+      <TopBarCss />
       <Grid container>
-        <Stepper1 />
-        <Grid xs={12} sx={{ margin: "auto" }}>
-          <VerifyNumber />
+        <Grid item xs={2}>
+          <RightBar />
         </Grid>
+        <Grid container xs={10} md={12}>
+          <Stepper1 />
+          <Grid xs={12} sx={{ margin: "auto" }}>
+            <VerifyNumber />
+          </Grid>
 
-        <Grid
-          xs={6}
-          sx={{
-            margin: "auto",
-            my: 20,
-            pr: { xs: 5, sm: 15, md: 25, lg: 30, xl: 38 },
-          }}
-        >
-          <BtnSignUp navigate={"/SignUpPage2"} />
+          <Grid
+            xs={6}
+            sx={{
+              margin: "auto",
+              my: 20,
+              pr: { xs: 5, sm: 15, md: 25, lg: 30, xl: 38 },
+            }}
+          >
+            <BtnSignUp navigate={"/SignUpPage2"} />
+          </Grid>
         </Grid>
-
         <Footer
-          display={"none"}
+          display="none"
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
