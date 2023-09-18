@@ -40,6 +40,7 @@ const SignupForm = (style) => {
                         width: "100%",
                     },
                     mt: 5,
+                    ml: 3,
                     width: "35rem",
 
                 }}
