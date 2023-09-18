@@ -83,7 +83,6 @@ if(setValue(event.key) == 'Backspace'){
                   width: "80%",
                   borderRadius: "7px",
                   input: { border: "3px solid #030f2 !important" },
-                  width: "80%",
 
                   "&:hover fieldset": {
                     border: "3px solid black !important",
