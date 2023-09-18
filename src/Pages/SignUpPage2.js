@@ -1,19 +1,45 @@
 import React from "react";
-
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
-import VerifyNumber from "../components/SignUpItems/SignUp(VerifyNumber)/VerifyNumber";
-import TopBarCss from "../components/topbarcss/TopBarCss";
 import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
-import { Box } from "@mui/material";
+import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
+import { Footer } from "../components/Footer/Footer";
+import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
 const SignUpPage2 = () => {
   return (
     <>
-      <TopBarCss display="none" />
-      <Stepper1 />
-      <VerifyNumber />
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 15 }}>
-        <BtnSignUp />
-      </Box>
+      <Grid container>
+        <Stepper1 />
+        <Grid xs={12} sx={{ margin: "auto" }}>
+          <VerifyCode />
+        </Grid>
+
+        <Grid
+          container
+          sx={{
+            width: "40%",
+            margin: "auto",
+            pr: { xs: 0, sm: 5, md: 12, lg: 15, xl: 20 },
+          }}
+        >
+          <Grid xs={6} sx={{ my: 20 }}>
+            <BtnSignUp />
+          </Grid>
+          <Grid container xs={6} sx={{ my: 20 }}>
+            <BackWardBtn navigate={"/SignUpPage"} />
+          </Grid>
+        </Grid>
+        <Footer
+          display={"none"}
+          page1={"درباره ما"}
+          page2={"ارتباط با ما"}
+          page3={"خدمات"}
+          services1={"خدمات مکانیکی"}
+          services2={"کارگران ساختمانی"}
+          address={"اعتمادیه.خیابان اول عربی"}
+          phNumber={"0919123456"}
+          email={"test1@gmail.com"}
+        />
+      </Grid>
     </>
   );
 };
