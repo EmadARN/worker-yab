@@ -16,6 +16,7 @@ import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
 import personImg1 from "../Asset/image/testimonial-2.jpg";
 import personImg2 from "../Asset/image/testimonial-3.jpg";
 import axios from "axios";
+import {IPServer} from "../Config/Server";
 
 //
 // [
@@ -43,6 +44,7 @@ import axios from "axios";
 const Home = () => {
 
   const [table_Row, setTable_Row] = useState([])
+  const [apiStatus, setAPI_status] = useState(false)
 
 
   useEffect(()=>{
@@ -56,14 +58,20 @@ const Home = () => {
 
       method: 'GET',
 
-      url:'http://172.27.131.37:8000/UserInf/user/list/'
+      url:`${IPServer}/UserInf/user/list/`
 
     }).then((res)=>{
 
       setTable_Row(res.data.data)
     })
 
-  }, [table_Row])
+    if (apiStatus === false){
+
+      setAPI_status(true)
+
+    }
+
+  }, [apiStatus])
 
   return (
     <>

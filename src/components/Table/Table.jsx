@@ -48,8 +48,10 @@ const TableInfo = ({ row }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {row.map((row) => (
-              <TableRow key={row.id}>
+            {row.map((row) => {
+
+              console.log(row.profile_image)
+              return (<TableRow key={row.id}>
                 <TableCell
                   align="center"
                   component="th"
@@ -58,7 +60,7 @@ const TableInfo = ({ row }) => {
                 >
                   <img
                     style={{ width: "90px", height: "5%", marginLeft: "10px" }}
-                    src={row.img}
+                    src={row.profile_image}
                   />
                 </TableCell>
 
@@ -66,10 +68,10 @@ const TableInfo = ({ row }) => {
                   <Box sx={{ display: "flex", pr: 2 }}>
                     <Typography sx={{ fontWeight: "bold" }}>
                       {" "}
-                      {row.firstName}
+                      {row.first_name}
                     </Typography>
                     <Typography sx={{ fontWeight: "bold", pr: 1 }}>
-                      {row.lastName}
+                      {row.last_name}
                     </Typography>
                   </Box>
                 </TableCell>
@@ -78,13 +80,13 @@ const TableInfo = ({ row }) => {
                 </TableCell>
 
                 <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
-                  {row.workExprience}
+                  {row.work_experience}
                 </TableCell>
                 <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
-                  {row.number}
+                  {row.phone_number}
                 </TableCell>
-              </TableRow>
-            ))}
+              </TableRow>)
+            })}
           </TableBody>
         </Table>
       </TableContainer>

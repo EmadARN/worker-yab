@@ -1,0 +1,1 @@
+export const IPServer ='http://172.27.131.37:8000';
