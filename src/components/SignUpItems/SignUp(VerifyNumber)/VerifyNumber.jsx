@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Title from "../../Title/Title";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -16,7 +16,7 @@ const cacheRtl = createCache({
   key: "muirtl",
   stylisPlugins: [prefixer, rtlPlugin],
 });
-const VerifyNumber = () => {
+const VerifyNumber = (props) => {
   return (
     <>
       <Title title="شماره خود را وارد کنید" />
@@ -38,6 +38,7 @@ const VerifyNumber = () => {
             }}
           >
             <TextField
+                onChange={(e)=>props.inputValue(e.target.value)}
               id="standard-basic"
               label="شماره همراه"
               variant="filled"

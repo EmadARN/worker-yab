@@ -18,26 +18,7 @@ import personImg2 from "../Asset/image/testimonial-3.jpg";
 import axios from "axios";
 import {IPServer} from "../Config/Server";
 
-//
-// [
-//   {
-//     firstName: "محمد",
-//     lastName: "رضایی",
-//     img: personImg1,
-//     job: "بنا",
-//     workExprience: "10 سال",
-//     number: "0910444444",
-//   },
-//
-//   {
-//     firstName: "علی",
-//     lastName: "محمدی",
-//     img: personImg2,
-//     job: "مکانیک",
-//     workExprience: "5 سال",
-//     number: "0912456854",
-//   },
-// ]
+
 
 
 

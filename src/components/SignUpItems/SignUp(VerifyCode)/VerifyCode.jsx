@@ -16,7 +16,7 @@ const cacheRtl = createCache({
   key: "muirtl",
   stylisPlugins: [prefixer, rtlPlugin],
 });
-const VerifyNumber = () => {
+const VerifyNumber = ({set_verify_code}) => {
   return (
     <>
       <Title title="کد  را وارد کنید" />
@@ -38,6 +38,7 @@ const VerifyNumber = () => {
             }}
           >
             <TextField
+                onChange={(e)=>{set_verify_code(e.target.value)}}
               id="standard-basic"
               label=" کد را وارد کنید"
               variant="filled"

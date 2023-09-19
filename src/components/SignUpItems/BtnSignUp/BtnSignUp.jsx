@@ -2,12 +2,15 @@ import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import {IPServer} from "../../../Config/Server";
 
-const BtnSignUp = ({ navigate }) => {
+const BtnSignUp = ({ navigate,onClick, linkState }) => {
   return (
     <>
       <Link
         to={navigate}
+        state={linkState}
         style={{
           textDecoration: "none",
 
@@ -16,6 +19,9 @@ const BtnSignUp = ({ navigate }) => {
       >
         <Button
           variant="contained"
+          onClick={
+              onClick
+          }
           sx={{
             width: { xs: "50%" },
             transition: ".5s",
