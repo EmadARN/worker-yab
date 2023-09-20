@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.8",
@@ -12,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
+    "antd": "^5.9.2",
     "axios": "^1.5.0",
     "history": "^5.3.0",
     "jwt-decode": "^3.1.2",
@@ -24,6 +26,7 @@
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.2.1",
     "react-webcam": "^7.1.1",
+    "stylis": "^4.3.0",
     "stylis-plugin-rtl": "^2.1.1",
     "web-vitals": "^2.1.4"
   },

@@ -10,12 +10,7 @@ import RightBar from "../components/RightBar/RightBar";
 import axios from "axios";
 import {IPServer} from "../Config/Server";
 import {useLocation} from "react-router-dom";
-import {createBrowserHistory} from "history";
-
 const SignUpPage2 = () => {
-
-const history = createBrowserHistory()
-
     const [verify_code, setVerify_code] = useState("");
     let location = useLocation();
 
@@ -61,15 +56,8 @@ const history = createBrowserHistory()
 
                   ).then((res)=>{
 
-                   if(res.data.status === 200){
-                   if(res.data.signup_level===2){
-                    history.push("/SignUpPage3")
-                   }
-                   }else{
-                   console.log("error");
-                   }
-                   
-                    console.log(res.data);
+                    console.log(res.data)
+
                   }).catch((error) => { // error is handled in catch block
                     if (error.response) { // status code out of the range of 2xx
                       console.log("Data :" , error.response.data);

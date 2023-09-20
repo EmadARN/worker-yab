@@ -3,7 +3,7 @@ import React  from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
 import Box from "@mui/material/Box";
-import {Grid} from "@mui/material";
+import {Alert, Button, Grid} from "@mui/material";
 import SignUpForm from "../components/SignUpItems/SignUpForm/SignUpForm";
 import SignUpImage from "../components/SignUpItems/SignUpImage/SignUpImage";
 import RightBar from "../components/RightBar/RightBar";
@@ -14,6 +14,7 @@ const SignUpPage3 = () => {
   <>
     <TopBarCss />
       <Grid container>
+
           <Grid item xs={2}>
               <RightBar />
           </Grid>
