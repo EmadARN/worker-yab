@@ -6,7 +6,7 @@ import img1 from "../../Asset/image/aboute.jpeg";
 
 const About = () => {
   return (
-    <Grid container xs={12} sx={{ mt: { xs: "12%", md: "10%" } }}>
+    <Grid container xs={12} sx={{ mt: { xs: "12%", md: "10%" },display:"flex" , flexDirection:{sm:"column-reverse" , md:"row"}}}>
       <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
         <AboutTitle />
       </Grid>
@@ -17,7 +17,7 @@ const About = () => {
         md={5}
         lg={5}
         xl={5}
-        sx={{ mr: { xs: "400px", sm: "40px", md: "0", lg: "0", xl: "0" }}}
+        sx={{ mr: { xs: "40px", sm: "40px", md: "0", lg: "0", xl: "0" }}}
       >
         <AboutImg />
       </Grid>
