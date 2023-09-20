@@ -28,12 +28,12 @@ const SignUpPage4 = () => {
         </Grid>
       <Grid  style={MainGrid}  container xs={10} md={12}>
         <Stepper1/>
-        <Box mb={4} sx={{mt:{xs:'10%'}}}>
+        <Box mb={4} sx={{mt:{xs:'7%'}}}>
           <Typography fontFamily={"Lalezar"} variant="h4">
             بارگذاری چهره متقاضی
           </Typography>
         </Box>
-        <Box mb={3}>
+        <Box mb={2}>
           <Typography
             fontFamily={"Yekan"}
             sx={{ whiteSpace: { xs: "wrap" } }}
@@ -51,6 +51,7 @@ const SignUpPage4 = () => {
               width: { xs: "50%", md: "30%" },
               padding: { xs: "3%", md: "1%" },
               justifyContent: "center",
+              
               m: "4% 0 6% 0",
             }}
           >
@@ -75,15 +76,17 @@ const SignUpPage4 = () => {
               width: { xs: "90%", md: "100%" },
             }}
           >
-            <img
+
+            {openCamera ? null :      <img
               style={{ width: "20%" }}
               src="https://www.lifewire.com/thmb/TRGYpWa4KzxUt1Fkgr3FqjOd6VQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg"
               alt=""
-            />
+            />}
+      
           </Box>
 
           {openCamera ? (
-            <Grid direction={"column"}>
+            <Grid direction={"column"} mb={4} >
               <Camera
                 onClose={() => {
                   setOpenCamera(false);
