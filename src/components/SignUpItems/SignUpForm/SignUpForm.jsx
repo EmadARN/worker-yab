@@ -1,13 +1,11 @@
 import { Place } from "@mui/icons-material";
 import {Box, Button, createTheme, Grid, TextField, ThemeProvider, Typography} from "@mui/material";
 import React from "react";
-import SignupWithGoogle from "../../signupgoogle/SignUpGoogle";
 import { Link, useNavigate } from "react-router-dom";
 import createCache from "@emotion/cache";
 import {prefixer} from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 import {CacheProvider} from "@emotion/react";
-import {Footer} from "../../Footer/Footer";
 
 const theme = createTheme({
     direction: "rtl",
@@ -20,13 +18,8 @@ const cacheRtl = createCache({
 
 const SignupForm = (style) => {
     const navigate = useNavigate();
-    const texFiled = [
-        { id: 1, label: "نام:", place:"نام خود را وارد کنید...", onchange: () => console.log("okay1") },
-        { id: 2, label: "نام خانوادگی:",place:"نام خانوادگی خود را وارد کنید...", onchange: () => console.log("okay2") },
-        { id: 3, label: "کد ملی:",place:"کد ملی خود را وارد کنید...", onchange: () => console.log("okay3") },
-        { id: 4, label: "محل سکونت:",place:"محل سکونت خود را وارد کنید...", onchange: () => console.log("okay4") },
-        { id: 5, label: "کد پستی:",place:"کدپستی خود را وارد کنید...", onchange: () => console.log("okay4") },
-    ];
+
+    ;
     return (
         <>
             <CacheProvider value={cacheRtl}>
@@ -39,9 +32,10 @@ const SignupForm = (style) => {
                         display: "flex",
                         width: "100%",
                     },
-                    mt: 5,
+                    mt: 1,
                     ml: 3,
-                    width: "35rem",
+                    width: "31rem",
+
 
                 }}
                 noValidate
@@ -52,21 +46,47 @@ const SignupForm = (style) => {
                 </Typography>
 
 
-                {texFiled.map((item) => {
-                    return (
-                        <TextField
-                            sx={{ style, pb: 2}}
-                            color="grey"
-                            label={item.label}
-                            variant="standard"
-                            onChange={item.onchange}
-                            placeholder={item.place}
-                        />
-                    );
-                })}
-                <Grid xs={12} sm={12} md={12} xl={12} sx={{ display: "flex", justifyContent: "center", width:"100%" }}>
-                    <SignupWithGoogle />
-                </Grid>
+
+                   <Grid container >
+                       <Grid item xs={12}>
+                           <TextField
+                               sx={{ style,  }}
+                               color="success"
+                               label="نام:"
+                               variant="standard"
+                               placeholder="نام خود را وارد کنید..."
+                           />
+                       </Grid>
+                       <Grid item xs={12}>
+                           <TextField
+                               sx={{ style,}}
+                               color="success"
+                               label="نام و نام خانوادگی:"
+                               variant="standard"
+                               placeholder="نام و نام خانوادگی خود را وارد کنید..."
+                           />
+                       </Grid>
+                       <Grid item xs={12}>
+                           <TextField
+                               sx={{ style, mr: 2 }}
+                               color="success"
+                               label="سابقه کاری:"
+                               variant="standard"
+                               placeholder="سابقه کاری خود را وارد کنید..."
+                           />
+                       </Grid>
+                       <Grid item xs={12}>
+                           <TextField
+                               sx={{ style,}}
+                               color="success"
+                               label="شغل:"
+                               variant="standard"
+                               placeholder="شغل خود را وارد کنید..."
+                           />
+                       </Grid>
+                   </Grid>
+
+
 
                 <Button
                     variant="contained"
