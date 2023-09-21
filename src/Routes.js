@@ -7,6 +7,7 @@ import VerifyCode from "./components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
 import SignUpPage2 from "./Pages/SignUpPage2";
 import SignUpPage3 from "./Pages/SignUpPage3";
 import SignUpPage4 from "./Pages/SignUpPage4";
+import SignUpPage5 from "./Pages/SignUpPage5";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/About", element: <AboutPage /> },
@@ -34,6 +35,10 @@ const routes = [
   {
     path: "/SignUpPage4",
     element: <SignUpPage4 />,
+  },
+  {
+    path: "/SignUpPage5",
+    element: <SignUpPage5 />,
   },
 ];
 export default routes;
