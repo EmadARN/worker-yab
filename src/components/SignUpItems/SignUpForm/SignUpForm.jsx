@@ -7,6 +7,7 @@ import {prefixer} from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 import {CacheProvider} from "@emotion/react";
 
+
 const theme = createTheme({
     direction: "rtl",
 });
@@ -19,7 +20,7 @@ const cacheRtl = createCache({
 const SignupForm = (style) => {
     const navigate = useNavigate();
 
-    ;
+
     return (
         <>
             <CacheProvider value={cacheRtl}>

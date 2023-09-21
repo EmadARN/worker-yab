@@ -4,16 +4,32 @@ import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
 import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
 import { Footer } from "../components/Footer/Footer";
 import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
-import { Grid } from "@mui/material";
+import {Button, Grid} from "@mui/material";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 import axios from "axios";
 import {IPServer} from "../Config/Server";
 import {useLocation} from "react-router-dom";
+import {message} from "antd";
 const SignUpPage2 = () => {
     const [verify_code, setVerify_code] = useState("");
     let location = useLocation();
 
+    const [messageApi, contextHolder] = message.useMessage();
+    const success = () => {
+        messageApi
+            .open({
+                type: 'loading',
+                content: 'در حال بارگیری ...',
+                duration: 3,
+                style :{
+                    fontSize:"18px"
+                }
+            })
+
+
+            .then(() => message.success('عملبات با موفقیت انجام شد :)', 2.5 ))
+    };
 
     return (
     <>
@@ -37,38 +53,34 @@ const SignUpPage2 = () => {
             }}
           >
             <Grid xs={6} sx={{ my: 20 }}>
-              <BtnSignUp onClick={
+                {contextHolder}
+                <Button variant="contained" onClick={success}>suh</Button>
+              <BtnSignUp  onClick={
 
                 ()=> {
-                  axios.post(
+                    axios.post(
+                        `${IPServer}/Auth/validate/signup/phone_number/`,
+                        {
 
-                      `${IPServer}/Auth/validate/signup/phone_number/`,
-                      {
+                            phone_number: location.state.phone_number,
+                            code: verify_code,
 
-                        phone_number: location.state.phone_number,
-                        code: verify_code,
+                        }
+                    ).then((res) => {
 
-                      }
-
-
+                        console.log(res.data)
 
 
-
-                  ).then((res)=>{
-
-                    console.log(res.data)
-
-                  }).catch((error) => { // error is handled in catch block
-                    if (error.response) { // status code out of the range of 2xx
-                      console.log("Data :" , error.response.data);
-                      console.log("Status :" + error.response.status);
-                    } else if (error.request) { // The request was made but no response was received
-                      console.log(error.request);
-                    } else {// Error on setting up the request
-                      console.log('Error', error.message);
-                    }
-                  })
-
+                    }).catch((error) => { // error is handled in catch block
+                        if (error.response) { // status code out of the range of 2xx
+                            console.log("Data :", error.response.data);
+                            console.log("Status :" + error.response.status);
+                        } else if (error.request) { // The request was made but no response was received
+                            console.log(error.request);
+                        } else {// Error on setting up the request
+                            console.log('Error', error.message);
+                        }
+                    })
 
 
                 }
