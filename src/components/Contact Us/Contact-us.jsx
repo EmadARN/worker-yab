@@ -4,14 +4,12 @@ import { styled } from "@mui/system";
 import Button from "@mui/material/Button/Button";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import Title from "../Title/Title";
-import { Input } from "@mui/base/Input";
 
 const Grid1 = styled("grid")(({ theme }) => ({
   backgroundColor: "#fdbe33",
   display: "flex",
   justifyContent: "flex-end",
   alignItems: "center",
-
   height: "80%",
   width: "100%",
   flexDirection: "column",
@@ -43,6 +41,7 @@ const MainButton = styled("button")(({ theme }) => ({
   color: "#fff",
   fontWeight: 550,
   margin: "auto",
+
   "&:hover": {
     background: "#030f27",
     color: "#fdbe33",
@@ -50,104 +49,37 @@ const MainButton = styled("button")(({ theme }) => ({
   },
 }));
 
-const StyledInputElement = styled("input")(
+const StyledTextarea = styled(TextareaAutosize)(
   ({ theme }) => `
-  width: 320px;
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5;
-  padding: 8px 12px;
-  border-radius: 8;
-  color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
-  background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-  border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
-  box-shadow: 0px 2px 2px ${
-    theme.palette.mode === "dark" ? grey[900] : grey[50]
-  };
+       width: 320px;
+   font-family: IBM Plex Sans, sans-serif;
+   font-size: 0.875rem;
+   font-weight: 400;
+   line-height: 3.5rem;
+   padding: 8px 12px;
 
-  &:hover {
-    border-color: ${blue[400]};
+   border-radius: 8px;
+   color: ${theme.palette.mode === "dark" ? grey[300] : "#030f27"};
+   background: ${theme.palette.mode === "dark" ? grey[900] : "#fdbe33"};
+   border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : "#030f27"};
+
+   box-shadow: 0px 2px 2px ${
+     theme.palette.mode === "dark" ? grey[900] : "#030f27"
+   };
+
+   &:focus {
+     border-color: "#030f27"};
+     box-shadow: 0 0 0 0px ${
+       theme.palette.mode === "dark" ? blue[500] : "#030f27"
+     };
   }
 
-  &:focus {
-    border-color: ${blue[400]};
-    box-shadow: 0 0 0 3px ${
-      theme.palette.mode === "dark" ? blue[500] : blue[200]
-    };
-  }
-
-  // firefox
-  &:focus-visible {
-    outline: 0;
-  }
-`
+   // firefox
+   &:focus-visible {
+     outline: 0;
+   }
+ `
 );
-
-const StyledTextareaElement = styled("textarea", {
-  shouldForwardProp: (prop) =>
-    !["ownerState", "minRows", "maxRows"].includes(prop.toString()),
-})(
-  ({ theme }) => `
-  width: 320px;
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 3.5rem;
-  padding: 8px 12px;
-  
-  border-radius: 8px;
-  color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
-  background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-  border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
-  "& label.Mui-focused": {
-    color: "#030f27",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "#030f27",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "#030f27",
-    },
-    "&:hover fieldset": {
-      borderColor: "#030f27",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#030f27",
-    },
-  box-shadow: 0px 2px 2px ${
-    theme.palette.mode === "dark" ? grey[900] : grey[50]
-  };
-
-  &:hover {
-    border-color: ${blue[400]};
-  }
-
-  &:focus {
-    border-color: ${blue[400]};
-    box-shadow: 0 0 0 3px ${
-      theme.palette.mode === "dark" ? blue[500] : blue[200]
-    };
-  }
-
-  // firefox
-  &:focus-visible {
-    outline: 0;
-  }
-`
-);
-
-const CustomInput = React.forwardRef(function CustomInput(props, ref) {
-  return (
-    <Input
-      slots={{ input: StyledInputElement, textarea: StyledTextareaElement }}
-      {...props}
-      ref={ref}
-    />
-  );
-});
-
 const Contactus = (props) => {
   return (
     <>
@@ -297,10 +229,10 @@ const Contactus = (props) => {
                 justifyContent: "center",
               }}
             >
-              <CustomInput
-                aria-label="Demo input"
-                multiline
-                placeholder="نظرات خود را با ما به اشتراک بگذارید"
+              <StyledTextarea
+                aria-label="maximum height"
+                placeholder="Maximum 4 rows"
+                defaultValue="پیام خود را بگذارید"
               />
             </Grid>
 
