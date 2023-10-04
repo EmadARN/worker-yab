@@ -1,37 +1,66 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
 import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
 import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
 import { Footer } from "../components/Footer/Footer";
 import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
-import {Button, Grid} from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 import axios from "axios";
-import {IPServer} from "../Config/Server";
-import {useLocation} from "react-router-dom";
-import {message} from "antd";
+import { IPServer } from "../Config/Server";
+import { useLocation } from "react-router-dom";
+import { message } from "antd";
 const SignUpPage2 = () => {
-    const [verify_code, setVerify_code] = useState("");
-    let location = useLocation();
+  const [verify_code, setVerify_code] = useState("");
+  let location = useLocation();
 
-    const [messageApi, contextHolder] = message.useMessage();
-    const success = () => {
-        messageApi
-            .open({
-                type: 'loading',
-                content: 'در حال بارگیری ...',
-                duration: 3,
-                style :{
-                    fontSize:"18px"
-                }
-            })
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi
+      .open({
+        type: "loading",
+        content: "در حال بارگیری ...",
+        duration: 3,
+        style: {
+          fontSize: "18px",
+        },
+      })
+
+      .then(() => message.success("عملبات با موفقیت انجام شد :)", 2.5));
+  };
 
 
-            .then(() => message.success('عملبات با موفقیت انجام شد :)', 2.5 ))
-    };
+const handleCLick=()=>{
+  
+    axios
+      .post(`${IPServer}/Auth/validate/signup/phone_number/`, {
+        phone_number: location.state.phone_number,
+        code: verify_code,
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        // error is handled in catch block
+        if (error.response) {
+          // status code out of the range of 2xx
+          console.log("Data :", error.response.data);
+          console.log("Status :" + error.response.status);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log(error.request);
+        } else {
+          // Error on setting up the request
+          console.log("Error", error.message);
+        }
+      });
 
-    return (
+      success();
+  
+}
+
+  return (
     <>
       <TopBarCss />
       <Grid container>
@@ -53,39 +82,18 @@ const SignUpPage2 = () => {
             }}
           >
             <Grid xs={6} sx={{ my: 20 }}>
-                {contextHolder}
-                <Button variant="contained" onClick={success}>suh</Button>
-              <BtnSignUp  onClick={
+              {contextHolder}
+        
+              <BtnSignUp
+                onClick={handleCLick}
+                navigate={
 
-                ()=> {
-                    axios.post(
-                        `${IPServer}/Auth/validate/signup/phone_number/`,
-                        {
-
-                            phone_number: location.state.phone_number,
-                            code: verify_code,
-
-                        }
-                    ).then((res) => {
-
-                        console.log(res.data)
-
-
-                    }).catch((error) => { // error is handled in catch block
-                        if (error.response) { // status code out of the range of 2xx
-                            console.log("Data :", error.response.data);
-                            console.log("Status :" + error.response.status);
-                        } else if (error.request) { // The request was made but no response was received
-                            console.log(error.request);
-                        } else {// Error on setting up the request
-                            console.log('Error', error.message);
-                        }
-                    })
-
-
-                }
-              }  />
-
+                  {
+                      pathname: '/SignUpPage3',
+  
+  
+                  }}
+              />
             </Grid>
             <Grid container xs={6} sx={{ my: 20 }}>
               <BackWardBtn navigate={"/SignUpPage"} />

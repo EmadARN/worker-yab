@@ -1,14 +1,15 @@
 import { Box, Grid, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
-import styled from "@emotion/styled";
+import { styled } from "@mui/system";
 import Button from "@mui/material/Button/Button";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import Title from "../Title/Title";
+import { Input } from "@mui/base/Input";
 
 const Grid1 = styled("grid")(({ theme }) => ({
   backgroundColor: "#fdbe33",
   display: "flex",
-  justifyContent: "flex-start",
+  justifyContent: "flex-end",
   alignItems: "center",
 
   height: "80%",
@@ -49,6 +50,104 @@ const MainButton = styled("button")(({ theme }) => ({
   },
 }));
 
+const StyledInputElement = styled("input")(
+  ({ theme }) => `
+  width: 320px;
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: 8;
+  color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+  background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
+  border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+  box-shadow: 0px 2px 2px ${
+    theme.palette.mode === "dark" ? grey[900] : grey[50]
+  };
+
+  &:hover {
+    border-color: ${blue[400]};
+  }
+
+  &:focus {
+    border-color: ${blue[400]};
+    box-shadow: 0 0 0 3px ${
+      theme.palette.mode === "dark" ? blue[500] : blue[200]
+    };
+  }
+
+  // firefox
+  &:focus-visible {
+    outline: 0;
+  }
+`
+);
+
+const StyledTextareaElement = styled("textarea", {
+  shouldForwardProp: (prop) =>
+    !["ownerState", "minRows", "maxRows"].includes(prop.toString()),
+})(
+  ({ theme }) => `
+  width: 320px;
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  padding: 8px 12px;
+  
+  border-radius: 8px;
+  color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+  background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
+  border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+  "& label.Mui-focused": {
+    color: "#030f27",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "#030f27",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#030f27",
+    },
+    "&:hover fieldset": {
+      borderColor: "#030f27",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#030f27",
+    },
+  box-shadow: 0px 2px 2px ${
+    theme.palette.mode === "dark" ? grey[900] : grey[50]
+  };
+
+  &:hover {
+    border-color: ${blue[400]};
+  }
+
+  &:focus {
+    border-color: ${blue[400]};
+    box-shadow: 0 0 0 3px ${
+      theme.palette.mode === "dark" ? blue[500] : blue[200]
+    };
+  }
+
+  // firefox
+  &:focus-visible {
+    outline: 0;
+  }
+`
+);
+
+const CustomInput = React.forwardRef(function CustomInput(props, ref) {
+  return (
+    <Input
+      slots={{ input: StyledInputElement, textarea: StyledTextareaElement }}
+      {...props}
+      ref={ref}
+    />
+  );
+});
+
 const Contactus = (props) => {
   return (
     <>
@@ -85,7 +184,7 @@ const Contactus = (props) => {
                 mb: "5%",
                 display: "flex",
                 justifyContent: "center",
-                mt: "5%",
+                mt: "12%",
               }}
             >
               <TextField
@@ -190,7 +289,20 @@ const Contactus = (props) => {
               />
             </Grid>
 
-            <Grid></Grid>
+            <Grid
+              sx={{
+                width: "100%",
+
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <CustomInput
+                aria-label="Demo input"
+                multiline
+                placeholder="نظرات خود را با ما به اشتراک بگذارید"
+              />
+            </Grid>
 
             <MainButton>دریافت مشاوره</MainButton>
           </Grid1>
@@ -254,6 +366,27 @@ const Contactus = (props) => {
 };
 
 export default Contactus;
+
+const blue = {
+  100: "#DAECFF",
+  200: "#80BFFF",
+  400: "#3399FF",
+  500: "#007FFF",
+  600: "#0072E5",
+};
+
+const grey = {
+  50: "#F3F6F9",
+  100: "#E7EBF0",
+  200: "#E0E3E7",
+  300: "#CDD2D7",
+  400: "#B2BAC2",
+  500: "#A0AAB4",
+  600: "#6F7E8C",
+  700: "#3E5060",
+  800: "#2D3843",
+  900: "#1A2027",
+};
 
 // <Contactus
 //   data={
