@@ -4,44 +4,58 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Camera from "../components/AllCameras/Camera.jsx";
 import Webcam from "react-webcam";
-import TopBarCss from '../components/topbarcss/TopBarCss.js';
-import RightBar from '../components/RightBar/RightBar.jsx';
-import Stepper1 from '../components/SignUpItems/Stepper/Stepper.jsx'
+import TopBarCss from "../components/topbarcss/TopBarCss.js";
+import RightBar from "../components/RightBar/RightBar.jsx";
+import Stepper1 from "../components/SignUpItems/Stepper/Stepper.jsx";
+import { IPServer } from "../Config/Server";
+import axios from "axios";
 const SignUpPage4 = () => {
   const MainGrid = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-   
-  
-    
   };
 
   const [openCamera, setOpenCamera] = useState(false);
+  const [url, setUrl] = useState(null);
+  const uploadImg = () => {
+    let form_Data = new FormData();
+    form_Data.append("image", url);
+
+    axios
+      .post(`${IPServer}/AddUserInf/upload/image/`, form_Data, {
+        headers: {
+          Authorization: "Token 1",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
   return (
     <>
-    <TopBarCss/>
-    <Grid container >
-    <Grid item xs={2}>
+      <TopBarCss />
+      <Grid container>
+        <Grid item xs={2}>
           <RightBar />
         </Grid>
-      <Grid  style={MainGrid}  container xs={10} md={12}>
-        <Stepper1/>
-        <Box mb={4} sx={{mt:{xs:'7%'}}}>
-          <Typography fontFamily={"Lalezar"} variant="h4">
-            بارگذاری چهره متقاضی
-          </Typography>
-        </Box>
-        <Box mb={2}>
-          <Typography
-            fontFamily={"Yekan"}
-            sx={{ whiteSpace: { xs: "wrap" } }}
-          >
-            با رعایت قوانین مشخص شده در انتهای صفحه ,از چهره تان عکس بگیرید و
-            آن را بارگذاری کنید
-          </Typography>
-        </Box>
+        <Grid style={MainGrid} container xs={10} md={12}>
+          <Stepper1 />
+          <Box mb={4} sx={{ mt: { xs: "7%" } }}>
+            <Typography fontFamily={"Lalezar"} variant="h4">
+              بارگذاری چهره متقاضی
+            </Typography>
+          </Box>
+          <Box mb={2}>
+            <Typography
+              fontFamily={"Yekan"}
+              sx={{ whiteSpace: { xs: "wrap" } }}
+            >
+              با رعایت قوانین مشخص شده در انتهای صفحه ,از چهره تان عکس بگیرید و
+              آن را بارگذاری کنید
+            </Typography>
+          </Box>
 
           <Box
             sx={{
@@ -51,7 +65,7 @@ const SignUpPage4 = () => {
               width: { xs: "50%", md: "30%" },
               padding: { xs: "3%", md: "1%" },
               justifyContent: "center",
-              
+
               m: "4% 0 6% 0",
             }}
           >
@@ -76,18 +90,20 @@ const SignUpPage4 = () => {
               width: { xs: "90%", md: "100%" },
             }}
           >
-
-            {openCamera ? null :      <img
-              style={{ width: "20%" }}
-              src="https://www.lifewire.com/thmb/TRGYpWa4KzxUt1Fkgr3FqjOd6VQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg"
-              alt=""
-            />}
-      
+            {openCamera ? null : (
+              <img
+                style={{ width: "20%" }}
+                src="https://www.lifewire.com/thmb/TRGYpWa4KzxUt1Fkgr3FqjOd6VQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg"
+                alt=""
+              />
+            )}
           </Box>
 
           {openCamera ? (
-            <Grid direction={"column"} mb={4} >
+            <Grid direction={"column"} mb={4}>
               <Camera
+                url={url}
+                setUrl={setUrl}
                 onClose={() => {
                   setOpenCamera(false);
                 }}
@@ -143,6 +159,7 @@ const SignUpPage4 = () => {
             sx={{ width: "100%", display: "flex", justifyContent: "center" }}
           >
             <Button
+              onClick={uploadImg}
               sx={{
                 backgroundColor: "#01B0F1",
                 color: "white",
