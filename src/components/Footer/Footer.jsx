@@ -16,6 +16,7 @@ const FotterGrid = styled("grid")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     justifyContent: "space-around",
+    marginTop: "4%",
   },
 }));
 

@@ -41,7 +41,7 @@ const MainButton = styled("button")(({ theme }) => ({
   color: "#fff",
   fontWeight: 550,
   margin: "auto",
-
+  marginTop: "12px",
   "&:hover": {
     background: "#030f27",
     color: "#fdbe33",
@@ -51,12 +51,13 @@ const MainButton = styled("button")(({ theme }) => ({
 
 const StyledTextarea = styled(TextareaAutosize)(
   ({ theme }) => `
-       width: 320px;
+       width: 80%;
+       
    font-family: IBM Plex Sans, sans-serif;
    font-size: 0.875rem;
    font-weight: 400;
-   line-height: 3.5rem;
-   padding: 8px 12px;
+   line-height: 5rem;
+  
 
    border-radius: 8px;
    color: ${theme.palette.mode === "dark" ? grey[300] : "#030f27"};
@@ -88,7 +89,7 @@ const Contactus = (props) => {
         sx={{
           ml: { xs: 0, md: 15 },
           mb: { xs: 30, md: 0 },
-          mt: { xs: 0, sm: 15 },
+          mt: { xs: 0, sm: 10 },
         }}
       >
         {" "}
@@ -113,10 +114,17 @@ const Contactus = (props) => {
             <Grid
               sx={{
                 width: "100%",
-                mb: "5%",
+                "@media (max-width:700px)": {
+                  py: 4,
+                },
+                "@media (max-width:900px)": {
+                  py: 2,
+                },
+                "@media (min-width:900px)": {
+                  py: 10,
+                },
                 display: "flex",
                 justifyContent: "center",
-                mt: "12%",
               }}
             >
               <TextField
@@ -231,8 +239,7 @@ const Contactus = (props) => {
             >
               <StyledTextarea
                 aria-label="maximum height"
-                placeholder="Maximum 4 rows"
-                defaultValue="پیام خود را بگذارید"
+                placeholder="پیام خود را بگذارید"
               />
             </Grid>
 
