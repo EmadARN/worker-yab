@@ -118,7 +118,7 @@ const Contactus = (props) => {
                   py: 4,
                 },
                 "@media (max-width:900px)": {
-                  py: 2,
+                  py: 1.9,
                 },
                 "@media (min-width:900px)": {
                   py: 10,
