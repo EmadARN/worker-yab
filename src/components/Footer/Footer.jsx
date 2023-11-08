@@ -80,7 +80,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -114,7 +114,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -150,7 +150,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -193,7 +193,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -226,7 +226,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -245,7 +245,7 @@ export const Footer = (props) => {
                     color: "white",
                     fontSize: { xs: "17px", sm: "20px", md: "25px" },
                     "&:hover": {
-                      mr: { xs: 1, sm: 2, md: 4 },
+                      mr: { xs: 1, sm: 2, md: 1 },
                       transition: "all .75s ",
                       color: "#fdbe33",
                     },
@@ -292,7 +292,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -325,7 +325,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                         },
@@ -354,7 +354,7 @@ export const Footer = (props) => {
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
                         "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 4 },
+                          mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
                           color: "#fdbe33",
                           "& .MuiSvgIcon-root": {
