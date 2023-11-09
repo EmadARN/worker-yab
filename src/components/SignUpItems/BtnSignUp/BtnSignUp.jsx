@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import {IPServer} from "../../../Config/Server";
 
-const BtnSignUp = ({ navigate,onClick, linkState }) => {
+const BtnSignUp = ({ navigate,onClick, linkState ,submit}) => {
   return (
     <>
       <Link
@@ -18,6 +18,7 @@ const BtnSignUp = ({ navigate,onClick, linkState }) => {
         }}
       >
         <Button
+        type={submit}
           variant="contained"
           onClick={
               onClick
