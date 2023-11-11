@@ -9,8 +9,12 @@ import { Footer } from "../components/Footer/Footer";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
 import CheckIcon from "@mui/icons-material/Check";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage5 = () => {
+
+const navigate = useNavigate()
+
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const timer = React.useRef();
@@ -60,20 +64,8 @@ const SignUpPage5 = () => {
           <RightBar />
         </Grid>
         <Grid item xs={8} sx={{ margin: { xs: "auto", md: "0" } }}>
-          <Typography
-            variant="h4"
-            sx={{
-              color: "gray",
-              textAlign: "center",
-              marginTop: "10%",
-              boxShadow:
-                "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
-            }}
-          >
-            برای ثبت نهایی مشخصات خود را بررسی کرده و سپس بر روی دکمه ثبت
-            اطلاعات حساب کلیک نموده
-          </Typography>
-          <Grid container>
+         
+          <Grid container mt={6}>
             <Grid item xs={12} sm={12} md={12} xl={12}>
               <Box>
                 <SignUpFinal />
@@ -87,6 +79,20 @@ const SignUpPage5 = () => {
                     mb: { xs: 0, md: 5 },
                   }}
                 >
+                   <Typography
+            variant="h6"
+            sx={{
+              color: "gray",
+              textAlign: "center",
+              fontWeight:"bold", 
+              margin: "7% 0",
+              boxShadow:
+                "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+            }}
+          >
+            برای ثبت نهایی مشخصات خود را بررسی کرده و سپس بر روی دکمه ثبت
+            اطلاعات حساب کلیک نموده
+          </Typography>
                   <Grid
                     item
                     xs={12}
@@ -99,6 +105,7 @@ const SignUpPage5 = () => {
                     }}
                   >
                     <Button
+                    onClick={()=>navigate('/SignUpPage3')}
                       variant="contained"
                       sx={{
                         mt: { xs: 5, md: 0 },

@@ -7,6 +7,7 @@ import {Alert, Button, Grid} from "@mui/material";
 import SignUpForm from "../components/SignUpItems/SignUpForm/SignUpForm";
 import SignUpImage from "../components/SignUpItems/SignUpImage/SignUpImage";
 import RightBar from "../components/RightBar/RightBar";
+import { Footer } from "../components/Footer/Footer";
 
 const SignUpPage3 = () => {
 
@@ -18,7 +19,7 @@ const SignUpPage3 = () => {
           <Grid item xs={2}>
               <RightBar />
           </Grid>
-          <Grid container xs={10} md={12} sx={{margin:"auto"}}>
+          <Grid container xs={10} md={12} sx={{marginBottom:"5%"}}>
               <Stepper1 />
               <Grid xs={12} sx={{ margin: "auto" }}>
               <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -44,6 +45,18 @@ const SignUpPage3 = () => {
               </Box>
               </Grid>
           </Grid>
+          <Footer
+          
+          display="none"
+          page1={"درباره ما"}
+          page2={"ارتباط با ما"}
+          page3={"خدمات"}
+          services1={"خدمات مکانیکی"}
+          services2={"کارگران ساختمانی"}
+          address={"اعتمادیه.خیابان اول عربی"}
+          phNumber={"0919123456"}
+          email={"test1@gmail.com"}
+        />
       </Grid>
 
 

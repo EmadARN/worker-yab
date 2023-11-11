@@ -5,8 +5,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import { Scale } from "@mui/icons-material";
+
 
 const FotterGrid = styled("grid")(({ theme }) => ({
   width: "100%",

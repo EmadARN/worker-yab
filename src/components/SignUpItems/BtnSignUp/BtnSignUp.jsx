@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import {IPServer} from "../../../Config/Server";
 
-const BtnSignUp = ({ navigate,onClick, linkState ,submit}) => {
+const BtnSignUp = ({ navigate,onClick, linkState ,submit }) => {
   return (
     <>
       <Link
@@ -25,7 +25,7 @@ const BtnSignUp = ({ navigate,onClick, linkState ,submit}) => {
           }
           sx={{
             width: { xs: "50%" },
-            transition: ".5s",
+            transition: ".8s",
             borderRadius: "2px",
             p: "15px 35px",
             color: "#030f27",
@@ -35,7 +35,7 @@ const BtnSignUp = ({ navigate,onClick, linkState ,submit}) => {
             fontFamily: "Lalezar",
             "&:hover": {
               transition: "all .75s",
-              p: "20px 40px",
+             
               bgcolor: "#030f27",
               color: "#fdbe33",
               boxShadow:

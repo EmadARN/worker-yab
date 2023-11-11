@@ -34,10 +34,25 @@ const SignUpFinal = () => {
             justifyContent: "center",
           }}
         >
-          <Grid sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mb: 5,
+              border: "2px solid #fdbe33",
+              p: 2,
+              borderRadius: "20px 0 20px 0",
+            }}
+          >
             <CardMedia
+              sx={{
+                p: 2,
+                border: "1px solid #fdbe33 ",
+                borderRadius: "0 20px  0 20px ",
+              }}
               component="img"
-              height="194"
+              height="270"
+              width="270"
               image="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"
               alt="Paella dish"
             />

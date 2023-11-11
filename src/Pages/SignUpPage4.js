@@ -8,7 +8,10 @@ import TopBarCss from "../components/topbarcss/TopBarCss.js";
 import RightBar from "../components/RightBar/RightBar.jsx";
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper.jsx";
 import { IPServer } from "../Config/Server";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { styled } from "@mui/material/styles";
 import axios from "axios";
+import { Footer } from "../components/Footer/Footer";
 const SignUpPage4 = () => {
   const MainGrid = {
     display: "flex",
@@ -16,6 +19,17 @@ const SignUpPage4 = () => {
     alignItems: "center",
     flexDirection: "column",
   };
+  const VisuallyHiddenInput = styled("input")({
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
+    height: 1,
+    overflow: "hidden",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    whiteSpace: "nowrap",
+    width: 1,
+  });
 
   const [openCamera, setOpenCamera] = useState(false);
   const [url, setUrl] = useState(null);
@@ -40,7 +54,7 @@ const SignUpPage4 = () => {
         <Grid item xs={2}>
           <RightBar />
         </Grid>
-        <Grid style={MainGrid} container xs={10} md={12}>
+        <Grid style={MainGrid} container xs={10} md={12} mb={5}>
           <Stepper1 />
           <Box mb={4} sx={{ mt: { xs: "7%" } }}>
             <Typography fontFamily={"Lalezar"} variant="h4">
@@ -60,30 +74,6 @@ const SignUpPage4 = () => {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
-              backgroundColor: "#EBECF2",
-              width: { xs: "50%", md: "30%" },
-              padding: { xs: "3%", md: "1%" },
-              justifyContent: "center",
-
-              m: "4% 0 6% 0",
-            }}
-          >
-            <Typography
-              sx={{
-                marginLeft: "10px",
-                whiteSpace: { xs: "nowrap", md: "wrap" },
-              }}
-              fontFamily={"Yekan"}
-            >
-              تصویر چهره متقاضی
-            </Typography>
-            <AddAPhotoIcon />
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
               justifyContent: "center",
               alignItems: "center",
               mb: "4%",
@@ -93,7 +83,7 @@ const SignUpPage4 = () => {
             {openCamera ? null : (
               <img
                 style={{ width: "20%" }}
-                src="https://www.lifewire.com/thmb/TRGYpWa4KzxUt1Fkgr3FqjOd6VQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg"
+                src="https://logodix.com/logo/1314431.png"
                 alt=""
               />
             )}
@@ -134,19 +124,50 @@ const SignUpPage4 = () => {
           </Box>
 
           <Box>
-            <TextField
-              sx={{ mb: { xs: "9%", md: "0" } }}
-              type="file"
-            ></TextField>
             <Button
               sx={{
-                marginRight: "10px",
-                backgroundColor: "gray",
-                color: "white",
-                fontSize: "20px",
-                borderRadius: "7px",
-                padding: "10px",
-                "&:hover": { backgroundColor: "#030f27" },
+                bgcolor: "#fdbe33",
+                color: "#030f27",
+                p: 1.8,
+                fontWeight: "bold",
+                fontSize: "15px",
+                "&:hover": {
+                  bgcolor: "#fdbe33",
+                  "& .iconee": {
+                    color: "#030f27",
+                  },
+                },
+              }}
+              component="label"
+              variant="contained"
+            >
+              <CloudUploadIcon
+                className="iconee"
+                sx={{
+                  mx: 2,
+                  color: "#030f27",
+                }}
+              />
+              بارگذاری عکس
+              <VisuallyHiddenInput type="file" />
+            </Button>
+            <Button
+              sx={{
+                transition: ".5s",
+                borderRadius: "2px",
+                p: "14px 35px",
+                color: "#fdbe33",
+                fontSize: "16px",
+                bgcolor: "#030f27",
+                fontWeight: "700",
+                fontFamily: "Lalezar",
+                borderRadius: "20px 0px 0px 20px",
+                "&:hover": {
+                  transition: "all .75s",
+
+                  bgcolor: "#030f27",
+                  color: "#fdbe33",
+                },
               }}
               onClick={() => setOpenCamera(true)}
             >
@@ -160,19 +181,42 @@ const SignUpPage4 = () => {
           >
             <Button
               onClick={uploadImg}
+              variant="contained"
               sx={{
-                backgroundColor: "#01B0F1",
-                color: "white",
-                borderRadius: "7px",
-                fontSize: "20px",
-                width: "20%",
-                "&:hover": { backgroundColor: "#030f27" },
+                mt: { xs: 5, md: 0 },
+                transition: ".5s",
+                borderRadius: "2px",
+                p: "10px 35px",
+                color: "#030f27",
+                fontSize: "16px",
+                bgcolor: "#fdbe33",
+                fontWeight: "700",
+                fontFamily: "Lalezar",
+                "&:hover": {
+                  transition: "all .75s",
+                  p: "10px 40px",
+                  bgcolor: "#030f27",
+                  color: "#fdbe33",
+                  boxShadow:
+                    "0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2)",
+                },
               }}
             >
               ادامه
             </Button>
           </Box>
         </Grid>
+        <Footer
+          display="none"
+          page1={"درباره ما"}
+          page2={"ارتباط با ما"}
+          page3={"خدمات"}
+          services1={"خدمات مکانیکی"}
+          services2={"کارگران ساختمانی"}
+          address={"اعتمادیه.خیابان اول عربی"}
+          phNumber={"0919123456"}
+          email={"test1@gmail.com"}
+        />
       </Grid>
     </>
   );

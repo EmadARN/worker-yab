@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
 import VerifyNumber from "../components/SignUpItems/SignUp(VerifyNumber)/VerifyNumber";
@@ -10,10 +10,11 @@ import { Footer } from "../components/Footer/Footer";
 import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
 import RightBar from "../components/RightBar/RightBar";
 import axios from "axios";
-import {IPServer} from "../Config/Server";
+
 
 const SignUpPage = () => {
-    const[phone_number,setPhone_number]=useState('')
+  const [phone_number, setPhone_number] = useState("");
+console.log(phone_number);
 
   return (
     <>
@@ -25,50 +26,10 @@ const SignUpPage = () => {
         <Grid container xs={10} md={12}>
           <Stepper1 />
           <Grid xs={12} sx={{ margin: "auto" }}>
-            <VerifyNumber inputValue={setPhone_number}/>
+            <VerifyNumber inputValue={setPhone_number} phone_number={phone_number} />
           </Grid>
 
-          <Grid
-            xs={6}
-            sx={{
-              margin: "auto",
-              my: 20,
-              pr: { xs: 5, sm: 15, md: 25, lg: 30, xl: 38 },
-            }}
-          >
-            <BtnSignUp
-
-                linkState={{phone_number: phone_number}}
-                onClick={
-
-                ()=> {
-                    axios.request({
-
-
-
-                        method: 'GET',
-
-                        url: `${IPServer}/Auth/signup/phone_number=${phone_number}/`
-
-                    }).then((res) => {
-
-                        console.log(res.data)
-                    })
-
-                }
-
-
-
-            } navigate={
-
-                {
-                    pathname: '/SignUpPage2',
-
-
-                }
-
-            } />
-          </Grid>
+        
         </Grid>
         <Footer
           display="none"

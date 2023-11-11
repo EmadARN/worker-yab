@@ -11,6 +11,7 @@ import axios from "axios";
 import { IPServer } from "../Config/Server";
 import { useLocation } from "react-router-dom";
 import { message } from "antd";
+
 const SignUpPage2 = () => {
   const [verify_code, setVerify_code] = useState("");
   let location = useLocation();
@@ -31,34 +32,37 @@ const SignUpPage2 = () => {
   };
 
 
-const handleCLick=()=>{
+// const handleCLick=()=>{
   
-    axios
-      .post(`${IPServer}/Auth/validate/signup/phone_number/`, {
-        phone_number: location.state.phone_number,
-        code: verify_code,
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((error) => {
-        // error is handled in catch block
-        if (error.response) {
-          // status code out of the range of 2xx
-          console.log("Data :", error.response.data);
-          console.log("Status :" + error.response.status);
-        } else if (error.request) {
-          // The request was made but no response was received
-          console.log(error.request);
-        } else {
-          // Error on setting up the request
-          console.log("Error", error.message);
-        }
-      });
+//     axios
+//       .post(`${IPServer}/Auth/validate/signup/phone_number/`, {
+//         phone_number: location.state.phone_number,
+//         code: verify_code,
+//       })
+//       .then((res) => {
+//         console.log(res.data);
+//       })
+//       .catch((error) => {
+//         // error is handled in catch block
+//         if (error.response) {
+//           // status code out of the range of 2xx
+//           console.log("Data :", error.response.data);
+//           console.log("Status :" + error.response.status);
+//         } else if (error.request) {
+//           // The request was made but no response was received
+//           console.log(error.request);
+//         } else {
+//           // Error on setting up the request
+//           console.log("Error", error.message);
+//         }
+//       });
 
-      success();
+//       success();
   
-}
+// }
+
+
+console.log(contextHolder);
 
   return (
     <>
@@ -70,7 +74,7 @@ const handleCLick=()=>{
         <Grid container xs={10} md={12}>
           <Stepper1 />
           <Grid xs={12} sx={{ margin: "auto" }}>
-            <VerifyCode set_verify_code={setVerify_code} />
+            <VerifyCode set_verify_code={setVerify_code} verify_code ={verify_code}/>
           </Grid>
 
           <Grid
@@ -81,11 +85,11 @@ const handleCLick=()=>{
               pr: { xs: 0, sm: 5, md: 12, lg: 15, xl: 20 },
             }}
           >
-            <Grid xs={6} sx={{ my: 20 }}>
+             <Grid xs={6} sx={{ my: 20 }}>
               {contextHolder}
         
               <BtnSignUp
-                onClick={handleCLick}
+               
                 navigate={
 
                   {
@@ -94,7 +98,7 @@ const handleCLick=()=>{
   
                   }}
               />
-            </Grid>
+            </Grid> 
             <Grid container xs={6} sx={{ my: 20 }}>
               <BackWardBtn navigate={"/SignUpPage"} />
             </Grid>
