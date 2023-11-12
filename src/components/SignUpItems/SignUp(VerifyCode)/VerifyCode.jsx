@@ -40,14 +40,14 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
   console.log(verify_code);
   return (
     <>
-      <Title title="کد  را وارد کنید" />
+      <Title title="کد  را وارد کنید" width={"200px"} />
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
           <Grid
             sx={{
               display: "flex",
               justifyContent: "center",
-              flexDirection:"column",
+              flexDirection: "column",
               mt: 20,
               "& .MuiInput-underline:after": {
                 borderBottomColor: "#fdbe33",
@@ -65,40 +65,36 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
               ) : null}
             </Box>
 
-
-
-            <Box sx={{display:"flex",justifyContent:"center"}}>
-            <form
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-              onChange={formik.handleChange("verify_code")}
-            >
-              <TextField
-                onChange={(e) => {
-                  set_verify_code(e.target.value);
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <form
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
                 }}
-                id="standard-basic"
-                onBlur={formik.handleBlur("verify_code")}
-                name="verify_code"
-                label=" کد را وارد کنید"
-                variant="filled"
-                sx={{
-                  "& .MuiFilledInput-underline:after": {
-                    borderBottomColor: "#fdbe33",
-                  },
+                onChange={formik.handleChange("verify_code")}
+              >
+                <TextField
+                  onChange={(e) => {
+                    set_verify_code(e.target.value);
+                  }}
+                  id="standard-basic"
+                  onBlur={formik.handleBlur("verify_code")}
+                  name="verify_code"
+                  label=" کد را وارد کنید"
+                  variant="filled"
+                  sx={{
+                    "& .MuiFilledInput-underline:after": {
+                      borderBottomColor: "#fdbe33",
+                    },
 
-                   width: { xs: "80%", lg: "50%", xl: "30%" },
-                }}
-              />
-            </form>
+                    width: { xs: "80%", lg: "50%", xl: "30%" },
+                  }}
+                />
+              </form>
             </Box>
 
-
-
-            <Box sx={{ my: 10, display:"flex",justifyContent:"center"}}>
+            <Box sx={{ my: 10, display: "flex", justifyContent: "center" }}>
               {/* {contextHolder}  */}
 
               <BtnSignUp
@@ -109,7 +105,7 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
                         .post(
                           `${IPServer}/Auth/validate/signup/phone_number/`,
                           {
-                             //phone_number: location.state.phone_number,
+                            //phone_number: location.state.phone_number,
                             code: verify_code,
                           }
                         )
