@@ -96,6 +96,7 @@ const Contactus = (props) => {
         <Title
           title="نظرات خود را با ما به اشتراک بگزارید
 "
+          width={"200px"}
         ></Title>
       </Grid>
 

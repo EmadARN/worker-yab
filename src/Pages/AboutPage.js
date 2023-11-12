@@ -1,12 +1,12 @@
 import AboutTitle from "../components/About/about title/About Title";
 import { Grid } from "@mui/material";
-import AboutImg from "../components/About/about img/About Img";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import Fact from "../components/Fact/Fact";
 import FAQs from "../components/faqs/FAQs";
 import RightBar from "../components/RightBar/RightBar";
 import { Footer } from "../components/Footer/Footer";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
+import AboutImage from "../components/About/aboutImage/AboutImage";
 function AboutPage() {
   return (
     <>
@@ -28,7 +28,7 @@ function AboutPage() {
             xl={5}
             sx={{ mr: { xs: "40px", sm: "40px", md: "0", lg: "0", xl: "0" } }}
           >
-            <AboutImg />
+            <AboutImage />
           </Grid>
           <Grid item xs={12} sx={{ mt: 10 }}>
             <Fact scroll="200" />

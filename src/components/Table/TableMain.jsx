@@ -4,10 +4,10 @@ import { Grid } from "@mui/material";
 import Title from "../Title/Title";
 import TableInfo from "./Table";
 
-const TableMain = ({ row }) => {
+const TableMain = ({ row, title, width, xsWidth }) => {
   return (
     <>
-      <Title title="ثبت نامی ها اخیر" />
+      <Title title={title} width={width} xsWidth={xsWidth} />
       <Container>
         <Grid container>
           <Grid

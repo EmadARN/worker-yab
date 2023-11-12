@@ -38,12 +38,18 @@ const BtnDownToTop = ({ minScroll, maxScroll }) => {
       }}
       onClick={scrollToTop}
     >
-      <Fab
+      <Box
         aria-label="add"
         sx={{
+          p: 1.5,
+
           backgroundColor: " #fdbe33",
+          border: "1px solid #030f27",
+          borderRadius: "4px",
           color: "#030f27",
-          display: { xs: "none", md: "inline" },
+          display: { xs: "none", md: "inline-flex" },
+
+          cursor: "pointer",
           "&:hover": {
             backgroundColor: " #030f27",
             color: "#fdbe33",
@@ -51,7 +57,7 @@ const BtnDownToTop = ({ minScroll, maxScroll }) => {
         }}
       >
         <ArrowUpward />
-      </Fab>
+      </Box>
     </Box>
   );
 };

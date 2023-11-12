@@ -32,7 +32,7 @@ const VerifyNumber = ({phone_number,inputValue}) => {
       phone_number: "",
     },
     onSubmit: (values) => {
-      console.log("clicked");;
+      console.log("clicked");
     },
     validationSchema: yup.object({
       phone_number: yup
@@ -42,18 +42,15 @@ const VerifyNumber = ({phone_number,inputValue}) => {
     }),
   });
 
- 
-
-
   return (
     <>
-      <Title title="شماره خود را وارد کنید" />
+      <Title title="شماره خود را وارد کنید" width={"200px"} />
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
           <Grid
             sx={{
-              flexDirection:"column",
-             
+              flexDirection: "column",
+
               display: "flex",
               justifyContent: "center",
               mt: 20,
@@ -67,37 +64,40 @@ const VerifyNumber = ({phone_number,inputValue}) => {
               },
             }}
           >
-            <Box sx={{display:"flex",justifyContent:'center'}}>
-            {formik.touched.phone_number && formik.errors.phone_number ? (
-              <p style={{ color: "red" }}>{formik.errors.phone_number}</p>
-            ) : null}
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              {formik.touched.phone_number && formik.errors.phone_number ? (
+                <p style={{ color: "red" }}>{formik.errors.phone_number}</p>
+              ) : null}
             </Box>
 
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <form
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                onChange={formik.handleChange("phone_number")}
+              >
+                <TextField
+                  onChange={(e) => props.inputValue(e.target.value)}
+                  id="standard-basic"
+                  label="شماره همراه"
+                  variant="filled"
+                  type="phone_number"
+                  onBlur={formik.handleBlur("phone_number")}
+                  value={formik.values.phone_number}
+                  name="phone_number"
+                  sx={{
+                    "& .MuiFilledInput-underline:after": {
+                      borderBottomColor: "#fdbe33",
+                    },
 
-            <Box sx={{display:"flex",justifyContent:'center'}}>
-              <form style={{width:"100%" , display:'flex',justifyContent:"center"}} onChange={formik.handleChange("phone_number")}>
-
-            <TextField
-             onChange={(e)=> inputValue(e.target.value)}
-              
-              id="standard-basic"
-              label="شماره همراه"
-              variant="filled"
-              type="phone_number"
-              onBlur={formik.handleBlur("phone_number")}
-              value={formik.values.phone_number}
-              name="phone_number"
-              sx={{
-                "& .MuiFilledInput-underline:after": {
-                  borderBottomColor: "#fdbe33",
-                },
-
-                width: { xs: "80%", lg: "50%", xl: "30%" },
-              }}
-            />
-            </form>
+                    width: { xs: "80%", lg: "50%", xl: "30%" },
+                  }}
+                />
+              </form>
             </Box>
-
 
             <Box
             
@@ -109,8 +109,8 @@ const VerifyNumber = ({phone_number,inputValue}) => {
             }}
           >
             <BtnSignUp
-              linkState={{ phone_number:phone_number }}
-              onClick={phone_number === "" ? formik.handleSubmit : ()=> axios
+              linkState={{ phone_number: props.phone_number }}
+              onClick={props.phone_number === "" ? formik.handleSubmit :  axios
               .request({
                 method: "GET",
 

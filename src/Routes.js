@@ -10,9 +10,14 @@ import SignUpPage4 from "./Pages/SignUpPage4";
 import SignUpPage5 from "./Pages/SignUpPage5";
 import AdminEnter from "./Pages/AdminEnter";
 import AdminPage from "./Pages/AdminPage";
+
+import MechanicListPage from "./Pages/MechanicListPage";
+import WorkerListPage from "./Pages/WorkerListPage";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/About", element: <AboutPage /> },
+  { path: "/worker", element: <WorkerListPage /> },
+  { path: "/mechanic", element: <MechanicListPage /> },
   {
     path: "/SignupPage",
     element: <SignUpPage />,
