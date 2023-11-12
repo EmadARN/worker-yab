@@ -16,6 +16,7 @@ const SignUpPage2 = () => {
   const [verify_code, setVerify_code] = useState("");
   let location = useLocation();
 
+
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
     messageApi
@@ -30,6 +31,8 @@ const SignUpPage2 = () => {
 
       .then(() => message.success("عملبات با موفقیت انجام شد :)", 2.5));
   };
+
+
 
 
 // const handleCLick=()=>{
@@ -62,7 +65,7 @@ const SignUpPage2 = () => {
 // }
 
 
-console.log(contextHolder);
+
 
   return (
     <>
@@ -87,17 +90,7 @@ console.log(contextHolder);
           >
              <Grid xs={6} sx={{ my: 20 }}>
               {contextHolder}
-        
-              <BtnSignUp
-               
-                navigate={
 
-                  {
-                      pathname: '/SignUpPage3',
-  
-  
-                  }}
-              />
             </Grid> 
             <Grid container xs={6} sx={{ my: 20 }}>
               <BackWardBtn navigate={"/SignUpPage"} />

@@ -8,6 +8,8 @@ import SignUpPage2 from "./Pages/SignUpPage2";
 import SignUpPage3 from "./Pages/SignUpPage3";
 import SignUpPage4 from "./Pages/SignUpPage4";
 import SignUpPage5 from "./Pages/SignUpPage5";
+import AdminEnter from "./Pages/AdminEnter";
+import AdminPage from "./Pages/AdminPage";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/About", element: <AboutPage /> },
@@ -39,6 +41,15 @@ const routes = [
   {
     path: "/SignUpPage5",
     element: <SignUpPage5 />,
+  },
+  {
+    path: "/adminenter",
+    element: <AdminEnter />,
+  },
+
+  {
+    path: "/adminpage",
+    element: <AdminPage />,
   },
 ];
 export default routes;

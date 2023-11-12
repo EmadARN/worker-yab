@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "../../Title/Title";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -26,6 +26,9 @@ const cacheRtl = createCache({
 
 const VerifyNumber = ({ set_verify_code, verify_code }) => {
   let location = useLocation();
+
+  const [phone_number2,setPhone_number2] = useState(location.state.phone_number);
+
   const formik = useFormik({
     initialValues: {
       verify_code: "",
@@ -37,7 +40,7 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
       verify_code: yup.string().required("این فیلد الزامی است"),
     }),
   });
-  console.log(verify_code);
+
   return (
     <>
       <Title title="کد  را وارد کنید" />
@@ -47,7 +50,7 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              flexDirection:"column",
+              flexDirection: "column",
               mt: 20,
               "& .MuiInput-underline:after": {
                 borderBottomColor: "#fdbe33",
@@ -65,74 +68,62 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
               ) : null}
             </Box>
 
-
-
-            <Box sx={{display:"flex",justifyContent:"center"}}>
-            <form
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-              onChange={formik.handleChange("verify_code")}
-            >
-              <TextField
-                onChange={(e) => {
-                  set_verify_code(e.target.value);
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <form
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
                 }}
-                id="standard-basic"
-                onBlur={formik.handleBlur("verify_code")}
-                name="verify_code"
-                label=" کد را وارد کنید"
-                variant="filled"
-                sx={{
-                  "& .MuiFilledInput-underline:after": {
-                    borderBottomColor: "#fdbe33",
-                  },
+                onChange={formik.handleChange("verify_code")}
+              >
+                <TextField
+                  onChange={(e) => {
+                    set_verify_code(e.target.value);
+                  }}
+                  id="standard-basic"
+                  onBlur={formik.handleBlur("verify_code")}
+                  name="verify_code"
+                  label=" کد را وارد کنید"
+                  variant="filled"
+                  sx={{
+                    "& .MuiFilledInput-underline:after": {
+                      borderBottomColor: "#fdbe33",
+                    },
 
-                   width: { xs: "80%", lg: "50%", xl: "30%" },
-                }}
-              />
-            </form>
+                    width: { xs: "80%", lg: "50%", xl: "30%" },
+                  }}
+                />
+              </form>
             </Box>
 
-
-
-            <Box sx={{ my: 10, display:"flex",justifyContent:"center"}}>
+            <Box sx={{ my: 10, display: "flex", justifyContent: "center" }}>
               {/* {contextHolder}  */}
 
               <BtnSignUp
-                onClick={
-                  verify_code === ""
-                    ? formik.handleSubmit
-                    : axios
-                        .post(
-                          `${IPServer}/Auth/validate/signup/phone_number/`,
-                          {
-                             //phone_number: location.state.phone_number,
-                            code: verify_code,
-                          }
-                        )
-                        .then((res) => {
-                          console.log(res.data);
-                        })
-                        .catch((error) => {
-                          // error is handled in catch block
-                          if (error.response) {
-                            // status code out of the range of 2xx
-                            console.log("Data :", error.response.data);
-                            console.log("Status :" + error.response.status);
-                          } else if (error.request) {
-                            // The request was made but no response was received
-                            console.log(error.request);
-                          } else {
-                            // Error on setting up the request
-                            console.log("Error", error.message);
-                          }
-                        })
-                }
-                navigate={{
-                  pathname: "/SignUpPage3",
+                onClick={() => {
+                 console.log(phone_number2);
+                  axios.post(`${IPServer}/Auth/validate/signup/phone_number/`, {
+                      phone_number: phone_number2,
+                      code: verify_code,
+                    })
+                    .then((res) => {
+                      console.log(res.data);
+                    })
+                    .catch((error) => {
+                      // error is handled in catch block
+                      if (error.response) {
+                        // status code out of the range of 2xx
+                        console.log("Data :", error.response.data);
+                        console.log("Status :" + error.response.status);
+                      } else if (error.request) {
+                        // The request was made but no response was received
+                        console.log(error.request);
+                      } else {
+                        // Error on setting up the request
+                        console.log("Error", error.message);
+                      }
+                    });
                 }}
               />
             </Box>

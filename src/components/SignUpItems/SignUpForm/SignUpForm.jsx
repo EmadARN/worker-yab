@@ -186,25 +186,7 @@ const SignupForm = (style) => {
                 </form>
               </Grid>
               <Grid item xs={12}>
-                {/* {
-                  <Autocomplete
-                    id="free-solo-demo"
-                    freeSolo
-                    options={cities.map((option) => option.title)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label="شهرتان را انتخاب کنید:"
-                        variant="standard"
-                        color="success"
-                        value={inp.city}
-                        sx={{ style }}
-                        placeholder="شهر خود را وارد کنید..."
-                        onChange={(e) => textHandler(e, "city")}
-                      />
-                    )}
-                  />
-                } */}
+             
                 <Box sx={{ minWidth: 120 }}>
                   <FormControl color="success"  fullWidth>
                     <InputLabel id="demo-simple-select-label">شهر:</InputLabel>
@@ -227,25 +209,7 @@ const SignupForm = (style) => {
                 </Box>
               </Grid>
               <Grid mt={2} item xs={12}>
-                {/* <Autocomplete
-                  id="free-solo-demo"
-                  freeSolo
-                  options={cities.map((option) => option.job)}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      value={inp.job}
-                      sx={{ style }}
-                      color="success"
-                      label="شغل:"
-                      variant="standard"
-                      placeholder="شغل خود را وارد کنید..."
-                      onChange={(e) => textHandler(e, "job")}
-                      onClick={(e) => textHandler(e, "job")}
-                      
-                    />
-                  )}
-                /> */}
+                
                 <Box sx={{ minWidth: 120 }}>
                   <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">شغل:</InputLabel>
