@@ -73,7 +73,7 @@ function AboutImage() {
         <Typography>{images[activeStep].label}</Typography>
       </Paper>
       <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        axis={theme.direction === "ltr" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -84,9 +84,9 @@ function AboutImage() {
               <Box
                 component="img"
                 sx={{
-                  height: 450,
+                  height: { xs: 400, md: 500 },
                   display: "block",
-                  maxWidth: 400,
+                  maxWidth: 500,
                   overflow: "hidden",
                   width: "100%",
                 }}
