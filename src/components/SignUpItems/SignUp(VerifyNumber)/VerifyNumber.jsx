@@ -80,7 +80,7 @@ const VerifyNumber = ({phone_number,inputValue}) => {
                 onChange={formik.handleChange("phone_number")}
               >
                 <TextField
-                  onChange={(e) => props.inputValue(e.target.value)}
+                  onChange={(e) => inputValue(e.target.value)}
                   id="standard-basic"
                   label="شماره همراه"
                   variant="filled"
@@ -109,8 +109,8 @@ const VerifyNumber = ({phone_number,inputValue}) => {
             }}
           >
             <BtnSignUp
-              linkState={{ phone_number: props.phone_number }}
-              onClick={props.phone_number === "" ? formik.handleSubmit :  axios
+              linkState={{ phone_number: phone_number }}
+              onClick={phone_number === "" ? formik.handleSubmit :  axios
               .request({
                 method: "GET",
 

@@ -142,7 +142,7 @@ const ImageSlider = () => {
 
               <Box sx={{ display: { xs: "none", sm: "flex" } }}>
                 <BtnAnimation
-                  title="ثبت نام"
+                  title=" ثبت نام کارجو"
                   color="#fff"
                   size="18px"
                   fweight="700"
