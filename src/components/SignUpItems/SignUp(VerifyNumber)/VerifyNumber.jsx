@@ -11,7 +11,7 @@ import Counter from "lyef-counter";
 import { prefixer } from "stylis";
 import * as yup from "yup";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IPServer } from "../../../Config/Server";
 const theme = createTheme({
@@ -22,9 +22,7 @@ const cacheRtl = createCache({
   key: "muirtl",
   stylisPlugins: [prefixer, rtlPlugin],
 });
-const VerifyNumber = ({phone_number,inputValue}) => {
-
-
+const VerifyNumber = ({ phone_number, inputValue }) => {
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -80,7 +78,7 @@ const VerifyNumber = ({phone_number,inputValue}) => {
                 onChange={formik.handleChange("phone_number")}
               >
                 <TextField
-                  onChange={(e) => props.inputValue(e.target.value)}
+                  onChange={(e) => inputValue(e.target.value)}
                   id="standard-basic"
                   label="شماره همراه"
                   variant="filled"
@@ -100,31 +98,34 @@ const VerifyNumber = ({phone_number,inputValue}) => {
             </Box>
 
             <Box
-            
-            sx={{
-              display:"felx",
-              justifyContent:"center",
-              my: 10,
-            
-            }}
-          >
-            <BtnSignUp
-              linkState={{ phone_number: props.phone_number }}
-              onClick={props.phone_number === "" ? formik.handleSubmit :  axios
-              .request({
-                method: "GET",
+              sx={{
+                display: "felx",
+                justifyContent: "center",
+                my: 10,
+              }}
+            >
+              <BtnSignUp
+                linkState={{ phone_number: phone_number }}
+                onClick={
+                  phone_number === ""
+                    ? formik.handleSubmit
+                    : () =>
+                        axios
+                          .request({
+                            method: "GET",
 
-                url: `${IPServer}/Auth/signup/phone_number=${phone_number}/`,
-              })
-              .then((res) => {
-                console.log(res.data);
-                navigate('/SignUpPage2',{state:{phone_number}})
-              })}
-              // onClick={formik.handleSubmit}
-              
-       
-            />
-          </Box>
+                            url: `${IPServer}/Auth/signup/phone_number=${phone_number}/`,
+                          })
+                          .then((res) => {
+                            console.log(res.data);
+                            navigate("/SignUpPage2", {
+                              state: { phone_number },
+                            });
+                          })
+                }
+                // onClick={formik.handleSubmit}
+              />
+            </Box>
           </Grid>
         </ThemeProvider>
       </CacheProvider>

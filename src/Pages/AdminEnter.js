@@ -47,36 +47,25 @@ const AdminEnter = () => {
                 flexDirection: "column",
               }}
             >
-             
-                <Title title="کد ورود ادمین را وارد کنید" />
-              
+              <Title title="کد ورود ادمین را وارد کنید" width={"200px"} />
 
-               
+              <TextField
+                id="standard-basic"
+                label=" کد ورود"
+                variant="filled"
+                type="phone_number"
+                sx={{
+                  marginTop: "25%",
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottomColor: "#fdbe33",
+                  },
 
-                <TextField
-                
-                  id="standard-basic"
-                  label=" کد ورود"
-                  variant="filled"
-                  type="phone_number"
-                  sx={{
-                    marginTop:"25%",
-                    "& .MuiFilledInput-underline:after": {
-                      borderBottomColor: "#fdbe33",
-                    },
-
-                    // width: { xs: "80%", lg: "50%", xl: "100%" },
-                  }}
-                />
-              
+                  // width: { xs: "80%", lg: "50%", xl: "100%" },
+                }}
+              />
 
               <Box mt={5}>
-                <BtnSignUp
-
-                onClick={navigate("/adminpage")}
-                  
-          
-                />
+                <BtnSignUp onClick={navigate("/adminpage")} />
               </Box>
             </Grid>
           </ThemeProvider>

@@ -11,7 +11,7 @@ const Title = ({ title, width, xsWidth }) => {
         <Box
           sx={{
             textAlign: "center",
-            width: { xs: xsWidth, md: width },
+            width: width,
             position: "relative",
             margin: "auto",
           }}

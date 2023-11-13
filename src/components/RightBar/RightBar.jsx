@@ -181,7 +181,7 @@ const RightBar = ({ display }) => {
 
           fontSize: "20px",
         }}
-        to={"/SignupPage"}
+        to={"/adminenter"}
       >
         <Box
           sx={{

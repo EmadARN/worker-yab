@@ -4,10 +4,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import BtnAnimation from "../BtnAnimation/BtnAnimation";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useNavigate } from 'react-router-dom';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useNavigate } from "react-router-dom";
 
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from "@mui/material/Tooltip";
 const pages = [
   { id: 1, name: "خانه", to: "/" },
   { id: 3, name: "درباره ما", to: "/About" },
@@ -16,7 +16,7 @@ const pages = [
 ];
 
 function NavBar({ display }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loadCount, setLoadCount] = React.useState(false);
   function lc() {
     if (window.scrollY > 10) {
@@ -118,7 +118,7 @@ function NavBar({ display }) {
               </Box>
             </Toolbar>
           </Box>
-          <Box sx={{ pl: 3 }}>
+          <Box sx={{ pl: 3, display: "flex" }}>
             <Link
               style={{
                 textDecoration: "none",
@@ -134,6 +134,15 @@ function NavBar({ display }) {
                 fweight="700"
               />
             </Link>
+            <Box sx={{ mr: 3, pt: 2 }}>
+              <Tooltip title="ادمین" placement="top-start">
+                <Link to={"/adminenter"}>
+                  <AccountCircleIcon
+                    sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}
+                  />
+                </Link>
+              </Tooltip>
+            </Box>
           </Box>
         </Box>
       ) : (
@@ -162,7 +171,6 @@ function NavBar({ display }) {
                     to={page.to}
                   >
                     <Button
-                    
                       sx={{
                         my: 2,
                         mx: 2,
@@ -217,7 +225,7 @@ function NavBar({ display }) {
               </Box>
             </Toolbar>
           </Box>
-          <Box sx={{ pl: 3, display:"flex",alignItems:"center"}}>
+          <Box sx={{ pl: 3, display: "flex", alignItems: "center" }}>
             <Link
               style={{
                 textDecoration: "none",
@@ -226,21 +234,24 @@ function NavBar({ display }) {
               }}
               to={"/SignupPage"}
             >
-              <BtnAnimation 
+              <BtnAnimation
                 title="ثبت نام"
                 color="#fff"
                 size="18px"
                 fweight="700"
               />
             </Link>
-            
-          <Box mr={3} >
-            <Tooltip title = "ادمین" placement="top-start" >
-         <Link to={'/adminenter'}>< AccountCircleIcon   sx={{color:"white", fontSize:"40px", cursor:"pointer"}} /></Link>
-         </Tooltip>
-          </Box>
-          </Box>
 
+            <Box mr={3}>
+              <Tooltip title="ادمین" placement="top-start">
+                <Link to={"/adminenter"}>
+                  <AccountCircleIcon
+                    sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}
+                  />
+                </Link>
+              </Tooltip>
+            </Box>
+          </Box>
         </Box>
       )}
     </Box>

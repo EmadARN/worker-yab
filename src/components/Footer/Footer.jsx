@@ -7,7 +7,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
 
-const FotterGrid = styled("grid")(({ theme }) => ({
+const FotterGrid = styled("Grid")(({ theme }) => ({
   width: "100%",
   height: "100%",
   backgroundColor: "#030F27",

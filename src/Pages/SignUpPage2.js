@@ -16,7 +16,6 @@ const SignUpPage2 = () => {
   const [verify_code, setVerify_code] = useState("");
   let location = useLocation();
 
-
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
     messageApi
@@ -32,40 +31,34 @@ const SignUpPage2 = () => {
       .then(() => message.success("عملبات با موفقیت انجام شد :)", 2.5));
   };
 
+  // const handleCLick=()=>{
 
+  //     axios
+  //       .post(`${IPServer}/Auth/validate/signup/phone_number/`, {
+  //         phone_number: location.state.phone_number,
+  //         code: verify_code,
+  //       })
+  //       .then((res) => {
+  //         console.log(res.data);
+  //       })
+  //       .catch((error) => {
+  //         // error is handled in catch block
+  //         if (error.response) {
+  //           // status code out of the range of 2xx
+  //           console.log("Data :", error.response.data);
+  //           console.log("Status :" + error.response.status);
+  //         } else if (error.request) {
+  //           // The request was made but no response was received
+  //           console.log(error.request);
+  //         } else {
+  //           // Error on setting up the request
+  //           console.log("Error", error.message);
+  //         }
+  //       });
 
+  //       success();
 
-// const handleCLick=()=>{
-  
-//     axios
-//       .post(`${IPServer}/Auth/validate/signup/phone_number/`, {
-//         phone_number: location.state.phone_number,
-//         code: verify_code,
-//       })
-//       .then((res) => {
-//         console.log(res.data);
-//       })
-//       .catch((error) => {
-//         // error is handled in catch block
-//         if (error.response) {
-//           // status code out of the range of 2xx
-//           console.log("Data :", error.response.data);
-//           console.log("Status :" + error.response.status);
-//         } else if (error.request) {
-//           // The request was made but no response was received
-//           console.log(error.request);
-//         } else {
-//           // Error on setting up the request
-//           console.log("Error", error.message);
-//         }
-//       });
-
-//       success();
-  
-// }
-
-
-
+  // }
 
   return (
     <>
@@ -77,7 +70,10 @@ const SignUpPage2 = () => {
         <Grid container xs={10} md={12}>
           <Stepper1 />
           <Grid xs={12} sx={{ margin: "auto" }}>
-            <VerifyCode set_verify_code={setVerify_code} verify_code ={verify_code}/>
+            <VerifyCode
+              set_verify_code={setVerify_code}
+              verify_code={verify_code}
+            />
           </Grid>
 
           <Grid
@@ -88,10 +84,9 @@ const SignUpPage2 = () => {
               pr: { xs: 0, sm: 5, md: 12, lg: 15, xl: 20 },
             }}
           >
-             <Grid xs={6} sx={{ my: 20 }}>
+            <Grid xs={6} sx={{ my: 20 }}>
               {contextHolder}
-
-            </Grid> 
+            </Grid>
             <Grid container xs={6} sx={{ my: 20 }}>
               <BackWardBtn navigate={"/SignUpPage"} />
             </Grid>

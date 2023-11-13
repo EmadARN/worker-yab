@@ -181,21 +181,19 @@ const SignupForm = (style) => {
                   />
                 </form>
               </Grid>
-              <Grid
-                container
-                sx={{ my: { xs: 2, md: 3.5 }, mx: { xs: 0, md: 5 } }}
-              >
+              <Grid container sx={{ my: { xs: 2, md: 3.5 } }}>
                 <Grid item xs={12} md={6} sx={{}}>
                   <Box
                     sx={{
                       "& .select-root": {
                         textAlign: "center",
                         height: "40px",
-                        paddingTop: "5px",
+                        paddingTop: "10px",
+                        pl: 1,
                       },
                     }}
                   >
-                    <FormControl sx={{ width: "80%" }}>
+                    <FormControl sx={{ width: "100%" }}>
                       <InputLabel id="demo-simple-select-label">
                         شهر:
                       </InputLabel>
@@ -222,11 +220,12 @@ const SignupForm = (style) => {
                       "& .select-root": {
                         textAlign: "center",
                         height: "40px",
-                        paddingTop: "5px",
+                        paddingTop: "10px",
+                        pl: 1,
                       },
                     }}
                   >
-                    <FormControl sx={{ width: "80%" }}>
+                    <FormControl sx={{ width: "100%" }}>
                       <InputLabel id="demo-simple-select-label">
                         شغل:
                       </InputLabel>

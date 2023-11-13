@@ -11,8 +11,7 @@ import { prefixer } from "stylis";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
-
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { IPServer } from "../../../Config/Server";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
 const theme = createTheme({
@@ -27,7 +26,10 @@ const cacheRtl = createCache({
 const VerifyNumber = ({ set_verify_code, verify_code }) => {
   let location = useLocation();
 
-  const [phone_number2,setPhone_number2] = useState(location.state.phone_number);
+  const [phone_number2, setPhone_number2] = useState(
+    location.state.phone_number
+  );
+  console.log(phone_number2);
 
   const formik = useFormik({
     initialValues: {
@@ -40,7 +42,7 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
       verify_code: yup.string().required("این فیلد الزامی است"),
     }),
   });
-
+  const navigate = useNavigate();
   return (
     <>
       <Title title="کد  را وارد کنید" width={"200px"} />
@@ -108,11 +110,12 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
                         .post(
                           `${IPServer}/Auth/validate/signup/phone_number/`,
                           {
-                             //phone_number: location.state.phone_number,
+                            phone_number: phone_number2,
                             code: verify_code,
                           }
                         )
                         .then((res) => {
+                          navigate("/SignUpPage3");
                           console.log(res.data);
                         })
                         .catch((error) => {
@@ -130,9 +133,6 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
                           }
                         })
                 }
-                navigate={{
-                  pathname: "/SignUpPage3",
-                }}
               />
             </Box>
           </Grid>
