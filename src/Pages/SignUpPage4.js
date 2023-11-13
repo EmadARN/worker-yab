@@ -3,6 +3,7 @@ import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import { useState, useEffect, useRef, useCallback } from "react";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Camera from "../components/AllCameras/Camera.jsx";
+import CloseIcon from "@mui/icons-material/Close";
 import Webcam from "react-webcam";
 import TopBarCss from "../components/topbarcss/TopBarCss.js";
 import RightBar from "../components/RightBar/RightBar.jsx";
@@ -33,6 +34,13 @@ const SignUpPage4 = () => {
 
   const [openCamera, setOpenCamera] = useState(false);
   const [url, setUrl] = useState(null);
+
+  const [disabled, setDisabled] = useState(true);
+
+  const [pic, setPic] = useState("");
+  console.log(pic);
+
+  const [file, setFile] = useState(false);
   const uploadImg = () => {
     let form_Data = new FormData();
     form_Data.append("image", url);
@@ -124,55 +132,148 @@ const SignUpPage4 = () => {
           </Box>
 
           <Box>
-            <Button
-              sx={{
-                bgcolor: "#fdbe33",
-                color: "#030f27",
-                p: 1.8,
-                fontWeight: "bold",
-                fontSize: "15px",
-                "&:hover": {
-                  bgcolor: "#fdbe33",
-                  "& .iconee": {
-                    color: "#030f27",
-                  },
-                },
-              }}
-              component="label"
-              variant="contained"
-            >
-              <CloudUploadIcon
-                className="iconee"
+            {openCamera ? (
+              <Button
                 sx={{
-                  mx: 2,
+                  bgcolor: "#fdbe33",
                   color: "#030f27",
+                  p: 1.8,
+                  fontWeight: "bold",
+                  fontSize: "15px",
+                  "&:hover": {
+                    bgcolor: "#fdbe33",
+                    "& .iconee": {
+                      color: "#030f27",
+                    },
+                  },
                 }}
-              />
-              بارگذاری عکس
-              <VisuallyHiddenInput type="file" />
-            </Button>
-            <Button
-              sx={{
-                transition: ".5s",
-                borderRadius: "2px",
-                p: "14px 35px",
-                color: "#fdbe33",
-                fontSize: "16px",
-                bgcolor: "#030f27",
-                fontWeight: "700",
-                fontFamily: "Lalezar",
-                borderRadius: "20px 0px 0px 20px",
-                "&:hover": {
-                  transition: "all .75s",
+                component="label"
+                variant="contained"
+                disabled
+              >
+                <CloudUploadIcon
+                  className="iconee"
+                  sx={{
+                    mx: 2,
+                    color: "#030f27",
+                  }}
+                />
+                بارگذاری عکس
+                <VisuallyHiddenInput type="file" />
+              </Button>
+            ) : (
+              <>
+                <Button
+                  sx={{
+                    bgcolor: "#fdbe33",
+                    color: "#030f27",
+                    p: 1.8,
+                    fontWeight: "bold",
+                    fontSize: "15px",
+                    "&:hover": {
+                      bgcolor: "#fdbe33",
+                      "& .iconee": {
+                        color: "#030f27",
+                      },
+                    },
+                  }}
+                  component="label"
+                  variant="contained"
+                >
+                  <CloudUploadIcon
+                    className="iconee"
+                    sx={{
+                      mx: 2,
+                      color: "#030f27",
+                    }}
+                  />
+                  بارگذاری عکس
+                  <VisuallyHiddenInput
+                    onChange={(e) => {
+                      return setPic(e.target.value), setFile(true);
+                    }}
+                    type="file"
+                  />
+                  {/* <Typography variant="body2" sx={{ pr: 1.5 }}>
+                   
+                  </Typography> */}
+                </Button>
+              </>
+            )}
 
-                  bgcolor: "#030f27",
+            {file ? (
+              <>
+                <Button
+                  sx={{
+                    transition: ".5s",
+                    borderRadius: "2px",
+                    p: "14px 35px",
+                    color: "#fdbe33",
+                    fontSize: "16px",
+                    bgcolor: "#030f27",
+                    fontWeight: "700",
+                    fontFamily: "Lalezar",
+                    borderRadius: "20px 0px 0px 20px",
+                    "&:hover": {
+                      transition: "all .75s",
+
+                      bgcolor: "#030f27",
+                      color: "#fdbe33",
+                    },
+                  }}
+                  onClick={() => setOpenCamera(true)}
+                  disabled={disabled}
+                >
+                  باز شدن دوربین
+                </Button>
+
+                <Typography
+                  sx={{
+                    fontSize: "20px",
+                    color: "red",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "row-reverse",
+                    justifyContent: "flex-end",
+                    mt: 3,
+                  }}
+                  onClick={() => {
+                    return setPic(""), setDisabled(false);
+                  }}
+                >
+                  {pic !== "" ? (
+                    <>
+                      <Typography sx={{ color: "#333" }}> {pic} </Typography>
+                      <CloseIcon />{" "}
+                    </>
+                  ) : null}
+                </Typography>
+              </>
+            ) : (
+              <Button
+                sx={{
+                  transition: ".5s",
+                  borderRadius: "2px",
+                  p: "14px 35px",
                   color: "#fdbe33",
-                },
-              }}
-              onClick={() => setOpenCamera(true)}
-            >
-              باز شدن دوربین
-            </Button>
+                  fontSize: "16px",
+                  bgcolor: "#030f27",
+                  fontWeight: "700",
+                  fontFamily: "Lalezar",
+                  borderRadius: "20px 0px 0px 20px",
+                  "&:hover": {
+                    transition: "all .75s",
+
+                    bgcolor: "#030f27",
+                    color: "#fdbe33",
+                  },
+                }}
+                onClick={() => setOpenCamera(true)}
+              >
+                باز شدن دوربین
+              </Button>
+            )}
           </Box>
 
           <Box

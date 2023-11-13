@@ -98,21 +98,19 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
             </Box>
 
             <Box
-              sx={{
-                display: "felx",
-                justifyContent: "center",
-                my: 10,
-              }}
-            >
-              <BtnSignUp
-                linkState={{ phone_number: phone_number }}
-                onClick={
-                  phone_number === ""
-                    ? formik.handleSubmit
-                    : () =>
-                        axios
-                          .request({
-                            method: "GET",
+            
+            sx={{
+              display:"felx",
+              justifyContent:"center",
+              my: 10,
+            
+            }}
+          >
+            <BtnSignUp
+              linkState={{ phone_number: phone_number }}
+              onClick={phone_number === "" ? formik.handleSubmit :  axios
+              .request({
+                method: "GET",
 
                             url: `${IPServer}/Auth/signup/phone_number=${phone_number}/`,
                           })

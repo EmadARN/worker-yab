@@ -234,8 +234,8 @@ function NavBar({ display }) {
               }}
               to={"/SignupPage"}
             >
-              <BtnAnimation
-                title="ثبت نام"
+              <BtnAnimation 
+                title="ثبت نام کارجو "
                 color="#fff"
                 size="18px"
                 fweight="700"
