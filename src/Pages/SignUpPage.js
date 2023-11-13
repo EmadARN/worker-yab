@@ -11,10 +11,9 @@ import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
 import RightBar from "../components/RightBar/RightBar";
 import axios from "axios";
 
-
 const SignUpPage = () => {
   const [phone_number, setPhone_number] = useState("");
-console.log(phone_number);
+  console.log(phone_number);
 
   return (
     <>
@@ -26,10 +25,11 @@ console.log(phone_number);
         <Grid container xs={10} md={12}>
           <Stepper1 />
           <Grid xs={12} sx={{ margin: "auto" }}>
-            <VerifyNumber inputValue={setPhone_number} phone_number={phone_number} />
+            <VerifyNumber
+              inputValue={setPhone_number}
+              phone_number={phone_number}
+            />
           </Grid>
-
-        
         </Grid>
         <Footer
           display="none"
