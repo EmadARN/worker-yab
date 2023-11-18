@@ -1,6 +1,7 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Box, Button, TextField } from "@mui/material";
+import { TablePagination } from "@mui/material";
 
 const AdminTable = () => {
   const [clickedRow, setClickedRow] = React.useState();
@@ -8,6 +9,9 @@ const AdminTable = () => {
     e.stopPropagation();
     setClickedRow(row);
   };
+  function defaultLabelDisplayedRows({ from, to, count }) {
+    return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
+  }
 
   const rows = [
     {
@@ -128,6 +132,7 @@ const AdminTable = () => {
   return (
     <Box sx={{ height: 400, width: "70%" }}>
       <DataGrid
+      
         sx={{
           "& .css-t89xny-MuiDataGrid-columnHeaderTitle": { margin: "0 25px" },
           "& .MuiDataGrid-cellContent": {
@@ -135,17 +140,20 @@ const AdminTable = () => {
             textAlign: "center !important",
           },
         }}
+        
         density="comfortable"
         rows={rows}
         columns={columns}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 5 },
+          
           },
         }}
         pageSizeOptions={[5, 10]}
         checkboxSelection
       />
+      
     </Box>
   );
 };
