@@ -11,7 +11,7 @@ import FAQs from "../components/faqs/FAQs";
 import { Footer } from "../components/Footer/Footer";
 import TableMain from "../components/Table/TableMain";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import Link from "@mui/material/Link/Link";
+import { Link } from "react-router-dom";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
 import personImg1 from "../Asset/image/testimonial-2.jpg";
 import personImg2 from "../Asset/image/testimonial-3.jpg";
@@ -68,10 +68,49 @@ const Home = () => {
               title="ثبت نامی ها اخیر"
               width={"200px"}
               xsWidth={"100px"}
+              display={"none"}
             />
           </Grid>
-          <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
-            <OurService />
+          <Grid
+            item
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center", ml: 1.5 }}
+          >
+            <Link to={"/allWorker"}>
+              <Button
+                variant="contained"
+                sx={{
+                  px: 6,
+                  height: "60px",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                  transition: ".5s",
+                  borderRadius: "2px",
+                  p: "15px 35px",
+                  color: "#030f27",
+
+                  bgcolor: "#fdbe33",
+
+                  fontFamily: "Lalezar",
+                  animation: "span1 3s 2s  ease-in-out infinite  alternate",
+                  "&:hover": {
+                    bgcolor: "transparent",
+                  },
+                  "@keyframes span1": {
+                    "0%": {
+                      transform: "scaleX(80%)",
+                    },
+                    "100%": {
+                      transform: " scaleX(100%)",
+                      bgcolor: "#030f27",
+                      color: "#fdbe33",
+                    },
+                  },
+                }}
+              >
+                بازدید همه سرویس ها
+              </Button>
+            </Link>
           </Grid>
           <Grid
             item
