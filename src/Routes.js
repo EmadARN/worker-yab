@@ -13,6 +13,7 @@ import AdminPage from "./Pages/AdminPage";
 
 import MechanicListPage from "./Pages/MechanicListPage";
 import WorkerListPage from "./Pages/WorkerListPage";
+import AllWorkerPage from "./Pages/AllWorkerPage";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/About", element: <AboutPage /> },
@@ -55,6 +56,10 @@ const routes = [
   {
     path: "/adminpage",
     element: <AdminPage />,
+  },
+  {
+    path: "/allWorker",
+    element: <AllWorkerPage />,
   },
 ];
 export default routes;
