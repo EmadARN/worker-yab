@@ -88,7 +88,7 @@ const SignUpPage2 = () => {
               {contextHolder}
             </Grid>
             <Grid container xs={6} sx={{ my: 20 }}>
-              <BackWardBtn navigate={"/SignUpPage"} />
+            
             </Grid>
           </Grid>
         </Grid>

@@ -3,9 +3,9 @@ import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {IPServer} from "../../../Config/Server";
+import { IPServer } from "../../../Config/Server";
 
-const BtnSignUp = ({ navigate,onClick, linkState ,submit }) => {
+const BtnSignUp = ({ navigate, onClick, linkState, submit }) => {
   return (
     <>
       <Link
@@ -18,11 +18,9 @@ const BtnSignUp = ({ navigate,onClick, linkState ,submit }) => {
         }}
       >
         <Button
-        type={submit}
+          type={submit}
           variant="contained"
-          onClick={
-              onClick
-          }
+          onClick={onClick}
           sx={{
             width: { xs: "50%" },
             transition: ".8s",
@@ -33,9 +31,10 @@ const BtnSignUp = ({ navigate,onClick, linkState ,submit }) => {
             bgcolor: "#fdbe33",
             fontWeight: "700",
             fontFamily: "Lalezar",
+            ml: { xs: 0, md: 8 },
             "&:hover": {
               transition: "all .75s",
-             
+
               bgcolor: "#030f27",
               color: "#fdbe33",
               boxShadow:

@@ -14,6 +14,7 @@ import axios from "axios";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { IPServer } from "../../../Config/Server";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
+import BackWardBtn from "../BackWardBtn/BackWardBtn";
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
 });
@@ -99,7 +100,9 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
               </form>
             </Box>
 
-            <Box sx={{ my: 10, display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{ my: 10, display: "flex", justifyContent: "space-evenly" }}
+            >
               {/* {contextHolder}  */}
 
               <BtnSignUp
@@ -119,21 +122,22 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
                           console.log(res.data);
                         })
                         .catch((error) => {
-                          // error is handled in catch block
-                          if (error.response) {
-                            // status code out of the range of 2xx
-                            console.log("Data :", error.response.data);
-                            console.log("Status :" + error.response.status);
-                          } else if (error.request) {
-                            // The request was made but no response was received
-                            console.log(error.request);
-                          } else {
-                            // Error on setting up the request
-                            console.log("Error", error.message);
-                          }
+                          // // error is handled in catch block
+                          // if (error.response) {
+                          //   // status code out of the range of 2xx
+                          //   console.log("Data :", error.response.data);
+                          //   console.log("Status :" + error.response.status);
+                          // } else if (error.request) {
+                          //   // The request was made but no response was received
+                          //   console.log(error.request);
+                          // } else {
+                          //   // Error on setting up the request
+                          console.log("Error", error.message);
+                          // }
                         })
                 }
               />
+              <BackWardBtn navigate={"/SignUpPage"} />
             </Box>
           </Grid>
         </ThemeProvider>

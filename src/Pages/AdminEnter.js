@@ -55,7 +55,9 @@ const AdminEnter = () => {
                 variant="filled"
                 type="phone_number"
                 sx={{
-                  marginTop: "25%",
+                  width: "90%",
+                  marginTop: { xs: "35%", md: "25%" },
+                  ml: { xs: 0, md: 7 },
                   "& .MuiFilledInput-underline:after": {
                     borderBottomColor: "#fdbe33",
                   },
@@ -65,7 +67,7 @@ const AdminEnter = () => {
               />
 
               <Box mt={5}>
-                <BtnSignUp onClick={navigate("/adminpage")} />
+                <BtnSignUp onClick={() => navigate("/adminpage")} />
               </Box>
             </Grid>
           </ThemeProvider>
