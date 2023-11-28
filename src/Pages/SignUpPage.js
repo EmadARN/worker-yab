@@ -3,17 +3,15 @@ import React, { useState } from "react";
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
 import VerifyNumber from "../components/SignUpItems/SignUp(VerifyNumber)/VerifyNumber";
 import TopBarCss from "../components/topbarcss/TopBarCss";
-import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
-import { Box, Grid } from "@mui/material";
-import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
+
+import { Grid } from "@mui/material";
+
 import { Footer } from "../components/Footer/Footer";
-import BackWardBtn from "../components/SignUpItems/BackWardBtn/BackWardBtn";
+
 import RightBar from "../components/RightBar/RightBar";
-import axios from "axios";
 
 const SignUpPage = () => {
   const [phone_number, setPhone_number] = useState("");
-  console.log(phone_number);
 
   return (
     <>

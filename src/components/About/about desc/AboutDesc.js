@@ -1,4 +1,5 @@
 import { Button, Grid, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function AboutDesc() {
   return (
@@ -30,7 +31,7 @@ function AboutDesc() {
             و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده
             قرار گیرد.
           </Typography>
-
+              <Link to={"/About"}>
           <Button
             variant="contained"
             sx={{
@@ -56,6 +57,7 @@ function AboutDesc() {
           >
             ادامه دیگر
           </Button>
+          </Link>
         </Grid>
       </Grid>
     </>

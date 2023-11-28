@@ -16,7 +16,7 @@ function AboutPage() {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12} sx={{ mt: 10 }}>
-          <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
+          <Grid item xs={12} sm={12} md={7} lg={7} xl={7} sx={{mb:{xs:'30px'}}}>
             <AboutTitle />
           </Grid>
           <Grid
@@ -26,7 +26,7 @@ function AboutPage() {
             md={5}
             lg={5}
             xl={5}
-            sx={{ mr: { xs: "40px", sm: "40px", md: "0", lg: "0", xl: "0" } }}
+            sx={{ mr: {  sm: "40px", md: "0", lg: "0", xl: "0" } }}
           >
             <AboutImage />
           </Grid>

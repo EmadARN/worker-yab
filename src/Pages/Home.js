@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
-import BtnAnimation from "../components/BtnAnimation/BtnAnimation";
-import OurService from "../components/OurService/OurService";
-import { Button, Container, Grid } from "@mui/material";
+
+import { Button, Grid } from "@mui/material";
 import ImageSlider from "../components/carousel/ImageSlider";
 import Fact from "../components/Fact/Fact";
 import About from "../components/About/About";
 import FAQs from "../components/faqs/FAQs";
 import { Footer } from "../components/Footer/Footer";
 import TableMain from "../components/Table/TableMain";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
 import { Link } from "react-router-dom";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
-import personImg1 from "../Asset/image/testimonial-2.jpg";
-import personImg2 from "../Asset/image/testimonial-3.jpg";
+
 import axios from "axios";
 import { IPServer } from "../Config/Server";
 
@@ -34,8 +32,7 @@ const Home = () => {
         url: `${IPServer}/UserInf/user/list/`,
       })
       .then((res) => {
-          setTable_Row(res.data.dataSummary);
-          console.log(res.data.dataSummary);
+        setTable_Row(res.data.dataSummary);
       });
 
     if (apiStatus === false) {

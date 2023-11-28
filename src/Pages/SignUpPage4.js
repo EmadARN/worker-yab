@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
-import { useState, useEffect, useRef, useCallback } from "react";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { Box, Button, Grid,  Typography } from "@mui/material";
+import { useState} from "react";
+
 import Camera from "../components/AllCameras/Camera.jsx";
 import CloseIcon from "@mui/icons-material/Close";
 import Webcam from "react-webcam";
@@ -45,7 +45,7 @@ const SignUpPage4 = () => {
   const [disabled, setDisabled] = useState(true);
 
   const [pic, setPic] = useState();
-  console.log(pic)
+
 
   const [file, setFile] = useState(false);
 
@@ -64,7 +64,7 @@ const SignUpPage4 = () => {
             },
           })
           .then((res) => {
-            console.log(res);
+     
           });
 
 
@@ -230,9 +230,7 @@ const SignUpPage4 = () => {
                     }}
                     type="file"
                   />
-                  {/* <Typography variant="body2" sx={{ pr: 1.5 }}>
-                   
-                  </Typography> */}
+         
                 </Button>
               </>
             )}

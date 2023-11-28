@@ -3,9 +3,7 @@ import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 import OurService from "../components/OurService/OurService";
 import { Grid } from "@mui/material";
-import ImageSlider from "../components/carousel/ImageSlider";
-import Fact from "../components/Fact/Fact";
-import About from "../components/About/About";
+
 import FAQs from "../components/faqs/FAQs";
 import { Footer } from "../components/Footer/Footer";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";

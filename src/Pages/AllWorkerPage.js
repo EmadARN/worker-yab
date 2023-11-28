@@ -1,21 +1,13 @@
 import React from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
-import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
-import Box from "@mui/material/Box";
-import { Grid, TextField } from "@mui/material";
-import SignUpForm from "../components/SignUpItems/SignUpForm/SignUpForm";
-import SignUpImage from "../components/SignUpItems/SignUpImage/SignUpImage";
+
+import { Grid } from "@mui/material";
+
 import RightBar from "../components/RightBar/RightBar";
 import { Footer } from "../components/Footer/Footer";
 import AllWorker from "../components/AllWorker/AllWorker";
-import axios from "axios";
-import {IPServer} from "../Config/Server";
 
 const AllWorkerPage = () => {
-
-
-
-
   return (
     <>
       <TopBarCss />
