@@ -14,7 +14,7 @@ const AdminPage = () => {
           alignItems: "center",
         }}
       >
-        <AdminTable />
+        {/*<AdminTable />*/}
       </Grid>
     </>
   );

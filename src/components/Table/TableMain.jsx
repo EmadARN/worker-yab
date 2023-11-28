@@ -37,7 +37,8 @@ const TableMain = ({ row, title, width, xsWidth, display }) => {
 
                 const dd = data.filter((item)=> {
 
-                    if (item.job === e.target.value) {
+
+                    if (item.job.includes(e.target.value)) {
 
                         return item
 

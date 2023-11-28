@@ -186,7 +186,7 @@ const SignupForm = (style) => {
                     sx={{ style, mr: 2 }}
                     color="success"
                     onBlur={formik.handleBlur("work_experience")}
-                    label="سابقه کاری:"
+                    label="سابقه کار:"
                     variant="standard"
                     placeholder="سابقه کاری خود را وارد کنید..."
                     onChange={formik.handleChange("work_experience")}
@@ -287,8 +287,8 @@ const SignupForm = (style) => {
 
 export default SignupForm;
 const jobs = [
-  { job: "مکانیک", value: "mechanic" },
-  { job: "کارگر ساختمان ", value: "kargar" },
+  { job: "مکانیک", value: "مکانیک خودرو" },
+  { job: "کارگر ساختمان ", value: "کارگر ساختمانی" },
 ];
 
-const cities = [{ title: "زنجان", value: "zanjan" }];
+const cities = [{ title: "زنجان", value: "زنجان" }];

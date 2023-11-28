@@ -128,21 +128,21 @@ function NavBar({ display }) {
               to={"/SignupPage"}
             >
               <BtnAnimation
-                title="ثبت نام"
+                title="ثبت نام کارجو"
                 color="#fff"
                 size="18px"
                 fweight="700"
               />
             </Link>
-            <Box sx={{ mr: 3, pt: 2 }}>
-              <Tooltip title="ادمین" placement="top-start">
-                <Link to={"/adminenter"}>
-                  <AccountCircleIcon
-                    sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}
-                  />
-                </Link>
-              </Tooltip>
-            </Box>
+            {/*<Box sx={{ mr: 3, pt: 2 }}>*/}
+            {/*  <Tooltip title="ادمین" placement="top-start">*/}
+            {/*    <Link to={"/adminenter"}>*/}
+            {/*      <AccountCircleIcon*/}
+            {/*        sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}*/}
+            {/*      />*/}
+            {/*    </Link>*/}
+            {/*  </Tooltip>*/}
+            {/*</Box>*/}
           </Box>
         </Box>
       ) : (
@@ -242,15 +242,15 @@ function NavBar({ display }) {
               />
             </Link>
 
-            <Box mr={3}>
-              <Tooltip title="ادمین" placement="top-start">
-                <Link to={"/adminenter"}>
-                  <AccountCircleIcon
-                    sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}
-                  />
-                </Link>
-              </Tooltip>
-            </Box>
+            {/*<Box mr={3}>*/}
+            {/*  <Tooltip title="ادمین" placement="top-start">*/}
+            {/*    <Link to={"/adminenter"}>*/}
+            {/*      <AccountCircleIcon*/}
+            {/*        sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}*/}
+            {/*      />*/}
+            {/*    </Link>*/}
+            {/*  </Tooltip>*/}
+            {/*</Box>*/}
           </Box>
         </Box>
       )}
