@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import {
   Box,
@@ -15,9 +15,6 @@ import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import { CacheProvider } from "@emotion/react";
 import BtnSignUp from "../components/SignUpItems/BtnSignUp/BtnSignUp";
-import {IPServer} from "../Config/Server";
-import axios from "axios";
-import { CookiesProvider, useCookies } from "react-cookie";
 
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
@@ -31,8 +28,6 @@ const cacheRtl = createCache({
 const AdminEnter = () => {
   const navigate = useNavigate();
 
-  const[admin,setAdmin] =useState("")
-    const [cookies, setCookie] = useCookies(["adminToken"]);
   return (
     <>
       <TopBarCss />
@@ -56,7 +51,6 @@ const AdminEnter = () => {
 
               <TextField
                 id="standard-basic"
-                onChange={(e)=>setAdmin(e.target.value)}
                 label=" کد ورود"
                 variant="filled"
                 type="phone_number"
@@ -71,21 +65,7 @@ const AdminEnter = () => {
               />
 
               <Box mt={5}>
-                <BtnSignUp  onClick={()=>{
-                    axios.post(`${IPServer}/UserInf/admin/prove/code/`, {code:admin})
-                        .then((res)=>{
-                            if(res.data.status ===200){
-                                setCookie("adminToken", res.data.adminToken.toString());
-                                 navigate('/AdminPage');
-
-                            }else{
-                                console.log("wrong code")
-                            }
-
-                        }).catch((err)=>{
-                        console.log(err)
-                    })
-                }}/>
+                <BtnSignUp onClick={navigate("/adminpage")} />
               </Box>
             </Grid>
           </ThemeProvider>
