@@ -242,7 +242,7 @@ function NavBar({ display }) {
               />
             </Link>
 
-            <Box mr={3}>
+            {/* <Box mr={3}>
               <Tooltip title="ادمین" placement="top-start">
                 <Link to={"/adminenter"}>
                   <AccountCircleIcon
@@ -250,7 +250,7 @@ function NavBar({ display }) {
                   />
                 </Link>
               </Tooltip>
-            </Box>
+            </Box> */}
           </Box>
         </Box>
       )}
