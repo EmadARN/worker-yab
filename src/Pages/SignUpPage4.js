@@ -12,8 +12,15 @@ import { IPServer } from "../Config/Server";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
+import { CookiesProvider, useCookies } from "react-cookie";
+
 import { Footer } from "../components/Footer/Footer";
+import {useNavigate} from "react-router-dom";
 const SignUpPage4 = () => {
+    const navigate = useNavigate();
+
+  const [cookies, setCookie] = useCookies(["phone-number"]);
+
   const MainGrid = {
     display: "flex",
     justifyContent: "center",
@@ -37,24 +44,52 @@ const SignUpPage4 = () => {
 
   const [disabled, setDisabled] = useState(true);
 
-  const [pic, setPic] = useState("");
-  console.log(pic);
+  const [pic, setPic] = useState();
+  console.log(pic)
 
   const [file, setFile] = useState(false);
-  const uploadImg = () => {
-    let form_Data = new FormData();
-    form_Data.append("image", url);
 
-    axios
-      .post(`${IPServer}/AddUserInf/upload/image/`, form_Data, {
-        headers: {
-          Authorization: "Token 1",
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      });
+  const uploadImg = () => {
+
+    if (file === false){
+
+      let form_Data = new FormData();
+      form_Data.append("image-camera", url);
+
+
+      axios
+          .post(`${IPServer}/AddUserInf/upload/image/camera/`, form_Data, {
+            headers: {
+              Authorization: `Barear ${cookies['token']}`,
+            },
+          })
+          .then((res) => {
+            console.log(res);
+          });
+
+
+    }else{
+
+      let form_Data = new FormData();
+      form_Data.append("image", storeData);
+
+
+      axios
+          .post(`${IPServer}/AddUserInf/upload/image/`, form_Data, {
+            headers: {
+              Authorization: `Barear ${cookies['token']}`,
+            },
+          })
+          .then((res) => {
+          });
+
+    }
+
+    navigate('/SignupPage5')
+
   };
+  const [storeData,setStoreDate] =useState()
+
   return (
     <>
       <TopBarCss />
@@ -190,7 +225,8 @@ const SignUpPage4 = () => {
                   بارگذاری عکس
                   <VisuallyHiddenInput
                     onChange={(e) => {
-                      return setPic(e.target.value), setFile(true);
+                      return setStoreDate(e.target.files[0]), setFile(true);
+
                     }}
                     type="file"
                   />
@@ -206,7 +242,6 @@ const SignUpPage4 = () => {
                 <Button
                   sx={{
                     transition: ".5s",
-                    borderRadius: "2px",
                     p: "14px 35px",
                     color: "#fdbe33",
                     fontSize: "16px",
@@ -254,7 +289,6 @@ const SignUpPage4 = () => {
               <Button
                 sx={{
                   transition: ".5s",
-                  borderRadius: "2px",
                   p: "14px 35px",
                   color: "#fdbe33",
                   fontSize: "16px",

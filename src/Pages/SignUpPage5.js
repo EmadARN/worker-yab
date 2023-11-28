@@ -8,15 +8,20 @@ import SignUpFinal from "../components/SignUpItems/SignUpFinal/SignUpFinal";
 import { Footer } from "../components/Footer/Footer";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
+import Alert from '@mui/material/Alert';
 import CheckIcon from "@mui/icons-material/Check";
 import { useNavigate } from "react-router-dom";
+import { CookiesProvider, useCookies } from "react-cookie";
+import { IPServer } from "../Config/Server";
+import axios from "axios";
 
 const SignUpPage5 = () => {
-
+    const [cookies, setCookie] = useCookies(["token"]);
 const navigate = useNavigate()
 
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
+  const [alert ,setAlert] =React.useState(false)
   const timer = React.useRef();
 
   const buttonSx = {
@@ -47,19 +52,43 @@ const navigate = useNavigate()
   }, []);
 
   const handleButtonClick = () => {
-    if (!loading) {
-      setSuccess(false);
-      setLoading(true);
-      timer.current = window.setTimeout(() => {
-        setSuccess(true);
-        setLoading(false);
-      }, 2000);
-    }
+
+
+
+      axios.get(`${IPServer}/AddUserInf/finalization/signup/`,
+          {
+              headers: {
+                  Authorization: `Barear ${cookies['token']}`,
+              },
+          },
+          )
+          .then((res)=>{
+              if (res.data.status === 200){
+                  if (!loading) {
+                      setSuccess(false);
+                      setLoading(true);
+                      timer.current = window.setTimeout(() => {
+                          setSuccess(true);
+                          setLoading(false);
+                          setAlert(true)
+
+
+                      }, 2000);
+
+                  }
+              }
+
+          })
+          .catch((err)=>{
+              console.log(err)
+          })
+
   };
   return (
     <>
       <TopBarCss />
       <Grid container>
+
         <Grid item xs={2}>
           <RightBar />
         </Grid>
@@ -165,6 +194,7 @@ const navigate = useNavigate()
                           </Typography>
                         </Button>
 
+
                         {loading && (
                           <>
                             <CircularProgress
@@ -195,7 +225,13 @@ const navigate = useNavigate()
                             }}
                           />
                         )}
+
                       </Box>
+                        {alert ? <Alert sx={{fontSize:"25px",whiteSpace:"nowrap","& .MuiPaper-root":{display:"none"}}} severity="success">اطلاعات با موفقیت ثبت شد</Alert> : null}
+
+                        {alert ? setTimeout(()=> {
+                            navigate( '/');
+                        }, 1500):null}
                     </Box>
                   </Grid>
                 </Grid>

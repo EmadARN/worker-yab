@@ -8,12 +8,15 @@ import {
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import Counter from "lyef-counter";
 import { prefixer } from "stylis";
+import { IPServer } from "../../../Config/Server";
+import axios from "axios";
+import { CookiesProvider, useCookies } from "react-cookie";
 const SignUpFinal = () => {
   const theme = createTheme({
     direction: "rtl", // Both here and <body dir="rtl">
@@ -23,6 +26,39 @@ const SignUpFinal = () => {
     key: "muirtl",
     stylisPlugins: [prefixer, rtlPlugin],
   });
+    const [cookies, setCookie] = useCookies(["token"]);
+    const[user,setUser]=useState({
+        first_name:"",
+        last_name:"",
+        job:"",
+        work_experience:"",
+        profile_image:"",
+        city:"",
+        phone_number:""
+    })
+
+
+  useEffect(()=>{
+      axios.get(`${IPServer}/UserInf/account/inf/`
+      ,
+          {
+              headers: {
+                  Authorization: `Barear ${cookies['token']}`,
+              },
+          },
+      )
+
+          .then(
+          (res)=>{
+              setUser(res.data.user_inf)}
+      // setUser({ ...user, [propertyName]: e.target.value });
+
+          )
+          .catch((err)=>{
+              console.log(err)})
+
+  },[])
+
   return (
     <CacheProvider value={cacheRtl}>
       <ThemeProvider theme={theme}>
@@ -53,11 +89,14 @@ const SignUpFinal = () => {
               component="img"
               height="270"
               width="270"
-              image="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"
+              image={user.profile_image}
               alt="Paella dish"
             />
           </Grid>
           <Grid container sx={{ justifyContent: "center" }}>
+
+
+
             <Grid>
               <TextField
                 sx={{
@@ -82,7 +121,7 @@ const SignUpFinal = () => {
                 disabled
                 id="filled-disabled"
                 label="نام:"
-                defaultValue="نام"
+                value={user.first_name}
                 variant="filled"
               />
             </Grid>
@@ -110,7 +149,7 @@ const SignUpFinal = () => {
                 disabled
                 id="filled-disabled"
                 label="نام خانوادگی:"
-                defaultValue="نام خانوادگی"
+                value={user.last_name}
                 variant="filled"
               />
             </Grid>
@@ -140,7 +179,7 @@ const SignUpFinal = () => {
                 disabled
                 id="filled-disabled"
                 label="سابقه کاری:"
-                defaultValue="سابقه کاری"
+                value={user.work_experience}
                 variant="filled"
               />
             </Grid>
@@ -168,7 +207,7 @@ const SignUpFinal = () => {
                 disabled
                 id="filled-disabled"
                 label="شغل:"
-                defaultValue="شغل"
+                value={user.job}
                 variant="filled"
               />
             </Grid>
@@ -197,7 +236,7 @@ const SignUpFinal = () => {
               disabled
               id="filled-disabled"
               label="شهر:"
-              defaultValue="شهر"
+              value={user.city}
               variant="filled"
             />
           </Grid>

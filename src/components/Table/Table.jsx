@@ -50,7 +50,6 @@ const TableInfo = ({ row }) => {
           <TableBody>
             {row.map((row) => {
 
-              console.log(row.profile_image)
               return (<TableRow key={row.id}>
                 <TableCell
                   align="center"

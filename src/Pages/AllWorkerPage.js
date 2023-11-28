@@ -8,8 +8,14 @@ import SignUpImage from "../components/SignUpItems/SignUpImage/SignUpImage";
 import RightBar from "../components/RightBar/RightBar";
 import { Footer } from "../components/Footer/Footer";
 import AllWorker from "../components/AllWorker/AllWorker";
+import axios from "axios";
+import {IPServer} from "../Config/Server";
 
 const AllWorkerPage = () => {
+
+
+
+
   return (
     <>
       <TopBarCss />

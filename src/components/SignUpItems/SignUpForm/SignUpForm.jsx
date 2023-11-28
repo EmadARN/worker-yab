@@ -6,7 +6,7 @@ import {
   FormControl,
   Grid,
   InputLabel,
-  MenuItem,
+  MenuItem, Select,
   TextField,
   ThemeProvider,
   Typography,
@@ -21,9 +21,11 @@ import { CacheProvider } from "@emotion/react";
 import axios from "axios";
 import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
 import { IPServer } from "../../../Config/Server";
-import { Select } from "antd";
+// import { Select } from "antd";
 import { useFormik } from "formik";
 import * as yup from "yup";
+
+import { CookiesProvider, useCookies } from "react-cookie";
 
 const theme = createTheme({
   direction: "rtl",
@@ -36,6 +38,8 @@ const cacheRtl = createCache({
 
 const SignupForm = (style) => {
   const navigate = useNavigate();
+  const [cookies, setCookie] = useCookies(["token"]);
+  console.log('token : ',cookies)
   const [inp, setInp] = useState({
     // first_name: "",
     // last_name: "",
@@ -47,7 +51,7 @@ const SignupForm = (style) => {
   };
 
   const textHandler2 = (e, propertyName) => {
-    setInp({ ...inp, [propertyName]: e });
+    setInp({ ...inp, [propertyName]: e.target.value });
   };
 
   const submit = () => {
@@ -58,17 +62,25 @@ const SignupForm = (style) => {
         inp,
         {
           headers: {
-            Authorization: "Barear 1",
+            Authorization: `Barear ${cookies['token']}`,
           },
         },
         inp
       )
       .then((res) => {
+        console.log(res.data)
         if (res.data.status === 200) {
           navigate("/SignUpPage4");
         }
-        console.log(res.data);
-      });
+      })
+
+        .catch((error)=>{
+
+          console.log(error)
+
+        })
+    ;
+
   };
 
   const formik = useFormik({
@@ -78,7 +90,7 @@ const SignupForm = (style) => {
       work_experience: "",
     },
     onSubmit: (values) => {
-      console.log("clicked");
+      console.log("");
     },
     validationSchema: yup.object({
       first_name: yup.string().required("این فیلد الزامی است"),

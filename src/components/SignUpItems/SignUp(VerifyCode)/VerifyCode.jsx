@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Title from "../../Title/Title";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Grid, ThemeProvider, createTheme } from "@mui/material";
+import {Grid, ThemeProvider, createTheme, Alert} from "@mui/material";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
@@ -14,6 +14,12 @@ import axios from "axios";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { IPServer } from "../../../Config/Server";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
+import { CookiesProvider, useCookies } from "react-cookie";
+
+
+
+
+
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
 });
@@ -23,13 +29,72 @@ const cacheRtl = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 
-const VerifyNumber = ({ set_verify_code, verify_code }) => {
-  let location = useLocation();
 
-  const [phone_number2, setPhone_number2] = useState(
-    location.state.phone_number
-  );
-  console.log(phone_number2);
+
+
+const VerifyNumber = ({ set_verify_code, verify_code }) => {
+    const [cookies, setCookie] = useCookies(["phone-number"]);
+  // let location = useLocation();
+  //   console.log('location state : ',location.state)
+  //
+
+
+    const [phone_number2, setPhone_number2] = useState(
+        // location.state.phone_number
+        cookies["phone-number"]
+    );
+    const [error, setError] = useState(
+
+        true
+    );
+
+  const clickHandler=()=>{
+      axios
+          .post(
+              `${IPServer}/Auth/validate/signup/phone_number/`,
+              {
+                  phone_number: phone_number2,
+                  code: verify_code,
+              }
+          )
+          .then((res) => {
+
+              console.log(res.data)
+
+              if (res.data.status === 200){
+
+                  console.log(res.data.token)
+
+                  setCookie("token", res.data.token.toString(), { path: "/" });
+
+                  if(res.data.signup_level === 2){
+
+                      navigate("/SignUpPage3");
+
+                  }else if(res.data.signup_level === 3){
+
+                      navigate("/SignUpPage4");
+
+                  }else if(res.data.signup_level === 4){
+
+                      navigate("/SignUpPage5");
+
+                  }else{
+
+                      navigate("/");
+
+                  }
+
+              }else{
+
+                  setError(false)
+              }
+
+          })
+
+
+
+  }
 
   const formik = useFormik({
     initialValues: {
@@ -70,6 +135,13 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
               ) : null}
             </Box>
 
+              {!error ?                   <Alert variant="outlined" severity="error">
+
+                  کد را اشتباه وارد کرده اید
+
+              </Alert>
+              : null}
+
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <form
                 style={{
@@ -106,32 +178,7 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
                 onClick={
                   verify_code === ""
                     ? formik.handleSubmit
-                    : axios
-                        .post(
-                          `${IPServer}/Auth/validate/signup/phone_number/`,
-                          {
-                            phone_number: phone_number2,
-                            code: verify_code,
-                          }
-                        )
-                        .then((res) => {
-                          navigate("/SignUpPage3");
-                          console.log(res.data);
-                        })
-                        .catch((error) => {
-                          // error is handled in catch block
-                          if (error.response) {
-                            // status code out of the range of 2xx
-                            console.log("Data :", error.response.data);
-                            console.log("Status :" + error.response.status);
-                          } else if (error.request) {
-                            // The request was made but no response was received
-                            console.log(error.request);
-                          } else {
-                            // Error on setting up the request
-                            console.log("Error", error.message);
-                          }
-                        })
+                    : clickHandler()
                 }
               />
             </Box>

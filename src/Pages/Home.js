@@ -34,7 +34,7 @@ const Home = () => {
         url: `${IPServer}/UserInf/user/list/`,
       })
       .then((res) => {
-        setTable_Row(res.data.data);
+        setTable_Row(res.data.dataSummary);
       });
 
     if (apiStatus === false) {

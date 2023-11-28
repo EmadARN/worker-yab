@@ -10,26 +10,26 @@ import RightBar from "../components/RightBar/RightBar";
 import axios from "axios";
 import { IPServer } from "../Config/Server";
 import { useLocation } from "react-router-dom";
-import { message } from "antd";
+// import { message } from "antd";
 
 const SignUpPage2 = () => {
   const [verify_code, setVerify_code] = useState("");
   let location = useLocation();
 
-  const [messageApi, contextHolder] = message.useMessage();
-  const success = () => {
-    messageApi
-      .open({
-        type: "loading",
-        content: "در حال بارگیری ...",
-        duration: 3,
-        style: {
-          fontSize: "18px",
-        },
-      })
-
-      .then(() => message.success("عملبات با موفقیت انجام شد :)", 2.5));
-  };
+  // const [messageApi, contextHolder] = message.useMessage();
+  // const success = () => {
+  //   messageApi
+  //     .open({
+  //       type: "loading",
+  //       content: "در حال بارگیری ...",
+  //       duration: 3,
+  //       style: {
+  //         fontSize: "18px",
+  //       },
+  //     })
+  //
+  //     .then(() => message.success("عملبات با موفقیت انجام شد :)", 2.5));
+  // };
 
   // const handleCLick=()=>{
 
@@ -85,7 +85,7 @@ const SignUpPage2 = () => {
             }}
           >
             <Grid xs={6} sx={{ my: 20 }}>
-              {contextHolder}
+              {/*{contextHolder}*/}
             </Grid>
             <Grid container xs={6} sx={{ my: 20 }}>
               <BackWardBtn navigate={"/SignUpPage"} />

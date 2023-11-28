@@ -242,15 +242,15 @@ function NavBar({ display }) {
               />
             </Link>
 
+              <Link to={"/adminenter"}>
             <Box mr={3}>
               <Tooltip title="ادمین" placement="top-start">
-                <Link to={"/adminenter"}>
                   <AccountCircleIcon
                     sx={{ color: "white", fontSize: "40px", cursor: "pointer" }}
                   />
-                </Link>
               </Tooltip>
             </Box>
+              </Link>
           </Box>
         </Box>
       )}

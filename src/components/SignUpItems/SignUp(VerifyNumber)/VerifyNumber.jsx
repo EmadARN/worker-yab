@@ -14,6 +14,17 @@ import BtnSignUp from "../BtnSignUp/BtnSignUp";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IPServer } from "../../../Config/Server";
+import { CookiesProvider, useCookies } from "react-cookie";
+
+
+
+
+
+
+
+
+
+
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
 });
@@ -23,6 +34,8 @@ const cacheRtl = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 const VerifyNumber = ({ phone_number, inputValue }) => {
+
+    const [cookies, setCookie] = useCookies(["phone-number"]);
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -42,6 +55,7 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
 
   return (
     <>
+        <CookiesProvider>
       <Title title="شماره خود را وارد کنید" width={"200px"} />
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
@@ -108,7 +122,7 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
           >
             <BtnSignUp
               linkState={{ phone_number: phone_number }}
-              onClick={phone_number === "" ? formik.handleSubmit :  axios
+              onClick={phone_number === "" ? formik.handleSubmit :  ()=> axios
               .request({
                 method: "GET",
 
@@ -116,9 +130,8 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
                           })
                           .then((res) => {
                             console.log(res.data);
-                            navigate("/SignUpPage2", {
-                              state: { phone_number },
-                            });
+                              setCookie("phone-number", phone_number, { path: "/" });
+                            navigate("/SignUpPage2");
                           })
                 }
                 // onClick={formik.handleSubmit}
@@ -127,6 +140,7 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
           </Grid>
         </ThemeProvider>
       </CacheProvider>
+        </CookiesProvider>
     </>
   );
 };
