@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 import BtnAnimation from "../components/BtnAnimation/BtnAnimation";
@@ -11,48 +11,36 @@ import FAQs from "../components/faqs/FAQs";
 import { Footer } from "../components/Footer/Footer";
 import TableMain from "../components/Table/TableMain";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import Link from "@mui/material/Link/Link";
+import { Link } from "react-router-dom";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
 import personImg1 from "../Asset/image/testimonial-2.jpg";
 import personImg2 from "../Asset/image/testimonial-3.jpg";
 import axios from "axios";
-import {IPServer} from "../Config/Server";
-
-
-
-
+import { IPServer } from "../Config/Server";
 
 const Home = () => {
+  const [table_Row, setTable_Row] = useState([]);
+  const [apiStatus, setAPI_status] = useState(false);
 
-  const [table_Row, setTable_Row] = useState([])
-  const [apiStatus, setAPI_status] = useState(false)
+  useEffect(() => {
+    axios
+      .request({
+        headers: {
+          Authorization: "Barear 1",
+        },
 
+        method: "GET",
 
-  useEffect(()=>{
-    axios.request({
+        url: `${IPServer}/UserInf/user/list/`,
+      })
+      .then((res) => {
+        setTable_Row(res.data.data);
+      });
 
-      headers:{
-
-        Authorization: 'Barear 1'
-
-      },
-
-      method: 'GET',
-
-      url:`${IPServer}/UserInf/user/list/`
-
-    }).then((res)=>{
-
-      setTable_Row(res.data.data)
-    })
-
-    if (apiStatus === false){
-
-      setAPI_status(true)
-
+    if (apiStatus === false) {
+      setAPI_status(true);
     }
-
-  }, [apiStatus])
+  }, [apiStatus]);
 
   return (
     <>
@@ -71,16 +59,58 @@ const Home = () => {
           </Grid>
           <BtnDownToTop minScroll={2000} maxScroll={1000} />
           <Grid item xs={12} sx={{ mt: 10 }}>
-            <Fact scroll="1000" account_number={table_Row.length}/>
+            <Fact scroll="1000" account_number={table_Row.length} />
           </Grid>
 
           <Grid item xs={12} md={8} sx={{ margin: "150px auto" }}>
             <TableMain
               row={table_Row}
+              title="ثبت نامی ها اخیر"
+              width={"200px"}
+              xsWidth={"100px"}
+              display={"none"}
             />
           </Grid>
-          <Grid item xs={10} md={8} sx={{ margin: "70px auto" }}>
-            <OurService />
+          <Grid
+            item
+            xs={12}
+            sx={{ display: "flex", justifyContent: "center", ml: 1.5 }}
+          >
+            <Link to={"/allWorker"}>
+              <Button
+                variant="contained"
+                sx={{
+                  px: 6,
+                  height: "60px",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                  transition: ".5s",
+                  borderRadius: "2px",
+                  p: "15px 35px",
+                  color: "#030f27",
+
+                  bgcolor: "#fdbe33",
+
+                  fontFamily: "Lalezar",
+                  animation: "span1 3s 2s  ease-in-out infinite  alternate",
+                  "&:hover": {
+                    bgcolor: "transparent",
+                  },
+                  "@keyframes span1": {
+                    "0%": {
+                      transform: "scaleX(80%)",
+                    },
+                    "100%": {
+                      transform: " scaleX(100%)",
+                      bgcolor: "#030f27",
+                      color: "#fdbe33",
+                    },
+                  },
+                }}
+              >
+                بازدید همه سرویس ها
+              </Button>
+            </Link>
           </Grid>
           <Grid
             item

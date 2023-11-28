@@ -24,7 +24,7 @@ import { IPServer } from "../../../Config/Server";
 import { Select } from "antd";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import styles from "./signUp.module.css";
+
 const theme = createTheme({
   direction: "rtl",
 });
@@ -42,10 +42,6 @@ const SignupForm = (style) => {
     // work_experience: 0,
     // job: "",
   });
-;
-
-
-
   const textHandler = (e, propertyName) => {
     setInp({ ...inp, [propertyName]: e.target.value });
   };
@@ -185,86 +181,71 @@ const SignupForm = (style) => {
                   />
                 </form>
               </Grid>
-              <Grid item xs={12}>
-                {/* {
-                  <Autocomplete
-                    id="free-solo-demo"
-                    freeSolo
-                    options={cities.map((option) => option.title)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        label="شهرتان را انتخاب کنید:"
-                        variant="standard"
-                        color="success"
+              <Grid container sx={{ my: { xs: 2, md: 3.5 } }}>
+                <Grid item xs={12} md={6} sx={{}}>
+                  <Box
+                    sx={{
+                      "& .select-root": {
+                        textAlign: "center",
+                        height: "40px",
+                        paddingTop: "10px",
+                        pl: 1,
+                      },
+                    }}
+                  >
+                    <FormControl sx={{ width: "100%" }}>
+                      <InputLabel id="demo-simple-select-label">
+                        شهر:
+                      </InputLabel>
+                      <Select
+                        className="select-root"
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
                         value={inp.city}
-                        sx={{ style }}
-                        placeholder="شهر خود را وارد کنید..."
-                        onChange={(e) => textHandler(e, "city")}
-                      />
-                    )}
-                  />
-                } */}
-                <Box sx={{ minWidth: 120 }}>
-                  <FormControl color="success"  fullWidth>
-                    <InputLabel id="demo-simple-select-label">شهر:</InputLabel>
-                    <Select
-                    
-                      className={styles.center}
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={inp.city}
-                      label="job"
-                      onChange={(e) => textHandler2(e, "city")}
-                    >
-                      {cities.map((item) => {
-                        return (
-                          <MenuItem value={item.value}>{item.title}</MenuItem>
-                        );
-                      })}
-                    </Select>
-                  </FormControl>
-                </Box>
-              </Grid>
-              <Grid mt={2} item xs={12}>
-                {/* <Autocomplete
-                  id="free-solo-demo"
-                  freeSolo
-                  options={cities.map((option) => option.job)}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      value={inp.job}
-                      sx={{ style }}
-                      color="success"
-                      label="شغل:"
-                      variant="standard"
-                      placeholder="شغل خود را وارد کنید..."
-                      onChange={(e) => textHandler(e, "job")}
-                      onClick={(e) => textHandler(e, "job")}
-                      
-                    />
-                  )}
-                /> */}
-                <Box sx={{ minWidth: 120 }}>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">شغل:</InputLabel>
-                    <Select
-                      className={styles.center}
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={inp.job}
-                      label="job"
-                      onChange={(e) => textHandler2(e, "job")}
-                    >
-                      {jobs.map((item) => {
-                        return (
-                          <MenuItem value={item.value}>{item.job}</MenuItem>
-                        );
-                      })}
-                    </Select>
-                  </FormControl>
-                </Box>
+                        label="job"
+                        onChange={(e) => textHandler2(e, "city")}
+                      >
+                        {cities.map((item) => {
+                          return (
+                            <MenuItem value={item.value}>{item.title}</MenuItem>
+                          );
+                        })}
+                      </Select>
+                    </FormControl>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Box
+                    sx={{
+                      "& .select-root": {
+                        textAlign: "center",
+                        height: "40px",
+                        paddingTop: "10px",
+                        pl: 1,
+                      },
+                    }}
+                  >
+                    <FormControl sx={{ width: "100%" }}>
+                      <InputLabel id="demo-simple-select-label">
+                        شغل:
+                      </InputLabel>
+                      <Select
+                        className="select-root"
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={inp.job}
+                        label="job"
+                        onChange={(e) => textHandler2(e, "job")}
+                      >
+                        {jobs.map((item) => {
+                          return (
+                            <MenuItem value={item.value}>{item.job}</MenuItem>
+                          );
+                        })}
+                      </Select>
+                    </FormControl>
+                  </Box>
+                </Grid>
               </Grid>
             </Grid>
 
@@ -281,10 +262,7 @@ const SignupForm = (style) => {
                   bgcolor: "#030F27",
                 },
               }}
-              onClick={
-                
-             submit
-              }
+              onClick={submit}
             >
               <Typography sx={{ px: 2 }}>ساخت اکانت </Typography>
             </Button>

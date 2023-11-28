@@ -4,14 +4,14 @@ import { styled } from "@mui/material/styles";
 const SectionTittle = styled("div")(({ theme }) => ({
   margin: "50px",
 }));
-const Title = ({ title }) => {
+const Title = ({ title, width, xsWidth }) => {
   return (
     <div>
       <SectionTittle sx={{}}>
         <Box
           sx={{
             textAlign: "center",
-            width: "200px",
+            width: width,
             position: "relative",
             margin: "auto",
           }}
