@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
+
 import { ArrowUpward } from "@mui/icons-material";
 
 const BtnDownToTop = ({ minScroll, maxScroll }) => {

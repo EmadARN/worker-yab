@@ -1,13 +1,12 @@
-import React from 'react'
-import AllCAmeras from './AllCAmeras'
-import Camera from './Camera'
+import React from "react";
+
+import Camera from "./Camera";
 const ShowCameras = () => {
   return (
     <div>
-
-     <Camera/>
+      <Camera />
     </div>
-  )
-}
+  );
+};
 
-export default ShowCameras
+export default ShowCameras;

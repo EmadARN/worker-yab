@@ -8,7 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Title from "../Title/Title";
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Box } from "@mui/material";
 
 const columns = [
   { id: "firestName", label: "عکس پروفایل", minWidth: 170 },
@@ -118,7 +118,6 @@ export default function TableClient({ rows, title, width, xsWidth }) {
           }}
           labelRowsPerPage="صفحه"
           rowsPerPageOptions={[10, 25, 100]}
-          
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}

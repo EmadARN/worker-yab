@@ -1,21 +1,13 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import {
-  Box,
-  Button,
-  CardActionArea,
-  CardActions,
-  Container,
-  Grid,
-} from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import builder from "../../Asset/image/portfolio-5.jpg";
 import mechanic from "../../Asset/image/Industrial-Maintenance-Mechanic-Technician-940x529.jpg";
-import { styled } from "@mui/material/styles";
+
 import Title from "../Title/Title";
-import { Navigate } from "react-router-dom";
+
 import { Link, useNavigate } from "react-router-dom";
 
 const OurService = () => {
@@ -25,14 +17,14 @@ const OurService = () => {
       name: "ساختمانی",
       img: builder,
       desc: "نیروی کارگر ساختمان",
-      to: "/worker",
+      to: "/allWorker",
     },
     {
       id: 2,
       name: "مکانیک",
       img: mechanic,
       desc: "نیروی مکانیک",
-      to: "/mechanic",
+      to: "/allWorker",
     },
   ];
   const navigate = useNavigate();

@@ -14,23 +14,7 @@ const BtnAnimation = ({ title, color, size, ffamily, fweight }) => {
     whiteSpace: " nowrap",
     padding: "12px",
   }));
-  const Span1 = styled("div")(({ theme }) => ({
-    width: "100%",
-    height: "2px",
-    background: "linear-gradient(to right, #030f27, rgba(253,190,51,1))",
-    position: "absolute",
-    top: "0",
-    left: "0",
-    animation: "span1 3s 1.5s linear infinite",
-    "@keyframes span1": {
-      "0%": {
-        transform: "translateX(100%)",
-      },
-      "100%": {
-        transform: " translateX(-100%)",
-      },
-    },
-  }));
+
   const Span2 = styled("div")(({ theme }) => ({
     width: "2px",
     height: "100%",
@@ -85,7 +69,6 @@ const BtnAnimation = ({ title, color, size, ffamily, fweight }) => {
   return (
     <CustomButton>
       <CustomButtonA href="" data-target="#log-in">
-        <Span1></Span1>
         <Span2></Span2>
         <Span3></Span3>
         <Span4></Span4>

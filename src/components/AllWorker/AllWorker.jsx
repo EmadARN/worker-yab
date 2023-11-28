@@ -1,28 +1,23 @@
 import React, { useState, useEffect } from "react";
 import TableMain from "../Table/TableMain";
-import { Box, TextField } from "@mui/material";
+
 import axios from "axios";
-import {IPServer} from "../../Config/Server";
+import { IPServer } from "../../Config/Server";
 
 const AllWorker = () => {
   const [table_Row, setTable_Row] = useState([]);
 
-  useEffect(()=>{
-
-
+  useEffect(() => {
     axios
-        .request({
+      .request({
+        method: "GET",
 
-          method: "GET",
-
-          url: `${IPServer}/UserInf/user/list/`,
-        })
-        .then((res) => {
-          setTable_Row(res.data.data);
-        });
-
-
-  },[])
+        url: `${IPServer}/UserInf/user/list/`,
+      })
+      .then((res) => {
+        setTable_Row(res.data.data);
+      });
+  }, []);
 
   return (
     <TableMain

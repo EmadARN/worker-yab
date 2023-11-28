@@ -1,9 +1,6 @@
-import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { IPServer } from "../../../Config/Server";
 
 const BtnSignUp = ({ navigate, onClick, linkState, submit }) => {
   return (
@@ -30,6 +27,7 @@ const BtnSignUp = ({ navigate, onClick, linkState, submit }) => {
             fontSize: "16px",
             bgcolor: "#fdbe33",
             fontWeight: "700",
+            whiteSpace: { xs: "wrap", sm: "nowrap" },
             fontFamily: "Lalezar",
             ml: { xs: 0, md: 8 },
             "&:hover": {

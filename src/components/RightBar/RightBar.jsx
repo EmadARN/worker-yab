@@ -1,26 +1,17 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Grid, Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Home } from "@mui/icons-material";
-import TtyIcon from "@mui/icons-material/Tty";
+
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import GroupsIcon from "@mui/icons-material/Groups";
 import SpeedDial from "@mui/material/SpeedDial";
-import SpeedDialIcon from "@mui/material/SpeedDialIcon";
-import SpeedDialAction from "@mui/material/SpeedDialAction";
-import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
-import PrintIcon from "@mui/icons-material/Print";
-import ShareIcon from "@mui/icons-material/Share";
+
+
 import { Link } from "react-router-dom";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
 const RightBar = ({ display }) => {
-  const actions = [
-    { icon: <FileCopyIcon />, name: "ثبت نام" },
-
-    { icon: <PrintIcon />, name: "پرینت" },
-    { icon: <ShareIcon />, name: "ارسال به دیگران" },
-  ];
   const Container = styled("div")(({ theme }) => ({
     backgroundColor: "#fdbe33",
     [theme.breakpoints.down("md")]: {
@@ -111,38 +102,7 @@ const RightBar = ({ display }) => {
           </Typography>
         </Box>
       </Link>
-      <Link
-        to={"/ContactUs"}
-        style={{
-          textDecoration: "none",
-          color: "#222",
-          fontSize: "20px",
-        }}
-      >
-        <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-          <TtyIcon
-            sx={{
-              color: "#030f27",
-              "@media (max-width:470px)": {
-                marginBottom: "40px",
-              },
-              cursor: "pointer",
-            }}
-          />
-          <Typography
-            sx={{
-              pb: 5,
-              color: "#030f27",
-              pr: { xs: 0, sm: 2 },
-              "@media (max-width:470px)": {
-                display: "none",
-              },
-            }}
-          >
-            ارتباط با ما
-          </Typography>
-        </Box>
-      </Link>
+
       <Link
         to={"/ServicesPage"}
         style={{

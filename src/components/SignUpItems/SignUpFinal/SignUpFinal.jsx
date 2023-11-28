@@ -1,18 +1,18 @@
 import {
-  Avatar,
+
   CardMedia,
-  Container,
+
   Grid,
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import Box from "@mui/material/Box";
+
 import TextField from "@mui/material/TextField";
 import React, {useEffect, useState} from "react";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import Counter from "lyef-counter";
+
 import { prefixer } from "stylis";
 import { IPServer } from "../../../Config/Server";
 import axios from "axios";
@@ -51,7 +51,7 @@ const SignUpFinal = () => {
           .then(
           (res)=>{
               setUser(res.data.user_inf)}
-      // setUser({ ...user, [propertyName]: e.target.value });
+
 
           )
           .catch((err)=>{

@@ -1,5 +1,5 @@
 import { Container } from "@mui/system";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, TextField } from "@mui/material";
 import Title from "../Title/Title";
 import TableInfo from "./Table";
@@ -17,41 +17,27 @@ const cacheRtl = createCache({
   stylisPlugins: [rtlPlugin],
 });
 const TableMain = ({ row, title, width, xsWidth, display }) => {
+  const [data, setData] = useState(row);
+  const [tempData, setTempdata] = useState(row);
 
+  useEffect(() => {
+    setTempdata(row);
+    setData(row);
+  }, [row]);
 
-    const [data, setData] = useState(row)
-    const [tempData, setTempdata] = useState(row)
+  const searchFun = (e) => {
+    if (e.target.value !== "") {
+      const dd = data.filter((item) => {
+        if (item.job.includes(e.target.value)) {
+          return item;
+        }
+      });
 
-    useEffect(()=>{
-
-        setTempdata(row)
-        setData(row)
-
-    }, [row])
-
-
-    const searchFun=(e)=> {
-
-
-            if(e.target.value !== ''){
-
-                const dd = data.filter((item)=> {
-
-
-                    if (item.job.includes(e.target.value)) {
-
-                        return item
-
-                    }
-                })
-
-                setTempdata(dd)
-
-            }else{
-
-                setTempdata(data)
-            }
+      setTempdata(dd);
+    } else {
+      setTempdata(data);
     }
+  };
   return (
     <>
       <Title title={title} width={width} xsWidth={xsWidth} />

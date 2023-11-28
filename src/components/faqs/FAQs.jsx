@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
@@ -73,7 +73,7 @@ function FAQs() {
       <Grid container sx={{ mt: 15 }} spacing={5}>
         <Grid item xs={12} md={6} sx={{}}>
           <Accordion
-            expanded={expanded === "panel1"}
+         
             onChange={handleChange("panel1")}
           >
             <AccordionSummary>
@@ -86,7 +86,7 @@ function FAQs() {
             </AccordionDetails>
           </Accordion>
           <Accordion
-            expanded={expanded === "panel2"}
+
             onChange={handleChange("panel2")}
           >
             <AccordionSummary
@@ -104,7 +104,7 @@ function FAQs() {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
           <Accordion
-            expanded={expanded === "panel6"}
+         
             onChange={handleChange("panel6")}
           >
             <AccordionSummary>
@@ -117,7 +117,7 @@ function FAQs() {
             </AccordionDetails>
           </Accordion>
           <Accordion
-            expanded={expanded === "panel7"}
+        
             onChange={handleChange("panel7")}
           >
             <AccordionSummary

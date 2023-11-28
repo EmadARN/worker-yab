@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 const SectionTittle = styled("div")(({ theme }) => ({
   margin: "50px",
 }));
-const Title = ({ title, width, xsWidth }) => {
+const Title = ({ title, width }) => {
   return (
     <div>
       <SectionTittle sx={{}}>

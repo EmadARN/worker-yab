@@ -1,6 +1,6 @@
 import { Box, Button, Grid } from "@mui/material";
-import axios from "axios";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+
+import React, { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
 
 const videoConstrants = {
@@ -24,9 +24,7 @@ const Camera = (props) => {
     setOffcamera(false);
   };
 
-  const onUserMedia = (e) => {
-    console.log(e);
-  };
+  const onUserMedia = (e) => {};
   return (
     <>
       <Grid>
@@ -46,21 +44,13 @@ const Camera = (props) => {
             mirrored={true}
           />
         )}
-        {/* <Webcam 
-        ref={webcamRef}
-        audio={true}
-        screenshotFormat="image/png"
-        videoConstraints={videoConstrants}
-        onUserMedia={onUserMedia}
-        mirrored={true}
-      /> */}
       </Grid>
       <Grid sx={{ display: "flex", justifyContent: "center" }}>
         <Box>
           <Button
             sx={{
               mt: { xs: 5, md: 3 },
-             
+
               transition: ".5s",
               borderRadius: "2px",
               p: "10px 35px",
@@ -68,7 +58,7 @@ const Camera = (props) => {
               fontSize: "16px",
               bgcolor: "#fdbe33",
               fontWeight: "700",
-        
+
               fontFamily: "Lalezar",
               "&:hover": {
                 transition: "all .75s",
@@ -120,7 +110,7 @@ const Camera = (props) => {
           <Button
             sx={{
               mt: { xs: 5, md: 3 },
-              mr:1,
+              mr: 1,
               transition: ".5s",
               borderRadius: "2px",
               p: "10px 35px",
@@ -144,11 +134,6 @@ const Camera = (props) => {
           </Button>
         </Box>
       </Grid>
-      {/* {url && (
-        <Box>
-          <img src={url} />
-        </Box>
-      )} */}
     </>
   );
 };

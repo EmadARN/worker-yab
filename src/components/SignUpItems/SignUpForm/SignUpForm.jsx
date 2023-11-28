@@ -1,4 +1,3 @@
-import { Place } from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -6,22 +5,23 @@ import {
   FormControl,
   Grid,
   InputLabel,
-  MenuItem, Select,
+  MenuItem,
+  Select,
   TextField,
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import { green } from "@mui/material/colors";
+
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import axios from "axios";
-import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
+
 import { IPServer } from "../../../Config/Server";
-// import { Select } from "antd";
+
 import { useFormik } from "formik";
 import * as yup from "yup";
 
@@ -39,13 +39,8 @@ const cacheRtl = createCache({
 const SignupForm = (style) => {
   const navigate = useNavigate();
   const [cookies, setCookie] = useCookies(["token"]);
-  console.log('token : ',cookies)
-  const [inp, setInp] = useState({
-    // first_name: "",
-    // last_name: "",
-    // work_experience: 0,
-    // job: "",
-  });
+  console.log("token : ", cookies);
+  const [inp, setInp] = useState({});
   const textHandler = (e, propertyName) => {
     setInp({ ...inp, [propertyName]: e.target.value });
   };
@@ -62,25 +57,21 @@ const SignupForm = (style) => {
         inp,
         {
           headers: {
-            Authorization: `Barear ${cookies['token']}`,
+            Authorization: `Barear ${cookies["token"]}`,
           },
         },
         inp
       )
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         if (res.data.status === 200) {
           navigate("/SignUpPage4");
         }
       })
 
-        .catch((error)=>{
-
-          console.log(error)
-
-        })
-    ;
-
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const formik = useFormik({

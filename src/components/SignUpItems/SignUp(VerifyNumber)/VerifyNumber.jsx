@@ -7,7 +7,7 @@ import rtlPlugin from "stylis-plugin-rtl";
 import { useFormik } from "formik";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import Counter from "lyef-counter";
+
 import { prefixer } from "stylis";
 import * as yup from "yup";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
@@ -15,15 +15,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IPServer } from "../../../Config/Server";
 import { CookiesProvider, useCookies } from "react-cookie";
-
-
-
-
-
-
-
-
-
 
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
@@ -34,17 +25,14 @@ const cacheRtl = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 const VerifyNumber = ({ phone_number, inputValue }) => {
-
-    const [cookies, setCookie] = useCookies(["phone-number"]);
+  const [cookies, setCookie] = useCookies(["phone-number"]);
   const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
       phone_number: "",
     },
-    onSubmit: (values) => {
-      console.log("clicked");
-    },
+    onSubmit: (values) => {},
     validationSchema: yup.object({
       phone_number: yup
         .string()
@@ -55,92 +43,95 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
 
   return (
     <>
-        <CookiesProvider>
-      <Title title="شماره خود را وارد کنید" width={"200px"} />
-      <CacheProvider value={cacheRtl}>
-        <ThemeProvider theme={theme}>
-          <Grid
-            sx={{
-              flexDirection: "column",
+      <CookiesProvider>
+        <Title title="شماره خود را وارد کنید" width={"200px"} />
+        <CacheProvider value={cacheRtl}>
+          <ThemeProvider theme={theme}>
+            <Grid
+              sx={{
+                flexDirection: "column",
 
-              display: "flex",
-              justifyContent: "center",
-              mt: 20,
-              "& .MuiInput-underline:after": {
-                borderBottomColor: "#fdbe33",
-              },
-              "& label.Mui-focused": {
-                color: "#030f27",
-                fontWeight: "bold",
-                fontSize: "22px",
-              },
-            }}
-          >
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              {formik.touched.phone_number && formik.errors.phone_number ? (
-                <p style={{ color: "red" }}>{formik.errors.phone_number}</p>
-              ) : null}
-            </Box>
+                display: "flex",
+                justifyContent: "center",
+                mt: 20,
+                "& .MuiInput-underline:after": {
+                  borderBottomColor: "#fdbe33",
+                },
+                "& label.Mui-focused": {
+                  color: "#030f27",
+                  fontWeight: "bold",
+                  fontSize: "22px",
+                },
+              }}
+            >
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                {formik.touched.phone_number && formik.errors.phone_number ? (
+                  <p style={{ color: "red" }}>{formik.errors.phone_number}</p>
+                ) : null}
+              </Box>
 
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <form
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-                onChange={formik.handleChange("phone_number")}
-              >
-                <TextField
-                  onChange={(e) => inputValue(e.target.value)}
-                  id="standard-basic"
-                  label="شماره همراه"
-                  variant="filled"
-                  type="phone_number"
-                  onBlur={formik.handleBlur("phone_number")}
-                  value={formik.values.phone_number}
-                  name="phone_number"
-                  sx={{
-                    "& .MuiFilledInput-underline:after": {
-                      borderBottomColor: "#fdbe33",
-                    },
-
-                    width: { xs: "80%", lg: "50%", xl: "30%" },
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <form
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
                   }}
+                  onChange={formik.handleChange("phone_number")}
+                >
+                  <TextField
+                    onChange={(e) => inputValue(e.target.value)}
+                    id="standard-basic"
+                    label="شماره همراه"
+                    variant="filled"
+                    type="phone_number"
+                    onBlur={formik.handleBlur("phone_number")}
+                    value={formik.values.phone_number}
+                    name="phone_number"
+                    sx={{
+                      "& .MuiFilledInput-underline:after": {
+                        borderBottomColor: "#fdbe33",
+                      },
+
+                      width: { xs: "80%", lg: "50%", xl: "30%" },
+                    }}
+                  />
+                </form>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "felx",
+                  justifyContent: "center",
+                  my: 10,
+                }}
+              >
+                <BtnSignUp
+                  linkState={{ phone_number: phone_number }}
+                  onClick={
+                    phone_number === ""
+                      ? formik.handleSubmit
+                      : () =>
+                          axios
+                            .request({
+                              method: "GET",
+
+                              url: `${IPServer}/Auth/signup/phone_number=${phone_number}/`,
+                            })
+                            .then((res) => {
+                              console.log(res.data);
+                              setCookie("phone-number", phone_number, {
+                                path: "/",
+                              });
+                              navigate("/SignUpPage2");
+                            })
+                  }
                 />
-              </form>
-            </Box>
-
-            <Box
-            
-            sx={{
-              display:"felx",
-              justifyContent:"center",
-              my: 10,
-            
-            }}
-          >
-            <BtnSignUp
-              linkState={{ phone_number: phone_number }}
-              onClick={phone_number === "" ? formik.handleSubmit :  ()=> axios
-              .request({
-                method: "GET",
-
-                            url: `${IPServer}/Auth/signup/phone_number=${phone_number}/`,
-                          })
-                          .then((res) => {
-                            console.log(res.data);
-                              setCookie("phone-number", phone_number, { path: "/" });
-                            navigate("/SignUpPage2");
-                          })
-                }
-                // onClick={formik.handleSubmit}
-              />
-            </Box>
-          </Grid>
-        </ThemeProvider>
-      </CacheProvider>
-        </CookiesProvider>
+              </Box>
+            </Grid>
+          </ThemeProvider>
+        </CacheProvider>
+      </CookiesProvider>
     </>
   );
 };

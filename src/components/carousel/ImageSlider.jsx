@@ -1,8 +1,7 @@
-import { Grid, styled, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
 import "animate.css";
-import { useState } from "react";
-import Button from "@mui/material/Button/Button";
+
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Box from "@mui/material/Box/Box";
 import "react-slideshow-image/dist/styles.css";
