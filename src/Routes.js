@@ -2,19 +2,15 @@ import Home from "./Pages/Home";
 import SignUpPage from "./Pages/SignUpPage";
 import AboutPage from "./Pages/AboutPage";
 import ServicesPage from "./Pages/ServicesPage";
-
-
 import SignUpPage2 from "./Pages/SignUpPage2";
 import SignUpPage3 from "./Pages/SignUpPage3";
 import SignUpPage4 from "./Pages/SignUpPage4";
 import SignUpPage5 from "./Pages/SignUpPage5";
-
-
 import AllWorkerPage from "./Pages/AllWorkerPage";
+
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/About", element: <AboutPage /> },
-
 
   {
     path: "/SignupPage",
@@ -24,8 +20,6 @@ const routes = [
     path: "/ServicesPage",
     element: <ServicesPage />,
   },
-
-
   {
     path: "/SignUpPage2",
     element: <SignUpPage2 />,

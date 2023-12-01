@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
-
 import { Footer } from "../components/Footer/Footer";
 import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode";
 import { Grid } from "@mui/material";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
 
-
-
 const SignUpPage2 = () => {
   const [verify_code, setVerify_code] = useState("");
-
 
   return (
     <>

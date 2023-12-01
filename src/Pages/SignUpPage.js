@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
 import VerifyNumber from "../components/SignUpItems/SignUp(VerifyNumber)/VerifyNumber";
 import TopBarCss from "../components/topbarcss/TopBarCss";
-
 import { Grid } from "@mui/material";
-
 import { Footer } from "../components/Footer/Footer";
-
 import RightBar from "../components/RightBar/RightBar";
 
 const SignUpPage = () => {

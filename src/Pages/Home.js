@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
-
 import { Button, Grid } from "@mui/material";
 import ImageSlider from "../components/carousel/ImageSlider";
 import Fact from "../components/Fact/Fact";
@@ -9,10 +8,8 @@ import About from "../components/About/About";
 import FAQs from "../components/faqs/FAQs";
 import { Footer } from "../components/Footer/Footer";
 import TableMain from "../components/Table/TableMain";
-
 import { Link } from "react-router-dom";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
-
 import axios from "axios";
 import { IPServer } from "../Config/Server";
 

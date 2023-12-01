@@ -1,10 +1,8 @@
 import React from "react";
-import { Box, Button, Grid,  Typography } from "@mui/material";
-import { useState} from "react";
-
+import { Box, Button, Grid, Typography } from "@mui/material";
+import { useState } from "react";
 import Camera from "../components/AllCameras/Camera.jsx";
 import CloseIcon from "@mui/icons-material/Close";
-import Webcam from "react-webcam";
 import TopBarCss from "../components/topbarcss/TopBarCss.js";
 import RightBar from "../components/RightBar/RightBar.jsx";
 import Stepper1 from "../components/SignUpItems/Stepper/Stepper.jsx";
@@ -12,12 +10,11 @@ import { IPServer } from "../Config/Server";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
-import { CookiesProvider, useCookies } from "react-cookie";
-
+import { useCookies } from "react-cookie";
 import { Footer } from "../components/Footer/Footer";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const SignUpPage4 = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [cookies, setCookie] = useCookies(["phone-number"]);
 
@@ -46,49 +43,36 @@ const SignUpPage4 = () => {
 
   const [pic, setPic] = useState();
 
-
   const [file, setFile] = useState(false);
 
   const uploadImg = () => {
-
-    if (file === false){
-
+    if (file === false) {
       let form_Data = new FormData();
       form_Data.append("image-camera", url);
 
-
       axios
-          .post(`${IPServer}/AddUserInf/upload/image/camera/`, form_Data, {
-            headers: {
-              Authorization: `Barear ${cookies['token']}`,
-            },
-          })
-          .then((res) => {
-     
-          });
-
-
-    }else{
-
+        .post(`${IPServer}/AddUserInf/upload/image/camera/`, form_Data, {
+          headers: {
+            Authorization: `Barear ${cookies["token"]}`,
+          },
+        })
+        .then((res) => {});
+    } else {
       let form_Data = new FormData();
       form_Data.append("image", storeData);
 
-
       axios
-          .post(`${IPServer}/AddUserInf/upload/image/`, form_Data, {
-            headers: {
-              Authorization: `Barear ${cookies['token']}`,
-            },
-          })
-          .then((res) => {
-          });
-
+        .post(`${IPServer}/AddUserInf/upload/image/`, form_Data, {
+          headers: {
+            Authorization: `Barear ${cookies["token"]}`,
+          },
+        })
+        .then((res) => {});
     }
 
-    navigate('/SignupPage5')
-
+    navigate("/SignupPage5");
   };
-  const [storeData,setStoreDate] =useState()
+  const [storeData, setStoreDate] = useState();
 
   return (
     <>
@@ -226,11 +210,9 @@ const SignUpPage4 = () => {
                   <VisuallyHiddenInput
                     onChange={(e) => {
                       return setStoreDate(e.target.files[0]), setFile(true);
-
                     }}
                     type="file"
                   />
-         
                 </Button>
               </>
             )}
