@@ -55,7 +55,7 @@ export const Footer = (props) => {
                 sx={{ color: "#CC902F", whiteSpace: "nowrap" }}
                 variant="h5"
               >
-                صفحه های کاربردی
+                 دسترسی سریع
               </Typography>
 
               <Grid style={ItemGrid}>
