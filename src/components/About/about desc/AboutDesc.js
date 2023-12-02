@@ -1,5 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Grid, Typography } from "@mui/material";
 
 function AboutDesc() {
   return (
@@ -31,33 +30,6 @@ function AboutDesc() {
             و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده
             قرار گیرد.
           </Typography>
-              <Link to={"/About"}>
-          <Button
-            variant="contained"
-            sx={{
-              left: { xs: "10%", sm: "12%", md: "55%" },
-              position: "absolute",
-              transition: ".5s",
-              borderRadius: "2px",
-              p: "15px 35px",
-              color: "#030f27",
-              fontSize: "16px",
-              bgcolor: "#fdbe33",
-              fontWeight: "700",
-              fontFamily: "Lalezar",
-              "&:hover": {
-                transition: "all .75s",
-                p: "20px 40px",
-                bgcolor: "#030f27",
-                color: "#fdbe33",
-                boxShadow:
-                  "0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2)",
-              },
-            }}
-          >
-            ادامه دیگر
-          </Button>
-          </Link>
         </Grid>
       </Grid>
     </>

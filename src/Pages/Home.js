@@ -49,7 +49,7 @@ const Home = () => {
           <Grid item xs={12} sx={{ height: { xs: "10%", md: "15%" } }}>
             <ImageSlider />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} mt={10}>
             <About />
           </Grid>
           <BtnDownToTop minScroll={2000} maxScroll={1000} />

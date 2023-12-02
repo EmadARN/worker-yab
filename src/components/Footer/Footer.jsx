@@ -6,7 +6,6 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
-
 const FotterGrid = styled("Grid")(({ theme }) => ({
   width: "100%",
   height: "100%",
@@ -169,7 +168,7 @@ export const Footer = (props) => {
             <Grid>
               <Typography sx={{ color: "#CC902F" }} variant="h5">
                 {" "}
-                خدمات قابل اراعه
+                خدمات قابل ارائه
               </Typography>
 
               <Grid style={ItemGrid}>
