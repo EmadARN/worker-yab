@@ -22,6 +22,9 @@ const Accordion = styled((props) => (
   "&:before": {
     display: "none",
   },
+  [theme.breakpoints.up("md")]: {
+    marginLeft: "20px",
+  },
 }));
 
 const AccordionSummary = styled((props) => (
@@ -70,14 +73,18 @@ function FAQs() {
       <Box sx={{ mr: { xs: 2, sm: 10 } }}>
         <Title title="سوالات شما" width={"200px"} />
       </Box>
-      <Grid container sx={{ mt: 15 }} spacing={5}>
+      <Grid container sx={{ mt: 15 }}>
         <Grid item xs={12} md={6} sx={{}}>
-          <Accordion
-         
-            onChange={handleChange("panel1")}
-          >
+          <Accordion onChange={handleChange("panel1")}>
             <AccordionSummary>
-              <Typography variant="h5">چه چیزی درباره ما میخواهید؟</Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: "16px", md: "22px" },
+                  fontWeight: { xs: "", md: "500" },
+                }}
+              >
+                چه چیزی درباره ما میخواهید؟
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="h6">
@@ -85,15 +92,19 @@ function FAQs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion
-
-            onChange={handleChange("panel2")}
-          >
+          <Accordion onChange={handleChange("panel2")}>
             <AccordionSummary
               aria-controls="panel2d-content"
               id="panel2d-header"
             >
-              <Typography variant="h5">چه چیزی درباره ما میخواهید؟</Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: "16px", md: "22px" },
+                  fontWeight: { xs: "", md: "500" },
+                }}
+              >
+                چه چیزی درباره ما میخواهید؟
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="h6">
@@ -103,12 +114,16 @@ function FAQs() {
           </Accordion>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-          <Accordion
-         
-            onChange={handleChange("panel6")}
-          >
+          <Accordion onChange={handleChange("panel6")}>
             <AccordionSummary>
-              <Typography variant="h5">چه چیزی درباره ما میخواهید؟</Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: "16px", md: "22px" },
+                  fontWeight: { xs: "", md: "500" },
+                }}
+              >
+                چه چیزی درباره ما میخواهید؟
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="h6">
@@ -116,15 +131,19 @@ function FAQs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion
-        
-            onChange={handleChange("panel7")}
-          >
+          <Accordion onChange={handleChange("panel7")}>
             <AccordionSummary
               aria-controls="panel2d-content"
               id="panel2d-header"
             >
-              <Typography variant="h5">چه چیزی درباره ما میخواهید؟</Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: "16px", md: "22px" },
+                  fontWeight: { xs: "", md: "500" },
+                }}
+              >
+                چه چیزی درباره ما میخواهید؟
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="h6">

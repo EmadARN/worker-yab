@@ -11,6 +11,8 @@ function TopBarCss({ display }) {
         xs={12}
         sx={{
           backgroundColor: "#fdbe33",
+          width: "100%",
+
         }}
       >
         <Grid

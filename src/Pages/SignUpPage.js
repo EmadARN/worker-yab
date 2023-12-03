@@ -18,13 +18,14 @@ const SignUpPage = () => {
         </Grid>
         <Grid container xs={10} md={12}>
           <Stepper1 />
-          <Grid xs={12} sx={{ margin: "auto" }}>
+          <Grid xs={12} sx={{ mx: "auto" }}>
             <VerifyNumber
               inputValue={setPhone_number}
               phone_number={phone_number}
             />
           </Grid>
         </Grid>
+
         <Footer
           display="none"
           page1={"درباره ما"}

@@ -16,31 +16,46 @@ const TableInfo = ({ row }) => {
           <TableHead>
             <TableRow>
               <TableCell
-                sx={{ fontSize: "20px", fontFamily: "Lalezar" }}
+                sx={{
+                  fontSize: { xs: "12px", md: "20px" },
+                  fontFamily: "Lalezar",
+                }}
                 align="right"
               >
                 عکس پروفایل
               </TableCell>
               <TableCell
-                sx={{ fontSize: "20px", fontFamily: "Lalezar" }}
+                sx={{
+                  fontSize: { xs: "12px", md: "20px" },
+                  fontFamily: "Lalezar",
+                }}
                 align="right"
               >
                 نام و نام خانوادگی
               </TableCell>
               <TableCell
-                sx={{ fontSize: "20px", fontFamily: "Lalezar" }}
+                sx={{
+                  fontSize: { xs: "12px", md: "20px" },
+                  fontFamily: "Lalezar",
+                }}
                 align="right"
               >
                 حوزه فعالیت
               </TableCell>
               <TableCell
-                sx={{ fontSize: "20px", fontFamily: "Lalezar" }}
+                sx={{
+                  fontSize: { xs: "12px", md: "20px" },
+                  fontFamily: "Lalezar",
+                }}
                 align="right"
               >
                 سابقه کار
               </TableCell>
               <TableCell
-                sx={{ fontSize: "20px", fontFamily: "Lalezar" }}
+                sx={{
+                  fontSize: { xs: "12px", md: "20px" },
+                  fontFamily: "Lalezar",
+                }}
                 align="right"
               >
                 شماره همراه{" "}
@@ -49,42 +64,47 @@ const TableInfo = ({ row }) => {
           </TableHead>
           <TableBody>
             {row.map((row) => {
+              return (
+                <TableRow key={row.id}>
+                  <TableCell
+                    align="center"
+                    component="th"
+                    scope="row"
+                    sx={{ display: "flex", alignItems: "center" }}
+                  >
+                    <img
+                      style={{
+                        width: "90px",
+                        height: "5%",
+                        marginLeft: "10px",
+                      }}
+                      src={row.profile_image}
+                    />
+                  </TableCell>
 
-              return (<TableRow key={row.id}>
-                <TableCell
-                  align="center"
-                  component="th"
-                  scope="row"
-                  sx={{ display: "flex", alignItems: "center" }}
-                >
-                  <img
-                    style={{ width: "90px", height: "5%", marginLeft: "10px" }}
-                    src={row.profile_image}
-                  />
-                </TableCell>
+                  <TableCell align="right">
+                    <Box sx={{ display: "flex", pr: 2 }}>
+                      <Typography sx={{ fontWeight: "bold" }}>
+                        {" "}
+                        {row.first_name}
+                      </Typography>
+                      <Typography sx={{ fontWeight: "bold", pr: 1 }}>
+                        {row.last_name}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell align="right" sx={{ fontWeight: "bold", pr: 4 }}>
+                    {row.job}
+                  </TableCell>
 
-                <TableCell align="right">
-                  <Box sx={{ display: "flex", pr: 2 }}>
-                    <Typography sx={{ fontWeight: "bold" }}>
-                      {" "}
-                      {row.first_name}
-                    </Typography>
-                    <Typography sx={{ fontWeight: "bold", pr: 1 }}>
-                      {row.last_name}
-                    </Typography>
-                  </Box>
-                </TableCell>
-                <TableCell align="right" sx={{ fontWeight: "bold", pr: 4 }}>
-                  {row.job}
-                </TableCell>
-
-                <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
-                  {row.work_experience}
-                </TableCell>
-                <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
-                  {row.phone_number}
-                </TableCell>
-              </TableRow>)
+                  <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
+                    {row.work_experience}
+                  </TableCell>
+                  <TableCell align="right" sx={{ fontWeight: "bold", pr: 3 }}>
+                    {row.phone_number}
+                  </TableCell>
+                </TableRow>
+              );
             })}
           </TableBody>
         </Table>

@@ -61,8 +61,7 @@ const TableMain = ({ row, title, width, xsWidth, display }) => {
                 "-webkit-box-shadow": "inset 0 0 6px rgba(0, 0, 0, 0.3)",
               },
               "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "  #fdbe33",
-                outline: " 3px solid #030f27",
+                backgroundColor: " #030f27",
               },
             }}
           >

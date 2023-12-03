@@ -6,7 +6,12 @@ function AboutDesc() {
       <Grid>
         <Grid sx={{ margin: "10px auto" }}>
           <Typography
-            sx={{ fontSize: "18px", color: "#6a6a6a", textAlign: "justify" }}
+            sx={{
+              fontSize: { xs: "12px", md: "20px" },
+              fontWeight: { xs: "500", md: "bold" },
+              color: "#6a6a6a",
+              textAlign: "justify",
+            }}
           >
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
@@ -17,7 +22,8 @@ function AboutDesc() {
           <Typography
             sx={{
               mt: 2,
-              fontSize: "18px",
+              fontSize: { xs: "12px", md: "20px" },
+              fontWeight: { xs: "500", md: "bold" },
               color: "#6a6a6a",
               textAlign: "justify",
             }}

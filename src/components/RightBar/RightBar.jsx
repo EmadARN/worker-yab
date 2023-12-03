@@ -3,11 +3,9 @@ import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Home } from "@mui/icons-material";
-
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import GroupsIcon from "@mui/icons-material/Groups";
 import SpeedDial from "@mui/material/SpeedDial";
-
 import { Link } from "react-router-dom";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
 const RightBar = ({ display }) => {
@@ -19,159 +17,151 @@ const RightBar = ({ display }) => {
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
-
-    paddingTop: 20,
-  
+    paddingTop: 5,
     width: "100%",
-    
-    height: "100vh",
+
+    height: "100%",
     color: "#efef",
-    position: "sticky",
-    top: "0px",
   }));
   return (
     <Container sx={{}}>
-      <Link
-        to={"/"}
-        style={{
-          textDecoration: "none",
-          color: "#222",
-          fontSize: "20px",
-        }}
-      >
-        <Box
-          sx={{
-            display: { xs: "block", sm: "flex" },
-            pr: 2,
+      <Box sx={{ position: "fixed" }}>
+        <Link
+          to={"/"}
+          style={{
+            textDecoration: "none",
+            color: "#222",
+            fontSize: "20px",
           }}
         >
-          <Home
+          <Box
             sx={{
-              color: "#030f27",
-              "@media (max-width:470px)": {
-                marginBottom: "40px",
-              },
-              cursor: "pointer",
-              mt: { xs: 0, sm: 3 },
-            }}
-          />
-
-          <Typography
-            sx={{
-              pb: 3,
-              color: "#030f27",
-              pr: { xs: 0, sm: 2 },
-              mt: { xs: 0, sm: 3 },
-              "@media (max-width:470px)": {
-                display: "none",
-              },
+              display: { xs: "block", sm: "flex" },
+              pr: 2,
             }}
           >
-            خانه
-          </Typography>
-        </Box>
-      </Link>
-      <Link
-        to={"/About"}
-        style={{
-          textDecoration: "none",
-          color: "#222",
-          fontSize: "20px",
-        }}
-      >
-        <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-          <GroupsIcon
-            sx={{
-              color: "#030f27",
-              "@media (max-width:470px)": {
-                marginBottom: "40px",
-              },
-              cursor: "pointer",
-            }}
-          />
-          <Typography
-            sx={{
-              pb: 5,
-              color: "#030f27",
-              pr: { xs: 0, sm: 2 },
-              "@media (max-width:470px)": {
-                display: "none",
-              },
-            }}
-          >
-            درباره ما
-          </Typography>
-        </Box>
-      </Link>
-
-      <Link
-        to={"/ServicesPage"}
-        style={{
-          textDecoration: "none",
-          color: "#222",
-          fontSize: "20px",
-        }}
-      >
-        <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-          <ManageAccountsIcon
-            sx={{
-              color: "#030f27",
-              "@media (max-width:470px)": {
-                marginBottom: "40px",
-              },
-              cursor: "pointer",
-            }}
-          />
-          <Typography
-            sx={{
-              pb: 5,
-              color: "#030f27",
-              pr: { xs: 0, sm: 2 },
-              "@media (max-width:470px)": {
-                display: "none",
-              },
-            }}
-          >
-            سرویس ها
-          </Typography>
-        </Box>
-      </Link>
-      <Link
-        style={{
-          textDecoration: "none",
-
-          fontSize: "20px",
-        }}
-        to={"/SignupPage"}
-      >
-        <Box
-          sx={{
-            height: 320,
-            marginTop: "200px",
-            transform: "translateZ(0px)",
-            flexGrow: 1,
-            display: { xs: display, md: "flex" },
-          }}
-        >
-          <SpeedDial
-            ariaLabel="SpeedDial basic example"
-            sx={{ position: "sticky", bottom: 16, right: { xs: 0, sm: 20 } }}
-            icon={<SensorOccupiedIcon />}
-            FabProps={{
-              sx: {
-                color: "#fdbe33",
-                bgcolor: "#030f27",
-                "&:hover": {
-                  bgcolor: "#fdbe33",
-                  color: "#030f27",
+            <Home
+              sx={{
+                color: "#030f27",
+                "@media (max-width:470px)": {
+                  marginBottom: "40px",
                 },
-                width: { xs: "45px", sm: "56px" },
-                height: { xs: "45px", sm: "55px" },
-              },
+                cursor: "pointer",
+                mt: { xs: 0, sm: 3 },
+              }}
+            />
+
+            <Typography
+              sx={{
+                pb: 3,
+                color: "#030f27",
+                pr: { xs: 0, sm: 2 },
+                mt: { xs: 0, sm: 3 },
+                "@media (max-width:470px)": {
+                  display: "none",
+                },
+              }}
+            >
+              خانه
+            </Typography>
+          </Box>
+        </Link>
+        <Link
+          to={"/About"}
+          style={{
+            textDecoration: "none",
+            color: "#222",
+            fontSize: "20px",
+          }}
+        >
+          <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
+            <GroupsIcon
+              sx={{
+                color: "#030f27",
+                "@media (max-width:470px)": {
+                  marginBottom: "40px",
+                },
+                cursor: "pointer",
+              }}
+            />
+            <Typography
+              sx={{
+                pb: 5,
+                color: "#030f27",
+                pr: { xs: 0, sm: 2 },
+                "@media (max-width:470px)": {
+                  display: "none",
+                },
+              }}
+            >
+              درباره ما
+            </Typography>
+          </Box>
+        </Link>
+        <Link
+          to={"/ServicesPage"}
+          style={{
+            textDecoration: "none",
+            color: "#222",
+            fontSize: "20px",
+          }}
+        >
+          <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
+            <ManageAccountsIcon
+              sx={{
+                color: "#030f27",
+                "@media (max-width:470px)": {
+                  marginBottom: "40px",
+                },
+                cursor: "pointer",
+              }}
+            />
+            <Typography
+              sx={{
+                pb: 5,
+                color: "#030f27",
+                pr: { xs: 0, sm: 2 },
+                "@media (max-width:470px)": {
+                  display: "none",
+                },
+              }}
+            >
+              سرویس ها
+            </Typography>
+          </Box>
+        </Link>
+        <Link
+          style={{
+            textDecoration: "none",
+            fontSize: "20px",
+          }}
+          to={"/SignupPage"}
+        >
+          <Box
+            sx={{
+              display: { xs: display, md: "flex" },
+              pr: 1,
             }}
-          ></SpeedDial>
-        </Box>
-      </Link>
+          >
+            <SpeedDial
+              ariaLabel="SpeedDial basic example"
+              icon={<SensorOccupiedIcon />}
+              FabProps={{
+                sx: {
+                  color: "#fdbe33",
+                  bgcolor: "#030f27",
+                  "&:hover": {
+                    bgcolor: "#fdbe33",
+                    color: "#030f27",
+                  },
+                  width: { xs: "45px", sm: "56px" },
+                  height: { xs: "45px", sm: "55px" },
+                },
+              }}
+            ></SpeedDial>
+          </Box>
+        </Link>
+      </Box>
     </Container>
   );
 };

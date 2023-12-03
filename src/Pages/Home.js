@@ -46,14 +46,14 @@ const Home = () => {
             <RightBar />
           </Grid>
           <Grid container xs={10} md={12}>
-            <Grid item xs={12} sx={{ height: { xs: "10%", md: "15%" } }}>
+            <Grid item xs={12} sx={{}}>
               <ImageSlider />
             </Grid>
             <Grid item xs={12} mt={10}>
               <About />
             </Grid>
             <BtnDownToTop minScroll={2000} maxScroll={1000} />
-            <Grid item xs={12} sx={{ mt: 10 }}>
+            <Grid item xs={12} sx={{ mt: 15 }}>
               <Fact scroll="1000" account_number={table_Row.length} />
             </Grid>
 
@@ -111,7 +111,11 @@ const Home = () => {
               item
               xs={10}
               md={8}
-              sx={{ mx: " auto", mb: { xs: 40, md: 10 } }}
+              sx={{
+                m: "auto",
+                mt: 11,
+                mb: { xs: 20, md: 20 },
+              }}
             >
               <FAQs />
             </Grid>
