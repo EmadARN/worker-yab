@@ -1,13 +1,12 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import {  Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Home } from "@mui/icons-material";
 
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import GroupsIcon from "@mui/icons-material/Groups";
 import SpeedDial from "@mui/material/SpeedDial";
-
 
 import { Link } from "react-router-dom";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
@@ -22,7 +21,9 @@ const RightBar = ({ display }) => {
     },
 
     paddingTop: 20,
+  
     width: "100%",
+    
     height: "100vh",
     color: "#efef",
     position: "sticky",
@@ -141,7 +142,7 @@ const RightBar = ({ display }) => {
 
           fontSize: "20px",
         }}
-        to={"/adminenter"}
+        to={"/SignupPage"}
       >
         <Box
           sx={{

@@ -160,7 +160,12 @@ const ImageSlider = () => {
           display: { xs: "flex", sm: "none" },
         }}
       >
-        <BtnAnimation title="ثبت نام" color="black" size="18px" fweight="700" />
+        <BtnAnimation
+          title="ثبت نام کارجو"
+          color="black"
+          size="18px"
+          fweight="700"
+        />
       </Grid>
     </>
   );

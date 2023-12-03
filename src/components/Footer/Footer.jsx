@@ -14,7 +14,7 @@ const FotterGrid = styled("Grid")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     justifyContent: "space-around",
-    marginTop: "4%",
+    marginTop: ".2%",
   },
 }));
 
@@ -55,7 +55,7 @@ export const Footer = (props) => {
                 sx={{ color: "#CC902F", whiteSpace: "nowrap" }}
                 variant="h5"
               >
-                 دسترسی سریع
+                دسترسی سریع
               </Typography>
 
               <Grid style={ItemGrid}>
