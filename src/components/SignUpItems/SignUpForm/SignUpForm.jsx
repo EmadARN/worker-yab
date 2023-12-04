@@ -12,19 +12,16 @@ import {
   Typography,
 } from "@mui/material";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import axios from "axios";
-
 import { IPServer } from "../../../Config/Server";
-
 import { useFormik } from "formik";
 import * as yup from "yup";
-
 import { CookiesProvider, useCookies } from "react-cookie";
 
 const theme = createTheme({
@@ -39,15 +36,31 @@ const cacheRtl = createCache({
 const SignupForm = (style) => {
   const navigate = useNavigate();
   const [cookies, setCookie] = useCookies(["token"]);
-  console.log("token : ", cookies);
   const [inp, setInp] = useState({});
+  const [inpfocus, setInpfocus] = useState(false);
   const textHandler = (e, propertyName) => {
     setInp({ ...inp, [propertyName]: e.target.value });
   };
-
   const textHandler2 = (e, propertyName) => {
     setInp({ ...inp, [propertyName]: e.target.value });
   };
+
+  useEffect(() => {
+    axios
+      .get(`${IPServer}/UserInf/account/inf/`, {
+        headers: {
+          Authorization: `Barear ${cookies["token"]}`,
+        },
+      })
+
+      .then((res) => {
+        setInp(res.data.user_inf);
+        setInpfocus(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const submit = () => {
     axios
@@ -127,6 +140,7 @@ const SignupForm = (style) => {
               <Grid item xs={12}>
                 <form onChange={formik.handleChange("first_name")}>
                   <TextField
+                    focused={inpfocus ? true : false}
                     value={inp.first_name}
                     sx={{ style }}
                     color="success"
@@ -147,6 +161,7 @@ const SignupForm = (style) => {
               <Grid item xs={12}>
                 <form onChange={(e) => textHandler(e, "last_name")}>
                   <TextField
+                    focused={inpfocus ? true : false}
                     value={inp.last_name}
                     name="last_name"
                     sx={{ style }}
@@ -171,7 +186,7 @@ const SignupForm = (style) => {
               <Grid item xs={12}>
                 <form onChange={(e) => textHandler(e, "work_experience")}>
                   <TextField
-            
+                    focused={inpfocus ? true : false}
                     name="work_experience"
                     value={inp.work_experience}
                     sx={{ style, mr: 2 }}
@@ -185,7 +200,7 @@ const SignupForm = (style) => {
                 </form>
               </Grid>
               <Grid container sx={{ my: { xs: 2, md: 3.5 } }}>
-                <Grid item xs={12} md={6} sx={{mb:{xs:2 , md:0}}}>
+                <Grid item xs={12} md={6} sx={{ mb: { xs: 2, md: 0 } }}>
                   <Box
                     sx={{
                       "& .select-root": {
@@ -278,8 +293,8 @@ const SignupForm = (style) => {
 
 export default SignupForm;
 const jobs = [
-  { job: "مکانیک", value: "مکانیک خودرو" },
-  { job: "کارگر ساختمان ", value: "کارگر ساختمانی" },
+  { job: "خدمات منزل", value: "خدمات منزل" },
+  { job: "خدمات ساختمان ", value: "خدمات ساختمانی" },
 ];
 
 const cities = [{ title: "زنجان", value: "زنجان" }];
