@@ -71,7 +71,7 @@ const Home = () => {
               xs={12}
               sx={{ display: "flex", justifyContent: "center", ml: 1.5 }}
             >
-              <Link to={"/allWorker"}>
+              <Link to={"/allWorker"} style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
                   sx={{
