@@ -43,7 +43,7 @@ const Home = () => {
         <TopBarCss />
         <Grid container>
           <Grid item xs={2}>
-            <RightBar minScroll={2770} maxScroll={2800} />
+            <RightBar minScroll={2460} maxScroll={2490} />
           </Grid>
           <Grid container xs={10} md={12}>
             <Grid item xs={12} sx={{}}>
@@ -123,9 +123,7 @@ const Home = () => {
 
           <Footer
             page1={"درباره ما"}
-           
             page3={"خدمات"}
-     
             address={"اعتمادیه.خیابان اول عربی"}
             phNumber={"0919123456"}
             email={"test1@gmail.com"}
