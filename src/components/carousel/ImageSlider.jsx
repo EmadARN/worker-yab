@@ -128,7 +128,7 @@ function SwipeableTextMobileStepper() {
                 zIndex: "999",
               }}
             >
-              <Link to={"/SignupPage"}>
+              <Link to={"/SignupPage"} style={{ textDecoration: "none" }}>
                 <BtnAnimation
                   title="ثبت نام کارجو"
                   color="white"
