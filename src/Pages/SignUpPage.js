@@ -24,6 +24,7 @@ const SignUpPage = () => {
               phone_number={phone_number}
             />
           </Grid>
+          <Grid container sx={{ my: 20 }}></Grid>
         </Grid>
 
         <Footer

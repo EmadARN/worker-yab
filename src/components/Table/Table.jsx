@@ -46,6 +46,7 @@ const TableInfo = ({ row }) => {
                 sx={{
                   fontSize: { xs: "12px", md: "20px" },
                   fontFamily: "Lalezar",
+                  whiteSpace: "nowrap",
                 }}
                 align="right"
               >

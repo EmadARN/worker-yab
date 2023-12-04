@@ -16,7 +16,8 @@ const BackWardBtn = ({ navigate }) => {
       <Button
         variant="contained"
         sx={{
-          width: { xs: "50%" },
+          maxWidth: "160px",
+          width: "100%",
           transition: ".5s",
           borderRadius: "2px",
           p: "15px 35px",
@@ -25,9 +26,9 @@ const BackWardBtn = ({ navigate }) => {
           bgcolor: "#030f27",
           fontWeight: "700",
           fontFamily: "Lalezar",
+          whiteSpace: "nowrap",
           "&:hover": {
             transition: "all .75s",
-            p: "20px 40px",
             bgcolor: "#fdbe33",
             color: "#030f27",
             boxShadow:
@@ -35,7 +36,7 @@ const BackWardBtn = ({ navigate }) => {
           },
         }}
       >
-        قبل
+        ویرایش شماره همراه
       </Button>
     </Link>
   );

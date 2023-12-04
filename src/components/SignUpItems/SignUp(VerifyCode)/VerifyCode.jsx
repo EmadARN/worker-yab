@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { IPServer } from "../../../Config/Server";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
 import { useCookies } from "react-cookie";
+import BackWardBtn from "../BackWardBtn/BackWardBtn";
 
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
@@ -68,7 +69,9 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
   const navigate = useNavigate();
   return (
     <>
-      <Title title="کد  را وارد کنید" width={"200px"} />
+      <Box sx={{ mr: { xs: 5, md: 0 } }}>
+        <Title title="کد  را وارد کنید" width={"200px"} />
+      </Box>
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
           <Grid
@@ -128,12 +131,20 @@ const VerifyNumber = ({ set_verify_code, verify_code }) => {
               </form>
             </Box>
 
-            <Box sx={{ my: 10, display: "flex", justifyContent: "center" ,mr:{xs:0, md:10}}}>
+            <Box
+              sx={{
+                my: 10,
+                display: "flex",
+                justifyContent: "center",
+                mr: { xs: 0, md: 10 },
+              }}
+            >
               <BtnSignUp
                 onClick={
                   verify_code === "" ? formik.handleSubmit : clickHandler()
                 }
               />
+              <BackWardBtn navigate={"/SignupPage"} />
             </Box>
           </Grid>
         </ThemeProvider>
