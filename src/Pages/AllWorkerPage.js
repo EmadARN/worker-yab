@@ -15,16 +15,16 @@ const AllWorkerPage = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid item xs={12} md={8} sx={{ margin: "150px auto" }}>
+          <Grid item xs={12} md={8} sx={{ margin: " auto" }}>
             <AllWorker />
           </Grid>
         </Grid>
 
         <Footer
+          display="none"
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-      
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}

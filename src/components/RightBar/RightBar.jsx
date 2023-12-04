@@ -40,7 +40,7 @@ const RightBar = ({ display, minScroll, maxScroll }) => {
       <Box
         sx={{
           position: "fixed",
-          top: "10%",
+          top: "11%",
 
           display: `${visible ? "none" : "inline"}`,
 

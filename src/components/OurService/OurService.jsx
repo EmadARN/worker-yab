@@ -4,7 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button, Grid } from "@mui/material";
 import builder from "../../Asset/image/portfolio-5.jpg";
-import mechanic from "../../Asset/image/Industrial-Maintenance-Mechanic-Technician-940x529.jpg";
+import mechanic from "../../Asset/image/officecleaning.jpg";
 
 import Title from "../Title/Title";
 
@@ -14,16 +14,16 @@ const OurService = () => {
   const buttons = [
     {
       id: 1,
-      name: "ساختمانی",
+      name: "خدمات  ساختمانی",
       img: builder,
       desc: "نیروی کارگر ساختمان",
       to: "/allWorker",
     },
     {
       id: 2,
-      name: "مکانیک",
+      name: "خدمات منزل",
       img: mechanic,
-      desc: "نیروی مکانیک",
+      desc: " خدمات منزل",
       to: "/allWorker",
     },
   ];

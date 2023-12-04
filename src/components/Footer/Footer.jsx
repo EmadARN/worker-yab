@@ -153,7 +153,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link>
+                  <Link to={"/ServicesPage"}>
                     <Button
                       sx={{
                         color: "white",
@@ -186,7 +186,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link>
+                  <Link to={"/ServicesPage"}>
                     <Button
                       sx={{
                         color: "white",
