@@ -72,7 +72,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link to={"/About"}>
+                  <Link to={"/About"} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
                         color: "white",
@@ -92,7 +92,6 @@ export const Footer = (props) => {
                 </Box>
               </Grid>
 
-
               <Grid
                 style={ItemGrid}
                 sx={{ marginLeft: { xs: "5%", md: "15%" } }}
@@ -110,7 +109,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link to={"/ServicesPage"}>
+                  <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
                         color: "white",
@@ -153,7 +152,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link to={"/ServicesPage"}>
+                  <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
                         color: "white",
@@ -167,7 +166,7 @@ export const Footer = (props) => {
                       style={ItemText}
                     >
                       {" "}
-                     خدمات منزل
+                      خدمات منزل
                     </Button>
                   </Link>
                 </Box>
@@ -186,7 +185,7 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link to={"/ServicesPage"}>
+                  <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
                         color: "white",
@@ -200,7 +199,7 @@ export const Footer = (props) => {
                       style={ItemText}
                     >
                       {" "}
-                     خدمات ساختمانی
+                      خدمات ساختمانی
                     </Button>
                   </Link>
                 </Box>
@@ -210,7 +209,6 @@ export const Footer = (props) => {
                   sx={{
                     color: "white",
                     fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                   
                   }}
                   style={ItemText}
                 >
@@ -240,24 +238,20 @@ export const Footer = (props) => {
                     sx={{
                       color: "white",
                       fontSize: "25px",
-                  
                     }}
                   />
                 </Box>
                 <Box>
-                  <Link>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                      
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
-                      {props.address}
-                    </Button>
-                  </Link>
+                  <Button
+                    sx={{
+                      color: "white",
+                      fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                    }}
+                    style={ItemText}
+                  >
+                    {" "}
+                    {props.address}
+                  </Button>
                 </Box>
               </Grid>
               <Grid style={ItemGrid}>
@@ -266,24 +260,20 @@ export const Footer = (props) => {
                     sx={{
                       color: "white",
                       fontSize: "25px",
-                 
                     }}
                   />
                 </Box>
                 <Box>
-                  <Link>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                       
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
-                      {props.phNumber}
-                    </Button>
-                  </Link>
+                  <Button
+                    sx={{
+                      color: "white",
+                      fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                    }}
+                    style={ItemText}
+                  >
+                    {" "}
+                    {props.phNumber}
+                  </Button>
                 </Box>
               </Grid>
               <Grid style={ItemGrid}>
@@ -296,19 +286,16 @@ export const Footer = (props) => {
                   />
                 </Box>
                 <Box>
-                  <Link>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                        
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
-                      {props.email}
-                    </Button>
-                  </Link>
+                  <Button
+                    sx={{
+                      color: "white",
+                      fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                    }}
+                    style={ItemText}
+                  >
+                    {" "}
+                    {props.email}
+                  </Button>
                 </Box>
               </Grid>
             </Grid>
