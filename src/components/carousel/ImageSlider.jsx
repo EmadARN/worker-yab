@@ -188,6 +188,7 @@ import SliderImg3 from "../../Asset/image/photo-1565954786194-d22abeaac3ae.avif"
 import BtnAnimation from "../BtnAnimation/BtnAnimation";
 import { Grid } from "@mui/material";
 import "animate.css";
+import { Link } from "react-router-dom";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -302,12 +303,14 @@ function SwipeableTextMobileStepper() {
                 zIndex: "999",
               }}
             >
+              <Link   to={"/SignupPage"}>
               <BtnAnimation
                 title="ثبت نام کارجو"
                 color="white"
                 size="18px"
                 fweight="500"
               />
+              </Link>
             </Grid>
           </div>
         ))}

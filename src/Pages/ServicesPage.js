@@ -30,8 +30,7 @@ const ServicesPage = () => {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-          services1={"خدمات مکانیکی"}
-          services2={"کارگران ساختمانی"}
+    
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}

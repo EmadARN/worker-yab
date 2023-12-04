@@ -20,7 +20,7 @@ const SignUpPage3 = () => {
           <Stepper1 />
           <Grid xs={12} sx={{ margin: "auto" }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Grid container xs={12}>
+              <Grid container >
                 <Grid
                   item
                   xs={12}
@@ -60,8 +60,7 @@ const SignUpPage3 = () => {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-          services1={"خدمات مکانیکی"}
-          services2={"کارگران ساختمانی"}
+     
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}

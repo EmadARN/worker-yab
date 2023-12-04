@@ -92,39 +92,7 @@ export const Footer = (props) => {
                 </Box>
               </Grid>
 
-              <Grid style={ItemGrid}>
-                <Box>
-                  <KeyboardArrowRightIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "25px",
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
-                    }}
-                  />
-                </Box>
-                <Box>
-                  <Link to={"/ContactUs"}>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
-                      {props.page2}
-                    </Button>
-                  </Link>
-                </Box>
-              </Grid>
+
               <Grid
                 style={ItemGrid}
                 sx={{ marginLeft: { xs: "5%", md: "15%" } }}
@@ -199,7 +167,7 @@ export const Footer = (props) => {
                       style={ItemText}
                     >
                       {" "}
-                      {props.services1}
+                     خدمات منزل
                     </Button>
                   </Link>
                 </Box>
@@ -232,7 +200,7 @@ export const Footer = (props) => {
                       style={ItemText}
                     >
                       {" "}
-                      {props.services2}
+                     خدمات ساختمانی
                     </Button>
                   </Link>
                 </Box>
@@ -242,11 +210,7 @@ export const Footer = (props) => {
                   sx={{
                     color: "white",
                     fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                    "&:hover": {
-                      mr: { xs: 1, sm: 2, md: 1 },
-                      transition: "all .75s ",
-                      color: "#fdbe33",
-                    },
+                   
                   }}
                   style={ItemText}
                 >
@@ -276,10 +240,7 @@ export const Footer = (props) => {
                     sx={{
                       color: "white",
                       fontSize: "25px",
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
+                  
                     }}
                   />
                 </Box>
@@ -289,11 +250,7 @@ export const Footer = (props) => {
                       sx={{
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
+                      
                       }}
                       style={ItemText}
                     >
@@ -309,10 +266,7 @@ export const Footer = (props) => {
                     sx={{
                       color: "white",
                       fontSize: "25px",
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
+                 
                     }}
                   />
                 </Box>
@@ -322,11 +276,7 @@ export const Footer = (props) => {
                       sx={{
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
+                       
                       }}
                       style={ItemText}
                     >
@@ -351,14 +301,7 @@ export const Footer = (props) => {
                       sx={{
                         color: "white",
                         fontSize: { xs: "17px", sm: "20px", md: "25px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                          "& .MuiSvgIcon-root": {
-                            color: "#fdbe33",
-                          },
-                        },
+                        
                       }}
                       style={ItemText}
                     >

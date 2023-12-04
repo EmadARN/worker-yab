@@ -171,7 +171,7 @@ const SignupForm = (style) => {
               <Grid item xs={12}>
                 <form onChange={(e) => textHandler(e, "work_experience")}>
                   <TextField
-                    type="number"
+            
                     name="work_experience"
                     value={inp.work_experience}
                     sx={{ style, mr: 2 }}
@@ -185,7 +185,7 @@ const SignupForm = (style) => {
                 </form>
               </Grid>
               <Grid container sx={{ my: { xs: 2, md: 3.5 } }}>
-                <Grid item xs={12} md={6} sx={{}}>
+                <Grid item xs={12} md={6} sx={{mb:{xs:2 , md:0}}}>
                   <Box
                     sx={{
                       "& .select-root": {

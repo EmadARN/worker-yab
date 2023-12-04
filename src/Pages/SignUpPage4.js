@@ -23,6 +23,7 @@ const SignUpPage4 = () => {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+  padding:"0 12px"
   };
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
@@ -77,7 +78,7 @@ const SignUpPage4 = () => {
   return (
     <>
       <TopBarCss />
-      <Grid container>
+      <Grid container >
         <Grid item xs={2}>
           <RightBar />
         </Grid>
@@ -150,7 +151,7 @@ const SignUpPage4 = () => {
             </Typography>
           </Box>
 
-          <Box>
+          <Box sx={{display:"flex", justifyContent:{xs:"center"} , }}>
             {openCamera ? (
               <Button
                 sx={{
@@ -326,8 +327,7 @@ const SignUpPage4 = () => {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-          services1={"خدمات مکانیکی"}
-          services2={"کارگران ساختمانی"}
+
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}
