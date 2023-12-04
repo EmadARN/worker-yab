@@ -83,7 +83,7 @@ const SignUpPage4 = () => {
           <RightBar />
         </Grid>
         <Grid style={MainGrid} container xs={10} md={12} mb={5}>
-          <Stepper1 />
+          <Stepper1 stepID={2}/>
           <Box mb={4} sx={{ mt: { xs: "7%" } }}>
             <Typography fontFamily={"Lalezar"} variant="h4">
               بارگذاری چهره متقاضی

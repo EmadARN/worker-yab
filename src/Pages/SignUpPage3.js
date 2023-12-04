@@ -17,7 +17,7 @@ const SignUpPage3 = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12} sx={{ marginBottom: "5%" }}>
-          <Stepper1 />
+          <Stepper1 stepID={1}/>
           <Grid xs={12} sx={{ margin: "auto" }}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Grid container >

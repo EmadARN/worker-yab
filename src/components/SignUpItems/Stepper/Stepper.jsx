@@ -11,10 +11,10 @@ const steps = [
   "تایید نهایی",
 ];
 
-export default function Stepper1() {
+export default function Stepper1({stepID}) {
   return (
     <Box sx={{ width: "80%", direction: "ltr", mt: 10, mx: "auto" }}>
-      <Stepper activeStep={0} alternativeLabel sx={{}}>
+      <Stepper activeStep={stepID} alternativeLabel sx={{}}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>

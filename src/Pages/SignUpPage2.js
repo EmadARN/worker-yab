@@ -17,7 +17,7 @@ const SignUpPage2 = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Stepper1 />
+          <Stepper1 stepID={0}/>
           <Grid xs={12} sx={{ margin: "auto" }}>
             <VerifyCode
               set_verify_code={setVerify_code}

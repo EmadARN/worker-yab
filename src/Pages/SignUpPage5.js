@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { CookiesProvider, useCookies } from "react-cookie";
 import { IPServer } from "../Config/Server";
 import axios from "axios";
+import Stepper1 from "../components/SignUpItems/Stepper/Stepper";
 
 const SignUpPage5 = () => {
   const [cookies, setCookie] = useCookies(["token"]);
@@ -82,7 +83,8 @@ const SignUpPage5 = () => {
         </Grid>
         <Grid item xs={8} sx={{ margin: { xs: "auto", md: "0" } }}>
           <Grid container mt={6}>
-            <Grid item xs={12} sm={12} md={12} xl={12}>
+            <Stepper1 stepID={4} />
+            <Grid item xs={12} sm={12} md={12} xl={12} mt={8}>
               <Box>
                 <SignUpFinal />
               </Box>
@@ -243,7 +245,6 @@ const SignUpPage5 = () => {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-    
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}
