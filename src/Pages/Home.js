@@ -43,7 +43,7 @@ const Home = () => {
         <TopBarCss />
         <Grid container>
           <Grid item xs={2}>
-            <RightBar />
+            <RightBar minScroll={2770} maxScroll={2800} />
           </Grid>
           <Grid container xs={10} md={12}>
             <Grid item xs={12} sx={{}}>
