@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -58,7 +57,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%", flexGrow: 1, position: "relative", }}>
+    <Box sx={{ width: "100%", flexGrow: 1, position: "relative" }}>
       <Paper square elevation={0} sx={{}}></Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === "ltr" ? "x-reverse" : "x"}
@@ -79,7 +78,6 @@ function SwipeableTextMobileStepper() {
                   width: "100%",
                 }}
                 src={step.imgPath}
-                alt={step.label}
               />
             ) : null}
             <Typography
@@ -130,13 +128,13 @@ function SwipeableTextMobileStepper() {
                 zIndex: "999",
               }}
             >
-              <Link   to={"/SignupPage"}>
-              <BtnAnimation
-                title="ثبت نام کارجو"
-                color="white"
-                size="18px"
-                fweight="500"
-              />
+              <Link to={"/SignupPage"}>
+                <BtnAnimation
+                  title="ثبت نام کارجو"
+                  color="white"
+                  size="18px"
+                  fweight="500"
+                />
               </Link>
             </Grid>
           </div>
