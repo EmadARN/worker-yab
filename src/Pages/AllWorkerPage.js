@@ -18,7 +18,7 @@ const AllWorkerPage = () => {
           <Grid item xs={12} md={8} sx={{ margin: " auto" }}>
             <AllWorker />
           </Grid>
-          <Grid container sx={{ my: 20 }}></Grid>
+          <Grid container sx={{ my: 21 }}></Grid>
         </Grid>
 
         <Footer
