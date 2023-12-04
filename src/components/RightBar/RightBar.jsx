@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -8,7 +8,7 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import SpeedDial from "@mui/material/SpeedDial";
 import { Link } from "react-router-dom";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
-const RightBar = ({ display }) => {
+const RightBar = ({ display, minScroll, maxScroll }) => {
   const Container = styled("div")(({ theme }) => ({
     backgroundColor: "#fdbe33",
     [theme.breakpoints.down("md")]: {
@@ -23,9 +23,30 @@ const RightBar = ({ display }) => {
     height: "100%",
     color: "#efef",
   }));
+
+  const [visible, setVisible] = useState(false);
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled < maxScroll) {
+      setVisible(false);
+    } else if (scrolled > minScroll) {
+      setVisible(true);
+    }
+  };
+
+  window.addEventListener("scroll", toggleVisible);
   return (
     <Container sx={{}}>
-      <Box sx={{ position: "fixed" }}>
+      <Box
+        sx={{
+          position: "fixed",
+          top: "10%",
+
+          display: `${visible ? "none" : "inline"}`,
+
+          zIndex: "999",
+        }}
+      >
         <Link
           to={"/"}
           style={{
