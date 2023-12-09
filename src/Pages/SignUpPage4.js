@@ -23,7 +23,7 @@ const SignUpPage4 = () => {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-  padding:"0 12px"
+    padding: "0 12px",
   };
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
@@ -38,13 +38,18 @@ const SignUpPage4 = () => {
   });
 
   const [openCamera, setOpenCamera] = useState(false);
+
   const [url, setUrl] = useState(null);
 
-  const [disabled, setDisabled] = useState(true);
-
-  const [pic, setPic] = useState();
-
   const [file, setFile] = useState(false);
+
+  const [storeData, setStoreDate] = useState();
+
+  
+  const CloseIconHandle =()=>{
+    setStoreDate("")
+    setFile(false)
+  }
 
   const uploadImg = () => {
     if (file === false) {
@@ -73,17 +78,19 @@ const SignUpPage4 = () => {
 
     navigate("/SignupPage5");
   };
-  const [storeData, setStoreDate] = useState();
+
+
+
 
   return (
     <>
       <TopBarCss />
-      <Grid container >
+      <Grid container>
         <Grid item xs={2}>
           <RightBar />
         </Grid>
         <Grid style={MainGrid} container xs={10} md={12} mb={5}>
-          <Stepper1 stepID={2}/>
+          <Stepper1 stepID={2} />
           <Box mb={4} sx={{ mt: { xs: "7%" } }}>
             <Typography fontFamily={"Lalezar"} variant="h4">
               بارگذاری چهره متقاضی
@@ -151,8 +158,8 @@ const SignUpPage4 = () => {
             </Typography>
           </Box>
 
-          <Box sx={{display:"flex", justifyContent:{xs:"center"} , }}>
-            {openCamera ? (
+          <Box sx={{ display: "flex", justifyContent: { xs: "center" } }}>
+            <>
               <Button
                 sx={{
                   bgcolor: "#fdbe33",
@@ -169,7 +176,7 @@ const SignUpPage4 = () => {
                 }}
                 component="label"
                 variant="contained"
-                disabled
+                disabled={openCamera}
               >
                 <CloudUploadIcon
                   className="iconee"
@@ -179,123 +186,71 @@ const SignUpPage4 = () => {
                   }}
                 />
                 بارگذاری عکس
-                <VisuallyHiddenInput type="file" />
+                <VisuallyHiddenInput
+                  onChange={(e) => {
+                    return setStoreDate(e.target.files[0]), setFile(true);
+                  }}
+                  type="file"
+                />
               </Button>
-            ) : (
-              <>
-                <Button
-                  sx={{
-                    bgcolor: "#fdbe33",
-                    color: "#030f27",
-                    p: 1.8,
-                    fontWeight: "bold",
-                    fontSize: "15px",
-                    "&:hover": {
-                      bgcolor: "#fdbe33",
-                      "& .iconee": {
-                        color: "#030f27",
-                      },
-                    },
-                  }}
-                  component="label"
-                  variant="contained"
-                >
-                  <CloudUploadIcon
-                    className="iconee"
-                    sx={{
-                      mx: 2,
-                      color: "#030f27",
-                    }}
-                  />
-                  بارگذاری عکس
-                  <VisuallyHiddenInput
-                    onChange={(e) => {
-                      return setStoreDate(e.target.files[0]), setFile(true);
-                    }}
-                    type="file"
-                  />
-                </Button>
-              </>
-            )}
+            </>
 
-            {file ? (
-              <>
-                <Button
-                  sx={{
-                    transition: ".5s",
-                    p: "14px 35px",
-                    color: "#fdbe33",
-                    fontSize: "16px",
-                    bgcolor: "#030f27",
-                    fontWeight: "700",
-                    fontFamily: "Lalezar",
-                    borderRadius: "20px 0px 0px 20px",
-                    "&:hover": {
-                      transition: "all .75s",
+            <></>
 
-                      bgcolor: "#030f27",
-                      color: "#fdbe33",
-                    },
-                  }}
-                  onClick={() => setOpenCamera(true)}
-                  disabled={disabled}
-                >
-                  باز شدن دوربین
-                </Button>
+            <Button
+              sx={{
+                transition: ".5s",
+                p: "14px 35px",
+                color: "#fdbe33",
+                fontSize: "16px",
+                bgcolor: "#030f27",
+                fontWeight: "700",
+                fontFamily: "Lalezar",
+                borderRadius: "20px 0px 0px 20px",
+                "&:hover": {
+                  transition: "all .75s",
 
-                <Typography
-                  sx={{
-                    fontSize: "20px",
-                    color: "red",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "row-reverse",
-                    justifyContent: "flex-end",
-                    mt: 3,
-                  }}
-                  onClick={() => {
-                    return setPic(""), setDisabled(false);
-                  }}
-                >
-                  {pic !== "" ? (
-                    <>
-                      <Typography sx={{ color: "#333" }}> {pic} </Typography>
-                      <CloseIcon />{" "}
-                    </>
-                  ) : null}
-                </Typography>
-              </>
-            ) : (
-              <Button
-                sx={{
-                  transition: ".5s",
-                  p: "14px 35px",
-                  color: "#fdbe33",
-                  fontSize: "16px",
                   bgcolor: "#030f27",
-                  fontWeight: "700",
-                  fontFamily: "Lalezar",
-                  borderRadius: "20px 0px 0px 20px",
-                  "&:hover": {
-                    transition: "all .75s",
-
-                    bgcolor: "#030f27",
-                    color: "#fdbe33",
-                  },
-                }}
-                onClick={() => setOpenCamera(true)}
-              >
-                باز شدن دوربین
-              </Button>
-            )}
+                  color: "#fdbe33",
+                },
+              }}
+              disabled={file}
+              onClick={() => setOpenCamera(true)}
+            >
+              باز شدن دوربین
+            </Button>
           </Box>
+
+          <Typography
+            sx={{
+              fontSize: "20px",
+              color: "red",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row-reverse",
+              justifyContent: "flex-end",
+              mt: 3,
+            }}
+            onClick={()=>CloseIconHandle()}
+          >
+            {storeData ? (
+              <>
+                <Typography sx={{ color: "#333" }}>
+                  {" "}
+                  {storeData.name}{" "}
+                </Typography>
+                <CloseIcon />{" "}
+              </>
+            ) : null}
+          </Typography>
 
           <Box
             mt={4}
             sx={{ width: "100%", display: "flex", justifyContent: "center" }}
           >
             <Button
+              disabled={!url && !storeData}
               onClick={uploadImg}
               variant="contained"
               sx={{
@@ -327,7 +282,6 @@ const SignUpPage4 = () => {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}
