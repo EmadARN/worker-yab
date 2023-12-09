@@ -76,7 +76,7 @@ const RightBar = ({ display, minScroll, maxScroll }) => {
               sx={{
                 pb: 3,
                 color: "#030f27",
-                pr: { xs: 0, sm: 2 },
+                pr: { xs: 0, sm: 1 },
                 mt: { xs: 0, sm: 3 },
                 "@media (max-width:470px)": {
                   display: "none",
@@ -109,7 +109,7 @@ const RightBar = ({ display, minScroll, maxScroll }) => {
               sx={{
                 pb: 5,
                 color: "#030f27",
-                pr: { xs: 0, sm: 2 },
+                pr: { xs: 0, sm: 1 },
                 "@media (max-width:470px)": {
                   display: "none",
                 },
@@ -141,7 +141,7 @@ const RightBar = ({ display, minScroll, maxScroll }) => {
               sx={{
                 pb: 5,
                 color: "#030f27",
-                pr: { xs: 0, sm: 2 },
+                pr: { xs: 0, sm: 1 },
                 "@media (max-width:470px)": {
                   display: "none",
                 },
