@@ -17,7 +17,7 @@ a {
 }
 @media screen and (min-width: 600px) {
   body::-webkit-scrollbar {
-    width: 1em;
+    width: 0.7em;
   }
 
   body::-webkit-scrollbar-track {
@@ -26,6 +26,6 @@ a {
 
   body::-webkit-scrollbar-thumb {
     background-color: #030f27;
-    outline: 3px solid #fdbe33;
+    outline: 2px solid #fdbe33;
   }
 }
