@@ -7,6 +7,7 @@ import SignUpForm from "../components/SignUpItems/SignUpForm/SignUpForm";
 import SignUpImage from "../components/SignUpItems/SignUpImage/SignUpImage";
 import RightBar from "../components/RightBar/RightBar";
 import { Footer } from "../components/Footer/Footer";
+import { Grid2, Grid3 } from "../styles/style";
 
 const SignUpPage3 = () => {
   return (
@@ -16,10 +17,10 @@ const SignUpPage3 = () => {
         <Grid item xs={2}>
           <RightBar />
         </Grid>
-        <Grid container xs={10} md={12} sx={{ marginBottom: "5%" }}>
+        <Grid container xs={10} md={12} mb={"5%"}>
           <Stepper1 stepID={1} />
-          <Grid xs={12} sx={{ margin: "auto" }}>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid xs={12} m="auto">
+            <Box sx={Grid2}>
               <Grid container>
                 <Grid
                   item
@@ -28,11 +29,7 @@ const SignUpPage3 = () => {
                   md={5}
                   xl={6}
                   spacing={2}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  sx={Grid3}
                 >
                   <SignUpForm />
                 </Grid>
@@ -43,11 +40,7 @@ const SignUpPage3 = () => {
                   md={7}
                   xl={6}
                   spacing={2}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  sx={Grid3}
                 >
                   <SignUpImage />
                 </Grid>

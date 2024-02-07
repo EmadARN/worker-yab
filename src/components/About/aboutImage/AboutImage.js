@@ -1,29 +1,3 @@
-// import { Grid } from "@mui/material";
-// import construction from "../../../Asset/image/aboute.jpeg";
-// import mechanic from "../../../Asset/image/meca.jpg";
-// import { useEffect, useState } from "react";
-// function AboutImg(props) {
-//   const [image_index, setImageIndex] = useState(0);
-
-//   const image_list = [construction, mechanic];
-//   useEffect(() => {
-//     const _ = setInterval(() => {
-//       setImageIndex((image_index) => image_index + 1);
-//     }, 5000);
-//   }, [image_index]);
-
-//   return (
-//     <>
-//       <img
-//         src={image_list[(image_index % image_list.length).toFixed()]}
-//         alt="image"
-//         className="image"
-//         style={{ width: "80%", height: "90%" }}
-//       />
-//     </>
-//   );
-// }
-// export default AboutImg;
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -33,6 +7,7 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import construction from "../../../Asset/image/aboute.jpeg";
 import mechanic from "../../../Asset/image/meca.jpg";
+import {AboutImage_B1, AboutImage_B2, AboutImage_paper1} from "../style";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -54,17 +29,11 @@ function AboutImage() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box sx={AboutImage_B1}>
       <Paper
         square
         elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
+        sx={AboutImage_paper1}
       >
         <Typography>{images[activeStep].label}</Typography>
       </Paper>
@@ -79,13 +48,7 @@ function AboutImage() {
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
-                sx={{
-                  height: { xs: 400, md: 500 },
-                  display: "block",
-                  maxWidth: 500,
-                  overflow: "hidden",
-                  width: "100%",
-                }}
+                sx={AboutImage_B2}
                 src={step.imgPath}
                 alt={step.label}
               />

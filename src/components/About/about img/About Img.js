@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
 import construction from "../../../Asset/image/aboute.jpeg";
 import mechanic from "../../../Asset/image/meca.jpg";
 import { useEffect, useState } from "react";
+import {AboutImg_s} from "../style";
 function AboutImg(props) {
   const [image_index, setImageIndex] = useState(0);
 
@@ -18,7 +18,7 @@ function AboutImg(props) {
         src={image_list[(image_index % image_list.length).toFixed()]}
         alt="image"
         className="image"
-        style={{ width: "80%", height: "90%" }}
+        style={AboutImg_s}
       />
     </>
   );

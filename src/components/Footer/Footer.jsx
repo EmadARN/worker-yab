@@ -5,49 +5,28 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-
-const FotterGrid = styled("Grid")(({ theme }) => ({
-  width: "100%",
-  height: "100%",
-  backgroundColor: "#030F27",
-
-  [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
-    justifyContent: "space-around",
-
-    marginTop: ".2%",
-  },
-}));
-
-const coloumnGrid = {
-  display: "flex",
-  textAlign: "start",
-  marginTop: "5%",
-  marginBottom: "5%",
-};
-
-const ItemGrid = {
-  display: "flex",
-  alignItems: "center",
-};
-
-const ItemText = {
-  whiteSpace: "nowrap",
-};
+import {
+  Button1,
+  EmailIconSX,
+  FotterGrid,
+  Grid1,
+  Grid2,
+  Grid4,
+  ItemGrid,
+  ItemText,
+  KeyboardArrowRightIconSX,
+  KeyboardArrowRightIconSx,
+  LocationOnIconSx,
+  Typ2,
+  Typography3,
+  coloumnGrid,
+} from "./style";
 
 export const Footer = (props) => {
   return (
     <>
       <FotterGrid>
-        <Grid
-          container
-          sx={{
-            display: { xs: props.display, md: "flex" },
-            justifyContent: "space-evenly",
-            borderBottom: "3px solid white",
-            pr: { xs: 5, md: 0 },
-          }}
-        >
+        <Grid container sx={Grid1(props)}>
           {/* useful pages */}
           <Grid
             textAlign="center"
@@ -58,80 +37,30 @@ export const Footer = (props) => {
             style={coloumnGrid}
           >
             <Grid sx={{}}>
-              <Typography
-                sx={{ color: "#CC902F", whiteSpace: "nowrap" }}
-                variant="h5"
-              >
+              <Typography sx={Typ2} variant="h5">
                 دسترسی سریع
               </Typography>
 
               <Grid style={ItemGrid}>
                 <Box>
-                  <KeyboardArrowRightIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "22px",
-                      mt: 1,
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
-                    }}
-                  />
+                  <KeyboardArrowRightIcon sx={KeyboardArrowRightIconSX} />
                 </Box>
                 <Box>
-                  <Link to={"/About"} style={{ textDecoration: "none" }}>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
+                  <Link to={"/About"}>
+                    <Button sx={Button1} style={ItemText}>
                       {props.page1}
                     </Button>
                   </Link>
                 </Box>
               </Grid>
 
-              <Grid
-                style={ItemGrid}
-                sx={{ marginLeft: { xs: "5%", md: "15%" } }}
-              >
+              <Grid style={ItemGrid} sx={Grid2}>
                 <Box>
-                  <KeyboardArrowRightIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "25px",
-                      mt: 1,
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
-                    }}
-                  />
+                  <KeyboardArrowRightIcon sx={KeyboardArrowRightIconSx} />
                 </Box>
                 <Box>
-                  <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
+                  <Link to={"/ServicesPage"}>
+                    <Button sx={Button1} style={ItemText}>
                       {props.page3}
                     </Button>
                   </Link>
@@ -142,40 +71,17 @@ export const Footer = (props) => {
           {/* services */}
           <Grid item xs={12} sm={6} md={2} style={coloumnGrid}>
             <Grid>
-              <Typography sx={{ color: "#CC902F" }} variant="h5">
-                {" "}
+              <Typography color="#cc902F" variant="h5">
                 خدمات قابل ارائه
               </Typography>
 
               <Grid textAlign="center" style={ItemGrid}>
                 <Box>
-                  <KeyboardArrowRightIcon
-                    sx={{
-                      color: "white",
-                      mt: 1,
-                      fontSize: "22px",
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
-                    }}
-                  />
+                  <KeyboardArrowRightIcon sx={Button1} />
                 </Box>
                 <Box>
-                  <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
+                  <Link to={"/ServicesPage"}>
+                    <Button sx={Button1} style={ItemText}>
                       خدمات منزل
                     </Button>
                   </Link>
@@ -183,46 +89,18 @@ export const Footer = (props) => {
               </Grid>
               <Grid style={ItemGrid}>
                 <Box>
-                  <KeyboardArrowRightIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "22px",
-                      mt: 1,
-                      "&:hover": {
-                        transition: "all .75s ",
-                        color: "#fdbe33",
-                      },
-                    }}
-                  />
+                  <KeyboardArrowRightIcon sx={Button1} />
                 </Box>
                 <Box>
                   <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
-                    <Button
-                      sx={{
-                        color: "white",
-                        fontSize: { xs: "17px", sm: "20px" },
-                        "&:hover": {
-                          mr: { xs: 1, sm: 2, md: 1 },
-                          transition: "all .75s ",
-                          color: "#fdbe33",
-                        },
-                      }}
-                      style={ItemText}
-                    >
-                      {" "}
+                    <Button sx={Button1} style={ItemText}>
                       خدمات ساختمانی
                     </Button>
                   </Link>
                 </Box>
               </Grid>
               <Grid style={ItemGrid}>
-                <Typography
-                  sx={{
-                    color: "white",
-                    fontSize: { xs: "17px", sm: "20px" },
-                  }}
-                  style={ItemText}
-                >
+                <Typography sx={Typography3} style={ItemText}>
                   منتظر سایر خدمات ما باشید
                 </Typography>
               </Grid>
@@ -240,74 +118,36 @@ export const Footer = (props) => {
             sx={{ mr: { xs: 0, md: 5 } }}
           >
             <Grid>
-              <Typography sx={{ color: "#CC902F" }} variant="h5">
-                {" "}
+              <Typography color="#cc902F" variant="h5">
                 راه های ارتباطی با ما
               </Typography>
 
               <Grid style={ItemGrid}>
                 <Box>
-                  <LocationOnIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "22px",
-                    }}
-                  />
+                  <LocationOnIcon sx={LocationOnIconSx} />
                 </Box>
                 <Box>
-                  <Button
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: "17px", sm: "20px" },
-                    }}
-                    style={ItemText}
-                  >
-                    {" "}
+                  <Button sx={Typography3} style={ItemText}>
                     {props.address}
                   </Button>
                 </Box>
               </Grid>
-              <Grid sx={{ ml: { xs: "28%", md: "32%" } }} style={ItemGrid}>
+              <Grid ml={{ xs: "28%", md: "32%" }} style={ItemGrid}>
                 <Box>
-                  <PhoneIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "22px",
-                    }}
-                  />
+                  <PhoneIcon sx={LocationOnIconSx} />
                 </Box>
                 <Box>
-                  <Button
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: "17px", sm: "20px" },
-                    }}
-                    style={ItemText}
-                  >
-                    {" "}
+                  <Button sx={Typography3} style={ItemText}>
                     {props.phNumber}
                   </Button>
                 </Box>
               </Grid>
               <Grid style={ItemGrid}>
                 <Box>
-                  <EmailIcon
-                    sx={{
-                      color: "white",
-                      fontSize: "22px",
-                      mt: 0.5,
-                    }}
-                  />
+                  <EmailIcon sx={EmailIconSX} />
                 </Box>
                 <Box>
-                  <Button
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: "17px", sm: "20px" },
-                    }}
-                    style={ItemText}
-                  >
-                    {" "}
+                  <Button sx={Typography3} style={ItemText}>
                     {props.email}
                   </Button>
                 </Box>
@@ -316,17 +156,9 @@ export const Footer = (props) => {
           </Grid>
         </Grid>
 
-        <Grid
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            padding: "1% 0",
-            justifyContent: "center",
-          }}
-        >
-          <Box sx={{ marginLeft: "1%" }}>
-            <Typography sx={{ color: "white" }} variant="h5">
-              {" "}
+        <Grid sx={Grid4}>
+          <Box ml={"1%"}>
+            <Typography color="#fff" variant="h5">
               ساخته شده توسط
             </Typography>
           </Box>

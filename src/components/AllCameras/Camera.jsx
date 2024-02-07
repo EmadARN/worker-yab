@@ -2,6 +2,12 @@ import { Box, Button, Grid } from "@mui/material";
 
 import React, { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
+import {
+  Camera_Button1,
+  Camera_Button2,
+  Camera_Button3,
+  Camera_G1,
+} from "./style";
 
 const videoConstrants = {
   width: 540,
@@ -45,91 +51,23 @@ const Camera = (props) => {
           />
         )}
       </Grid>
-      <Grid sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid sx={Camera_G1}>
         <Box>
-          <Button
-            sx={{
-              mt: { xs: 5, md: 3 },
-
-              transition: ".5s",
-              borderRadius: "2px",
-              p: "10px 35px",
-              color: "#030f27",
-              fontSize: "16px",
-              bgcolor: "#fdbe33",
-              fontWeight: "700",
-
-              fontFamily: "Lalezar",
-              "&:hover": {
-                transition: "all .75s",
-
-                bgcolor: "#fdbe33",
-                color: "#030f27",
-                boxShadow:
-                  "0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2)",
-              },
-            }}
-            onClick={capturePhoto}
-          >
+          <Button sx={Camera_Button1} onClick={capturePhoto}>
             گرفتن عکس
           </Button>
         </Box>
         <Box>
           {" "}
           {offcamera ? (
-            <Button
-              sx={{
-                mt: { xs: 5, md: 3 },
-                mx: 3,
-                transition: ".5s",
-                borderRadius: "2px",
-                p: "10px 35px",
-                color: "#fdbe33",
-                fontSize: "16px",
-                bgcolor: "#030f27",
-                fontWeight: "700",
-                fontFamily: "Lalezar",
-                borderRadius: "20px 20px 20px 20px",
-                "&:hover": {
-                  transition: "all .75s",
-
-                  bgcolor: "#030f27",
-                  color: "#fdbe33",
-                  boxShadow:
-                    "0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2)",
-                },
-              }}
-              onClick={retryHandler}
-            >
+            <Button sx={Camera_Button2} onClick={retryHandler}>
               تلاش دوباره
             </Button>
           ) : null}
         </Box>
         <Box>
           {" "}
-          <Button
-            sx={{
-              mt: { xs: 5, md: 3 },
-              mr: 1,
-              transition: ".5s",
-              borderRadius: "2px",
-              p: "10px 35px",
-              color: "#030f27",
-              fontSize: "16px",
-              bgcolor: "rgb(226, 22, 36)",
-              fontWeight: "700",
-              fontFamily: "Lalezar",
-              "&:hover": {
-                transition: "all .5s",
-
-                bgcolor: "rgb(226, 22, 36)",
-
-                boxShadow:
-                  "0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2)",
-              },
-            }}
-            onClick={props.onClose}
-          >
+          <Button sx={Camera_Button3} onClick={props.onClose}>
             بستن دوربین{" "}
           </Button>
         </Box>

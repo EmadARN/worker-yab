@@ -1,33 +1,19 @@
 import { Grid, Typography } from "@mui/material";
+import {AboutDesk_T1, AboutDesk_T2} from "../style";
 
 function AboutDesc() {
   return (
     <>
       <Grid>
         <Grid my={1.5} mx="auto">
-          <Typography
-            sx={{
-              fontSize: { xs: "12px", md: "20px" },
-              fontWeight: { xs: "500", md: "bold" },
-              color: "#6a6a6a",
-              textAlign: "justify",
-            }}
-          >
+          <Typography sx={AboutDesk_T1}>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
             کاربردهای متنوع با هدف بهبود ابزارهای کاربردی.
           </Typography>
 
-          <Typography
-            sx={{
-              mt: 2,
-              fontSize: { xs: "12px", md: "20px" },
-              fontWeight: { xs: "500", md: "bold" },
-              color: "#6a6a6a",
-              textAlign: "justify",
-            }}
-          >
+          <Typography sx={AboutDesk_T2}>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و

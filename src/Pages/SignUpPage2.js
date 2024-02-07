@@ -5,6 +5,7 @@ import VerifyCode from "../components/SignUpItems/SignUp(VerifyCode)/VerifyCode"
 import { Grid } from "@mui/material";
 import TopBarCss from "../components/topbarcss/TopBarCss";
 import RightBar from "../components/RightBar/RightBar";
+import { Grid1 } from "../styles/style";
 
 const SignUpPage2 = () => {
   const [verify_code, setVerify_code] = useState("");
@@ -17,23 +18,16 @@ const SignUpPage2 = () => {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Stepper1 stepID={0}/>
-          <Grid xs={12} sx={{ margin: "auto" }}>
+          <Stepper1 stepID={0} />
+          <Grid xs={12} m="auto">
             <VerifyCode
               set_verify_code={setVerify_code}
               verify_code={verify_code}
             />
           </Grid>
 
-          <Grid
-            container
-            sx={{
-              width: "40%",
-              margin: "auto",
-              pr: { xs: 0, sm: 5, md: 12, lg: 15, xl: 20 },
-            }}
-          >
-            <Grid container xs={6} sx={{ my: 20 }}></Grid>
+          <Grid container sx={Grid1}>
+            <Grid container xs={6} my={"4"}></Grid>
           </Grid>
         </Grid>
         <Footer
@@ -41,8 +35,7 @@ const SignUpPage2 = () => {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-   
-          address={"اعتمادیه.خیابان اول عربی"}
+          address={"اعتمادیه.خیابان اول غربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}
         />
