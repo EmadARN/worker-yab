@@ -4,7 +4,7 @@ function AboutDesc() {
   return (
     <>
       <Grid>
-        <Grid sx={{ margin: "10px auto" }}>
+        <Grid my={1.5} mx="auto">
           <Typography
             sx={{
               fontSize: { xs: "12px", md: "20px" },

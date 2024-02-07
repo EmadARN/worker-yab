@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import TableClient from "../TableClient/TableClient";
 
 const MechanicList = () => {

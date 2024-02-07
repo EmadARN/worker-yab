@@ -20,10 +20,8 @@ const FotterGrid = styled("Grid")(({ theme }) => ({
 
 const coloumnGrid = {
   display: "flex",
-
   marginTop: "5%",
   marginBottom: "5%",
-  alignItems: "center",
 };
 
 const ItemGrid = {
@@ -63,7 +61,8 @@ export const Footer = (props) => {
                   <KeyboardArrowRightIcon
                     sx={{
                       color: "white",
-                      fontSize: "25px",
+                      fontSize: "22px",
+                      mt: 1,
                       "&:hover": {
                         transition: "all .75s ",
                         color: "#fdbe33",
@@ -76,7 +75,7 @@ export const Footer = (props) => {
                     <Button
                       sx={{
                         color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                        fontSize: { xs: "17px", sm: "20px" },
                         "&:hover": {
                           mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
@@ -101,6 +100,7 @@ export const Footer = (props) => {
                     sx={{
                       color: "white",
                       fontSize: "25px",
+                      mt: 1,
                       "&:hover": {
                         transition: "all .75s ",
                         color: "#fdbe33",
@@ -113,7 +113,7 @@ export const Footer = (props) => {
                     <Button
                       sx={{
                         color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                        fontSize: { xs: "17px", sm: "20px" },
                         "&:hover": {
                           mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
@@ -143,7 +143,8 @@ export const Footer = (props) => {
                   <KeyboardArrowRightIcon
                     sx={{
                       color: "white",
-                      fontSize: "25px",
+                      mt: 1,
+                      fontSize: "22px",
                       "&:hover": {
                         transition: "all .75s ",
                         color: "#fdbe33",
@@ -156,7 +157,7 @@ export const Footer = (props) => {
                     <Button
                       sx={{
                         color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                        fontSize: { xs: "17px", sm: "20px" },
                         "&:hover": {
                           mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
@@ -176,7 +177,8 @@ export const Footer = (props) => {
                   <KeyboardArrowRightIcon
                     sx={{
                       color: "white",
-                      fontSize: "25px",
+                      fontSize: "22px",
+                      mt: 1,
                       "&:hover": {
                         transition: "all .75s ",
                         color: "#fdbe33",
@@ -189,7 +191,7 @@ export const Footer = (props) => {
                     <Button
                       sx={{
                         color: "white",
-                        fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                        fontSize: { xs: "17px", sm: "20px" },
                         "&:hover": {
                           mr: { xs: 1, sm: 2, md: 1 },
                           transition: "all .75s ",
@@ -208,7 +210,7 @@ export const Footer = (props) => {
                 <Typography
                   sx={{
                     color: "white",
-                    fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                    fontSize: { xs: "17px", sm: "20px" },
                   }}
                   style={ItemText}
                 >
@@ -237,7 +239,7 @@ export const Footer = (props) => {
                   <LocationOnIcon
                     sx={{
                       color: "white",
-                      fontSize: "25px",
+                      fontSize: "22px",
                     }}
                   />
                 </Box>
@@ -245,7 +247,7 @@ export const Footer = (props) => {
                   <Button
                     sx={{
                       color: "white",
-                      fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                      fontSize: { xs: "17px", sm: "20px" },
                     }}
                     style={ItemText}
                   >
@@ -259,7 +261,7 @@ export const Footer = (props) => {
                   <PhoneIcon
                     sx={{
                       color: "white",
-                      fontSize: "25px",
+                      fontSize: "22px",
                     }}
                   />
                 </Box>
@@ -267,7 +269,7 @@ export const Footer = (props) => {
                   <Button
                     sx={{
                       color: "white",
-                      fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                      fontSize: { xs: "17px", sm: "20px" },
                     }}
                     style={ItemText}
                   >
@@ -281,7 +283,8 @@ export const Footer = (props) => {
                   <EmailIcon
                     sx={{
                       color: "white",
-                      fontSize: "25px",
+                      fontSize: "22px",
+                      mt: 0.5,
                     }}
                   />
                 </Box>
@@ -289,7 +292,7 @@ export const Footer = (props) => {
                   <Button
                     sx={{
                       color: "white",
-                      fontSize: { xs: "17px", sm: "20px", md: "25px" },
+                      fontSize: { xs: "17px", sm: "20px" },
                     }}
                     style={ItemText}
                   >

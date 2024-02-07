@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import BtnDownToTop from "../components/BtnDownToTop/BtnDownToTop";
 import axios from "axios";
 import { IPServer } from "../Config/Server";
+import { HomeBtnStyle } from "../styles/style";
 
 const Home = () => {
   const [table_Row, setTable_Row] = useState([]);
@@ -53,11 +54,11 @@ const Home = () => {
               <About />
             </Grid>
             <BtnDownToTop minScroll={2000} maxScroll={1000} />
-            <Grid item xs={12} sx={{ mt: 15 }}>
+            <Grid item xs={12} mt={15}>
               <Fact scroll="1000" account_number={table_Row.length} />
             </Grid>
 
-            <Grid item xs={12} md={8} sx={{ margin: "150px auto" }}>
+            <Grid item xs={12} md={8} my={"150px"} mx={"auto"}>
               <TableMain
                 row={table_Row}
                 title="ثبت نامی ها اخیر"
@@ -69,40 +70,12 @@ const Home = () => {
             <Grid
               item
               xs={12}
-              sx={{ display: "flex", justifyContent: "center", ml: 1.5 }}
+              display={"flex"}
+              justifyContent={"center"}
+              ml={1.5}
             >
-              <Link to={"/allWorker"} style={{ textDecoration: "none" }}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    px: 6,
-                    height: "60px",
-                    fontWeight: "bold",
-                    fontSize: "20px",
-                    transition: ".5s",
-                    borderRadius: "2px",
-                    p: "15px 35px",
-                    color: "#030f27",
-
-                    bgcolor: "#fdbe33",
-
-                    fontFamily: "Lalezar",
-                    animation: "span1 3s 2s  ease-in-out infinite  alternate",
-                    "&:hover": {
-                      bgcolor: "transparent",
-                    },
-                    "@keyframes span1": {
-                      "0%": {
-                        transform: "scaleX(80%)",
-                      },
-                      "100%": {
-                        transform: " scaleX(100%)",
-                        bgcolor: "#030f27",
-                        color: "#fdbe33",
-                      },
-                    },
-                  }}
-                >
+              <Link to={"/allWorker"}>
+                <Button variant="contained" sx={HomeBtnStyle}>
                   بازدید همه سرویس ها
                 </Button>
               </Link>
@@ -111,16 +84,13 @@ const Home = () => {
               item
               xs={10}
               md={8}
-              sx={{
-                m: "auto",
-                mt: 11,
-                mb: { xs: 20, md: 20 },
-              }}
+              m={"auto"}
+              mt={11}
+              mb={{ xs: 20, md: 20 }}
             >
               <FAQs />
             </Grid>
           </Grid>
-
           <Footer
             page1={"درباره ما"}
             page3={"خدمات"}

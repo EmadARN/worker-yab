@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,60 +7,28 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Box, Typography } from "@mui/material";
+import {
+  ImgStyle,
+  TableCellStyl3,
+  TableCellStyle,
+  TableContainerStyle,
+} from "./style";
+import { cell } from "./data";
 
 const TableInfo = ({ row }) => {
   return (
     <>
-      <TableContainer component={Paper} sx={{ all: "unset" }}>
+      <TableContainer component={Paper} sx={TableContainerStyle}>
         <Table aria-label="caption table">
           <TableHead>
             <TableRow>
-              <TableCell
-                sx={{
-                  fontSize: { xs: "12px", md: "20px" },
-                  fontFamily: "Lalezar",
-                }}
-                align="right"
-              >
-                عکس پروفایل
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontSize: { xs: "12px", md: "20px" },
-                  fontFamily: "Lalezar",
-                }}
-                align="right"
-              >
-                نام و نام خانوادگی
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontSize: { xs: "12px", md: "20px" },
-                  fontFamily: "Lalezar",
-                }}
-                align="right"
-              >
-                حوزه فعالیت
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontSize: { xs: "12px", md: "20px" },
-                  fontFamily: "Lalezar",
-                  whiteSpace: "nowrap",
-                }}
-                align="right"
-              >
-                سابقه کار
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontSize: { xs: "12px", md: "20px" },
-                  fontFamily: "Lalezar",
-                }}
-                align="right"
-              >
-                شماره همراه{" "}
-              </TableCell>
+              {cell.map((cell) => {
+                return (
+                  <TableCell sx={TableCellStyle} align="right">
+                    {cell.name}
+                  </TableCell>
+                );
+              })}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -71,25 +39,17 @@ const TableInfo = ({ row }) => {
                     align="center"
                     component="th"
                     scope="row"
-                    sx={{ display: "flex", alignItems: "center" }}
+                    sx={TableCellStyl3}
                   >
-                    <img
-                      style={{
-                        width: "90px",
-                        height: "5%",
-                        marginLeft: "10px",
-                      }}
-                      src={row.profile_image}
-                    />
+                    <img style={ImgStyle} src={row.profile_image} />
                   </TableCell>
 
                   <TableCell align="right">
                     <Box sx={{ display: "flex", pr: 2 }}>
-                      <Typography sx={{ fontWeight: "bold" }}>
-                        {" "}
+                      <Typography fontWeight={"bold"}>
                         {row.first_name}
                       </Typography>
-                      <Typography sx={{ fontWeight: "bold", pr: 1 }}>
+                      <Typography pr={1} fontWeight={"bold"}>
                         {row.last_name}
                       </Typography>
                     </Box>

@@ -16,7 +16,7 @@ function AboutPage() {
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12} sx={{ mt: 10 }}>
-          <Grid item xs={12} sm={12} md={7} lg={7} xl={7} sx={{mb:{xs:'30px'}}}>
+          <Grid item xs={12} sm={12} md={7} lg={7} xl={7} mb={{ xs: "30px" }}>
             <AboutTitle />
           </Grid>
           <Grid
@@ -26,7 +26,7 @@ function AboutPage() {
             md={5}
             lg={5}
             xl={5}
-            sx={{ mr: {  sm: "40px", md: "0", lg: "0", xl: "0" } }}
+            mr={{ sm: "40px", md: "0", lg: "0", xl: "0" }}
           >
             <AboutImage />
           </Grid>
@@ -34,7 +34,7 @@ function AboutPage() {
             <Fact scroll="200" />
           </Grid>
           <BtnDownToTop minScroll={100} maxScroll={50} />
-          <Grid item xs={10} md={8} sx={{ margin: "100px auto" }}>
+          <Grid item xs={10} md={8} my={"100px"} mx={"auto"}>
             <FAQs />
           </Grid>
         </Grid>
@@ -43,7 +43,6 @@ function AboutPage() {
           page1={"درباره ما"}
           page2={"ارتباط با ما"}
           page3={"خدمات"}
-      
           address={"اعتمادیه.خیابان اول عربی"}
           phNumber={"0919123456"}
           email={"test1@gmail.com"}

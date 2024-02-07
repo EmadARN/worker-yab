@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Title from "../../Title/Title";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -7,7 +7,6 @@ import rtlPlugin from "stylis-plugin-rtl";
 import { useFormik } from "formik";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-
 import { prefixer } from "stylis";
 import * as yup from "yup";
 import BtnSignUp from "../BtnSignUp/BtnSignUp";
@@ -15,6 +14,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IPServer } from "../../../Config/Server";
 import { CookiesProvider, useCookies } from "react-cookie";
+import {
+  BoxStyle,
+  FormStyle,
+  GridStyle,
+  SignUpVerifyNumberBoxStyle,
+  TextFieldStyle,
+} from "../style";
 
 const theme = createTheme({
   direction: "rtl", // Both here and <body dir="rtl">
@@ -24,6 +30,7 @@ const cacheRtl = createCache({
   key: "muirtl",
   stylisPlugins: [prefixer, rtlPlugin],
 });
+
 const VerifyNumber = ({ phone_number, inputValue }) => {
   const [cookies, setCookie] = useCookies(["phone-number"]);
   const navigate = useNavigate();
@@ -48,35 +55,21 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
         <CacheProvider value={cacheRtl}>
           <ThemeProvider theme={theme}>
             <Grid
-              sx={{
-                flexDirection: "column",
-
-                display: "flex",
-                justifyContent: "center",
-                mt: 20,
-                "& .MuiInput-underline:after": {
-                  borderBottomColor: "#fdbe33",
-                },
-                "& label.Mui-focused": {
-                  color: "#030f27",
-                  fontWeight: "bold",
-                  fontSize: "22px",
-                },
-              }}
+              mt={20}
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              sx={GridStyle}
             >
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Box sx={BoxStyle}>
                 {formik.touched.phone_number && formik.errors.phone_number ? (
                   <p style={{ color: "red" }}>{formik.errors.phone_number}</p>
                 ) : null}
               </Box>
 
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Box sx={BoxStyle}>
                 <form
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
+                  style={FormStyle}
                   onChange={formik.handleChange("phone_number")}
                 >
                   <TextField
@@ -88,24 +81,12 @@ const VerifyNumber = ({ phone_number, inputValue }) => {
                     onBlur={formik.handleBlur("phone_number")}
                     value={formik.values.phone_number}
                     name="phone_number"
-                    sx={{
-                      "& .MuiFilledInput-underline:after": {
-                        borderBottomColor: "#fdbe33",
-                      },
-
-                      width: { xs: "80%", lg: "50%", xl: "30%" },
-                    }}
+                    sx={TextFieldStyle}
                   />
                 </form>
               </Box>
 
-              <Box
-                sx={{
-                  display: "felx",
-                  justifyContent: "center",
-                  my: 10,
-                }}
-              >
+              <Box sx={SignUpVerifyNumberBoxStyle}>
                 <BtnSignUp
                   linkState={{ phone_number: phone_number }}
                   onClick={

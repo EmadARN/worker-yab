@@ -1,29 +1,28 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import { Home } from "@mui/icons-material";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import GroupsIcon from "@mui/icons-material/Groups";
 import SpeedDial from "@mui/material/SpeedDial";
 import { Link } from "react-router-dom";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
+import {
+  BoxStyle1,
+  BoxStyle3,
+  BoxStyleTwo,
+  Container,
+  FabPropsStyle,
+  GroupsIconStyle,
+  HomeStyle,
+  LinkStyle,
+  ManageAccountsIconStyle,
+  TypographyStyle,
+  TypographyStyle3,
+  TypographyStyletwo,
+} from "./style";
+
 const RightBar = ({ display, minScroll, maxScroll }) => {
-  const Container = styled("div")(({ theme }) => ({
-    backgroundColor: "#fdbe33",
-    [theme.breakpoints.down("md")]: {
-      display: "inline-block",
-    },
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
-    paddingTop: 5,
-    width: "100%",
-
-    height: "100%",
-    color: "#efef",
-  }));
-
   const [visible, setVisible] = useState(false);
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -33,152 +32,38 @@ const RightBar = ({ display, minScroll, maxScroll }) => {
       setVisible(true);
     }
   };
-
   window.addEventListener("scroll", toggleVisible);
+
   return (
-    <Container sx={{}}>
-      <Box
-        sx={{
-          position: "fixed",
-          top: "11%",
-
-          display: `${visible ? "none" : "inline"}`,
-
-          zIndex: "999",
-        }}
-      >
-        <Link
-          to={"/"}
-          style={{
-            textDecoration: "none",
-            color: "#222",
-            fontSize: "20px",
-          }}
-        >
-          <Box
-            sx={{
-              display: { xs: "block", sm: "flex" },
-              pr: 2,
-            }}
-          >
-            <Home
-              sx={{
-                color: "#030f27",
-                "@media (max-width:470px)": {
-                  marginBottom: "40px",
-                },
-                cursor: "pointer",
-                mt: { xs: 0, sm: 3 },
-              }}
-            />
-
-            <Typography
-              sx={{
-                pb: 3,
-                color: "#030f27",
-                pr: { xs: 0, sm: 1 },
-                mt: { xs: 0, sm: 3 },
-                "@media (max-width:470px)": {
-                  display: "none",
-                },
-              }}
-            >
-              خانه
-            </Typography>
+    <Container>
+      <Box sx={BoxStyle1(visible)}>
+        <Link to={"/"} style={LinkStyle}>
+          <Box sx={BoxStyleTwo}>
+            <Home sx={HomeStyle} />
+            <Typography sx={TypographyStyle}>خانه</Typography>
           </Box>
         </Link>
-        <Link
-          to={"/About"}
-          style={{
-            textDecoration: "none",
-            color: "#222",
-            fontSize: "20px",
-          }}
-        >
-          <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-            <GroupsIcon
-              sx={{
-                color: "#030f27",
-                "@media (max-width:470px)": {
-                  marginBottom: "40px",
-                },
-                cursor: "pointer",
-              }}
-            />
-            <Typography
-              sx={{
-                pb: 5,
-                color: "#030f27",
-                pr: { xs: 0, sm: 1 },
-                "@media (max-width:470px)": {
-                  display: "none",
-                },
-              }}
-            >
-              درباره ما
-            </Typography>
+
+        <Link to={"/About"} style={LinkStyle}>
+          <Box sx={BoxStyleTwo}>
+            <GroupsIcon sx={GroupsIconStyle} />
+            <Typography sx={TypographyStyletwo}>درباره ما</Typography>
           </Box>
         </Link>
-        <Link
-          to={"/ServicesPage"}
-          style={{
-            textDecoration: "none",
-            color: "#222",
-            fontSize: "20px",
-          }}
-        >
-          <Box sx={{ display: { xs: "block", sm: "flex" }, pr: 2 }}>
-            <ManageAccountsIcon
-              sx={{
-                color: "#030f27",
-                "@media (max-width:470px)": {
-                  marginBottom: "40px",
-                },
-                cursor: "pointer",
-              }}
-            />
-            <Typography
-              sx={{
-                pb: 5,
-                color: "#030f27",
-                pr: { xs: 0, sm: 1 },
-                "@media (max-width:470px)": {
-                  display: "none",
-                },
-              }}
-            >
-              سرویس ها
-            </Typography>
+
+        <Link to={"/ServicesPage"} style={LinkStyle}>
+          <Box sx={BoxStyleTwo}>
+            <ManageAccountsIcon sx={ManageAccountsIconStyle} />
+            <Typography sx={TypographyStyle3}>سرویس ها</Typography>
           </Box>
         </Link>
-        <Link
-          style={{
-            textDecoration: "none",
-            fontSize: "20px",
-          }}
-          to={"/SignupPage"}
-        >
-          <Box
-            sx={{
-              display: { xs: display, md: "flex" },
-              pr: 1,
-            }}
-          >
+
+        <Link style={LinkStyle} to={"/SignupPage"}>
+          <Box sx={BoxStyle3(display)}>
             <SpeedDial
               ariaLabel="SpeedDial basic example"
               icon={<SensorOccupiedIcon />}
-              FabProps={{
-                sx: {
-                  color: "#fdbe33",
-                  bgcolor: "#030f27",
-                  "&:hover": {
-                    bgcolor: "#fdbe33",
-                    color: "#030f27",
-                  },
-                  width: { xs: "45px", sm: "56px" },
-                  height: { xs: "45px", sm: "55px" },
-                },
-              }}
+              FabProps={FabPropsStyle}
             ></SpeedDial>
           </Box>
         </Link>

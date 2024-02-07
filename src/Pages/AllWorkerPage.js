@@ -9,18 +9,16 @@ const AllWorkerPage = () => {
   return (
     <>
       <TopBarCss />
-
       <Grid container>
         <Grid item xs={2}>
           <RightBar />
         </Grid>
         <Grid container xs={10} md={12}>
-          <Grid item xs={12} md={8} sx={{ margin: " auto" }}>
+          <Grid item xs={12} md={8} mx={"auto"}>
             <AllWorker />
           </Grid>
-          <Grid container sx={{ my: 21 }}></Grid>
+          <Grid container my={21}></Grid>
         </Grid>
-
         <Footer
           display="none"
           page1={"درباره ما"}

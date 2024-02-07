@@ -1,108 +1,56 @@
 import * as React from "react";
-
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button, Grid } from "@mui/material";
-import builder from "../../Asset/image/portfolio-5.jpg";
-import mechanic from "../../Asset/image/officecleaning.jpg";
-
 import Title from "../Title/Title";
-
 import { Link, useNavigate } from "react-router-dom";
+import { buttons } from "./data";
+import {
+  BoxStyle1,
+  BoxStyle2,
+  ButtonStyle,
+  CardMediaStyle,
+  GridStyle1,
+  TypographyStyle,
+} from "./style";
 
 const OurService = () => {
-  const buttons = [
-    {
-      id: 1,
-      name: "خدمات  ساختمانی",
-      img: builder,
-      desc: "نیروی کارگر ساختمان",
-      to: "/allWorker",
-    },
-    {
-      id: 2,
-      name: "خدمات منزل",
-      img: mechanic,
-      desc: " خدمات منزل",
-      to: "/allWorker",
-    },
-  ];
   const navigate = useNavigate();
   return (
     <>
-      <Box sx={{ mr: { xs: 2, sm: 10 } }}>
+      <Box sx={BoxStyle1}>
         <Title title="سرویس ها" width={"200px"} />
       </Box>
 
-      <Grid container sx={{ mt: 15 }}>
+      <Grid container mt={15}>
         {buttons.map((item) => {
           return (
-            <Grid
-              key={item.id}
-              xs={12}
-              md={6}
-              sx={{ px: 2, my: { xs: 2, md: 0 } }}
-            >
-              <Box sx={{ position: "relative" }}>
-                <Box
-                  onClick={() => navigate(item.to)}
-                  sx={{
-                    position: "absolute",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                    width: "100%",
-                    height: "100%",
-                    opacity: 0,
-                    transition: "0.5s ease-in",
-
-                    cursor: "pointer",
-                    "&:hover": {
-                      opacity: 1,
-                    },
-                  }}
-                >
+            <Grid key={item.id} xs={12} md={6} px={2} sx={GridStyle1}>
+              <Box position="relative">
+                <Box onClick={() => navigate(item.to)} sx={BoxStyle2}>
                   <Typography
                     onClick={() => navigate(item.page)}
                     variant="h6"
-                    sx={{
-                      position: "absolute",
-                      color: "#fff",
-                      right: "50%",
-                      top: "50%",
-                      transform: "translate(50%,-50%)",
-                    }}
+                    sx={TypographyStyle}
                   >
                     {item.desc}
                   </Typography>
                 </Box>
                 <CardMedia
-                  sx={{ height: { xs: 200, sm: 250, md: 350 } }}
+                  sx={CardMediaStyle}
                   component="img"
                   image={item.img}
                   alt="green iguana"
                 />
               </Box>
 
-              <Box sx={{ p: 0, m: 0 }}>
+              <Grid p={0} m={0}>
                 <Link to={item.to}>
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={{
-                      width: "100%",
-                      bgcolor: "#030f27",
-                      color: "#fdbe33",
-                      fontFamily: "Lalezar",
-                      fontSize: "22px",
-                      "&:hover": {
-                        bgcolor: "#fdbe33",
-                        color: "#030f27",
-                      },
-                    }}
-                  >
+                  <Button variant="contained" size="small" sx={ButtonStyle}>
                     {item.name}
                   </Button>
                 </Link>
-              </Box>
+              </Grid>
             </Grid>
           );
         })}

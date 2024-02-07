@@ -8,7 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Title from "../Title/Title";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 const columns = [
   { id: "firestName", label: "عکس پروفایل", minWidth: 170 },
@@ -60,9 +60,9 @@ export default function TableClient({ rows, title, width, xsWidth }) {
 
   return (
     <>
-      <Box sx={{ mb: 20 }}>
+      <Grid mb={20}>
         <Title title={title} width={width} xsWidth={xsWidth} />
-      </Box>
+      </Grid>
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">

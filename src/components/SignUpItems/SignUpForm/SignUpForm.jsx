@@ -11,7 +11,6 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import createCache from "@emotion/cache";
@@ -22,7 +21,13 @@ import axios from "axios";
 import { IPServer } from "../../../Config/Server";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { CookiesProvider, useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
+import {
+  SignupFormBoxStyle1,
+  SignupFormBoxStyleTwo,
+  SignupFormBtnStyle,
+} from "../style";
+import { cities, jobs } from "../data";
 
 const theme = createTheme({
   direction: "rtl",
@@ -33,7 +38,7 @@ const cacheRtl = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 
-const SignupForm = (style) => {
+const SignupForm = ({ style }) => {
   const navigate = useNavigate();
   const [cookies, setCookie] = useCookies(["token"]);
   const [inp, setInp] = useState({});
@@ -57,9 +62,7 @@ const SignupForm = (style) => {
         setInp(res.data.user_inf);
         setInpfocus(true);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   }, []);
 
   const submit = () => {
@@ -76,15 +79,12 @@ const SignupForm = (style) => {
         inp
       )
       .then((res) => {
-        console.log(res.data);
         if (res.data.status === 200) {
           navigate("/SignUpPage4");
         }
       })
 
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   const formik = useFormik({
@@ -107,21 +107,7 @@ const SignupForm = (style) => {
     <>
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
-          <Box
-            sx={{
-              style,
-              "& .MuiTextField-root": {
-                my: 1,
-                display: "flex",
-                width: "100%",
-              },
-              mt: 18,
-              ml: 3,
-              width: "31rem",
-            }}
-            noValidate
-            autoComplete="off"
-          >
+          <Box sx={SignupFormBoxStyle1} noValidate autoComplete="off">
             <Typography
               variant="h5"
               textAlign={"center"}
@@ -132,11 +118,11 @@ const SignupForm = (style) => {
             </Typography>
 
             <Grid container>
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid display="flex" justifyContent="center">
                 {formik.touched.first_name && formik.errors.first_name ? (
                   <p style={{ color: "red" }}>{formik.errors.first_name}</p>
                 ) : null}
-              </Box>
+              </Grid>
               <Grid item xs={12}>
                 <form onChange={formik.handleChange("first_name")}>
                   <TextField
@@ -153,11 +139,11 @@ const SignupForm = (style) => {
                   />
                 </form>
               </Grid>
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid display="flex" justifyContent="center">
                 {formik.touched.last_name && formik.errors.last_name ? (
                   <p style={{ color: "red" }}>{formik.errors.last_name}</p>
                 ) : null}
-              </Box>
+              </Grid>
               <Grid item xs={12}>
                 <form onChange={(e) => textHandler(e, "last_name")}>
                   <TextField
@@ -174,15 +160,14 @@ const SignupForm = (style) => {
                   />
                 </form>
               </Grid>
-
-              <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid display="flex" justifyContent="center">
                 {formik.touched.work_experience &&
                 formik.errors.work_experience ? (
                   <p style={{ color: "red" }}>
                     {formik.errors.work_experience}
                   </p>
                 ) : null}
-              </Box>
+              </Grid>
               <Grid item xs={12}>
                 <form onChange={(e) => textHandler(e, "work_experience")}>
                   <TextField
@@ -199,18 +184,11 @@ const SignupForm = (style) => {
                   />
                 </form>
               </Grid>
+
               <Grid container sx={{ my: { xs: 2, md: 3.5 } }}>
+                {/* city */}
                 <Grid item xs={12} md={6} sx={{ mb: { xs: 2, md: 0 } }}>
-                  <Box
-                    sx={{
-                      "& .select-root": {
-                        textAlign: "center",
-                        height: "40px",
-                        paddingTop: "10px",
-                        pl: 1,
-                      },
-                    }}
-                  >
+                  <Box sx={SignupFormBoxStyleTwo}>
                     <FormControl sx={{ width: "100%" }}>
                       <InputLabel id="demo-simple-select-label">
                         شهر:
@@ -232,17 +210,9 @@ const SignupForm = (style) => {
                     </FormControl>
                   </Box>
                 </Grid>
+                {/* jobs */}
                 <Grid item xs={12} md={6}>
-                  <Box
-                    sx={{
-                      "& .select-root": {
-                        textAlign: "center",
-                        height: "40px",
-                        paddingTop: "10px",
-                        pl: 1,
-                      },
-                    }}
-                  >
+                  <Box sx={SignupFormBoxStyleTwo}>
                     <FormControl sx={{ width: "100%" }}>
                       <InputLabel id="demo-simple-select-label">
                         شغل:
@@ -270,16 +240,7 @@ const SignupForm = (style) => {
             <Button
               variant="contained"
               color="error"
-              sx={{
-                width: "100%",
-                marginTop: "15px",
-                mb: 2,
-                bgcolor: "#fdbe33",
-                transition: "all ease 0.8s",
-                "&:hover": {
-                  bgcolor: "#030F27",
-                },
-              }}
+              sx={SignupFormBtnStyle}
               onClick={submit}
             >
               <Typography sx={{ px: 2 }}>ساخت اکانت </Typography>
@@ -292,9 +253,3 @@ const SignupForm = (style) => {
 };
 
 export default SignupForm;
-const jobs = [
-  { job: "خدمات منزل", value: "خدمات منزل" },
-  { job: "خدمات ساختمان ", value: "خدمات ساختمانی" },
-];
-
-const cities = [{ title: "زنجان", value: "زنجان" }];
