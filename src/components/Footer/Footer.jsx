@@ -14,12 +14,17 @@ const FotterGrid = styled("Grid")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     justifyContent: "space-around",
+    
     marginTop: ".2%",
   },
 }));
 
 const coloumnGrid = {
   display: "flex",
+<<<<<<< HEAD
+=======
+justifyContent:"center",
+>>>>>>> 0f7bb122c2f90c3a832a463143836e75a4a652a6
   marginTop: "5%",
   marginBottom: "5%",
 };
@@ -27,6 +32,9 @@ const coloumnGrid = {
 const ItemGrid = {
   display: "flex",
   alignItems: "center",
+  justifyContent:"center",
+ 
+  
 };
 
 const ItemText = {
@@ -47,7 +55,7 @@ export const Footer = (props) => {
           }}
         >
           {/* useful pages */}
-          <Grid item xs={12} sm={6} md={2} style={coloumnGrid}>
+          <Grid textAlign="center" item xs={12} sm={6} md={2} style={coloumnGrid}>
             <Grid sx={{}}>
               <Typography
                 sx={{ color: "#CC902F", whiteSpace: "nowrap" }}
@@ -132,13 +140,13 @@ export const Footer = (props) => {
           </Grid>
           {/* services */}
           <Grid item xs={12} sm={6} md={2} style={coloumnGrid}>
-            <Grid>
+            <Grid textAlign="center"  >
               <Typography sx={{ color: "#CC902F" }} variant="h5">
                 {" "}
                 خدمات قابل ارائه
               </Typography>
 
-              <Grid style={ItemGrid}>
+              <Grid textAlign="center" style={ItemGrid}>
                 <Box>
                   <KeyboardArrowRightIcon
                     sx={{
@@ -152,7 +160,7 @@ export const Footer = (props) => {
                     }}
                   />
                 </Box>
-                <Box>
+                <Box >
                   <Link to={"/ServicesPage"} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
@@ -219,8 +227,14 @@ export const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
+
+
+
+
+
           {/* addreses */}
           <Grid
+          textAlign="center"
             item
             xs={12}
             sm={6}
@@ -256,8 +270,8 @@ export const Footer = (props) => {
                   </Button>
                 </Box>
               </Grid>
-              <Grid style={ItemGrid}>
-                <Box>
+              <Grid sx={{ml:{xs:"28%",md:'32%'}}} style={ItemGrid}>
+                <Box >
                   <PhoneIcon
                     sx={{
                       color: "white",
